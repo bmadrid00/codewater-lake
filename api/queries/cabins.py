@@ -53,7 +53,7 @@ class CabinQueries:
                 )
                 result = db.fetchone()
                 cabin = {}
-                for i, col  in enumerate(db.description):
+                for i, col in enumerate(db.description):
                     cabin[col.name] = result[i]
                 return cabin
 
@@ -116,5 +116,5 @@ class CabinQueries:
                         [cabin_id]
                     )
             return True
-        except Exception as e:
+        except Exception:
             return {"message": "Invalid cabin id"}
