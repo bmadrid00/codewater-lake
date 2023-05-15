@@ -15,8 +15,12 @@ class UserIn(BaseModel):
 class UserOut(UserIn):
     id: int
 
+class UserOutWithPassword(UserOut):
+    hashed_password: str
+
+
 class UserQueries():
-    def get_user(self, user_id: int) -> UserOut:
+    def get_user(self, user_id: int) -> UserOutWithPassword:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
@@ -32,6 +36,9 @@ class UserQueries():
                 for i, col in enumerate(db.description):
                     user[col.name] = result[i]
                 return user
+
+    def create_user(self, info: UserIn, hashed_password: str) -> UserOutWithPassword:
+
 
 
     def delete_user(self, user_id: int) -> bool:

@@ -1,9 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from routers import cabins
+from authenticator import authenticator
 
 app = FastAPI()
+app.include_router(authenticator.router)
 app.include_router(cabins.router)
 
 app.add_middleware(
