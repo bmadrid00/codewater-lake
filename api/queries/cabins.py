@@ -3,7 +3,7 @@ import os
 from typing import List
 from psycopg_pool import ConnectionPool
 
-pool =  ConnectionPool(conninfo=os.environ["DATABASE_URL"])
+pool = ConnectionPool(conninfo=os.environ["DATABASE_URL"])
 
 
 class CabinIn(BaseModel):
@@ -11,12 +11,13 @@ class CabinIn(BaseModel):
     max_occupants: int
     description: str
     on_lake: bool
-    rating:int
+    rating: int
     day_rate: int
 
 
 class CabinOut(CabinIn):
     id: int
+
 
 class CabinList(BaseModel):
     cabins: List[CabinOut]
@@ -53,14 +54,14 @@ class CabinQueries:
                 )
                 result = db.fetchone()
                 cabin = {}
-                for i, col  in enumerate(db.description):
+                for i, col in enumerate(db.description):
                     cabin[col.name] = result[i]
                 return cabin
 
     def create_cabin(self, cabin: CabinIn) -> CabinOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
-                result = db.execute(
+                db.execute(
                     """
                     INSERT INTO cabins
                         (cabin_name, max_occupants, description, on_lake, rating, day_rate)
@@ -116,5 +117,5 @@ class CabinQueries:
                         [cabin_id]
                     )
             return True
-        except Exception as e:
+        except Exception:
             return {"message": "Invalid cabin id"}
