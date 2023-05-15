@@ -12,3 +12,6 @@ class ReservationIn(BaseModel):
 
 class ReservationOut(ReservationIn):
     id: int
+
+
+class ReservationQu

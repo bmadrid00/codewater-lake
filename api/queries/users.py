@@ -15,6 +15,7 @@ class UserIn(BaseModel):
 class UserOut(UserIn):
     id: int
 
+
 class UserOutWithPassword(UserOut):
     hashed_password: str
 
@@ -38,8 +39,7 @@ class UserQueries():
                 return user
 
     def create_user(self, info: UserIn, hashed_password: str) -> UserOutWithPassword:
-
-
+        pass
 
     def delete_user(self, user_id: int) -> bool:
         try:
@@ -56,8 +56,7 @@ class UserQueries():
         except Exception:
             return {"message": "Invalid user id"}
 
-
-    def update_user(self, user_id: int, user: UserIn) -> UserOut
+    def update_user(self, user_id: int, user: UserIn) -> UserOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
