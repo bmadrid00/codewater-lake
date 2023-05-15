@@ -3,7 +3,7 @@ import os
 from typing import List
 from psycopg_pool import ConnectionPool
 
-pool =  ConnectionPool(conninfo=os.environ["DATABASE_URL"])
+pool = ConnectionPool(conninfo=os.environ["DATABASE_URL"])
 
 
 class CabinIn(BaseModel):
@@ -17,6 +17,7 @@ class CabinIn(BaseModel):
 
 class CabinOut(CabinIn):
     id: int
+
 
 class CabinList(BaseModel):
     cabins: List[CabinOut]
