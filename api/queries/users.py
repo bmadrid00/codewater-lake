@@ -15,6 +15,7 @@ class UserIn(BaseModel):
 class UserOut(UserIn):
     id: int
 
+    
 class UserQueries():
     def get_user(self, user_id: int) -> UserOut:
         with pool.connection() as conn:
@@ -33,7 +34,6 @@ class UserQueries():
                     user[col.name] = result[i]
                 return user
 
-
     def delete_user(self, user_id: int) -> bool:
         try:
             with pool.connection() as conn:
@@ -49,8 +49,7 @@ class UserQueries():
         except Exception:
             return {"message": "Invalid user id"}
 
-
-    def update_user(self, user_id: int, user: UserIn) -> UserOut
+    def update_user(self, user_id: int, user: UserIn) -> UserOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
