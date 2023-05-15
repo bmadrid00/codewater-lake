@@ -9,7 +9,7 @@ steps = [
             description VARCHAR(500) NOT NULL,
             on_lake BOOLEAN NOT NULL,
             rating SMALLINT,
-            day_rate: SMALLINT NOT NULL
+            day_rate SMALLINT NOT NULL
 
         );
         """,
