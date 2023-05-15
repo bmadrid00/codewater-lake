@@ -1,9 +1,7 @@
 # volumes:
 volumes:
   postgres-data:
-external: """"true""""
-
-
+    external: true
 services:
   fastapi:
     build:
