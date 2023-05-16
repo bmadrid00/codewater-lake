@@ -4,10 +4,11 @@ from queries.reservations import ReservationIn, ReservationOut, ReservationList,
 
 router = APIRouter()
 
+
 @router.get("/api/reservations/", response_model=ReservationList)
 def list_reservations(
     repo: ReservationQueries = Depends(),
-    ):
+):
     return repo.get_all_reservations()
 
 
@@ -23,7 +24,7 @@ def create_reservation(reservation: ReservationIn, repo: ReservationQueries = De
     return repo.create_reservation(reservation)
 
 
-@router.put("/api/reservations/{reservation_id}", reponse_model=ReservationOut)
+@router.put("/api/reservations/{reservation_id}", response_model=ReservationOut)
 def update_reservation(reservation_id: int, reservation: ReservationIn, repo: ReservationQueries = Depends()):
     return repo.update_reservation(reservation_id, reservation)
 

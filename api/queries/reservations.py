@@ -17,14 +17,14 @@ class ReservationIn(BaseModel):
 
 class ReservationOut(ReservationIn):
     id: int
-    
-    
+
+
 class ReservationList(BaseModel):
     reservations: List[ReservationOut]
 
 
 class ReservationQueries():
-    def get_all_reservations(self) -> List[ReservationOut]:
+    def get_all_reservations(self) -> ReservationList:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
@@ -39,8 +39,8 @@ class ReservationQueries():
                     for i, col in enumerate(db.description):
                         reservation[col.name] = row[i]
                     results.append(reservation)
-                return {"reservation": results}
-                        
+                return {"reservations": results}
+
     def get_reservation(self, reservation_id: int) -> ReservationOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
@@ -56,45 +56,52 @@ class ReservationQueries():
                 reservation = {}
                 for i, col in enumerate(db.description):
                     reservation[col.name] = result[i]
-                    return reservation
-                
+                return reservation
+
     def create_reservation(self, reservation: ReservationIn) -> ReservationOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
                     """
                     INSERT INTO reservations
-                        (id, cabin_id, start_date, end_date, user_id, number_of_people)
+                        (cabin_id, start_date, end_date, user_id, number_of_people)
                     VALUES
-                        (%s, %s, %s, %s, %s, %s)
+                        (%s, %s, %s, %s, %s)
                     RETURNING id;
                     """,
                     [reservation.cabin_id,
-                     reservation.start_date,
-                     reservation.end_date,
-                     reservation.user_id,
-                     reservation.number_of_people]
+                        reservation.start_date,
+                        reservation.end_date,
+                        reservation.user_id,
+                        reservation.number_of_people]
                 )
                 id = db.fetchone()[0]
                 old_data = reservation.dict()
                 return ReservationOut(id=id, **old_data)
-    
+
     def update_reservation(self, reservation_id: int, reservation: ReservationIn) -> ReservationOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
                     """
                     UPDATE reservations
-                    SET reservation_id=%s
-                        , cabin_id=%s
+                    SET cabin_id=%s
                         , start_date=%s
                         , end_date=%s
                         , user_id=%s
                         , number_of_people=%s
                     WHERE id=%s
-                    """
+                    """,
+                    [reservation.cabin_id,
+                        reservation.start_date,
+                        reservation.end_date,
+                        reservation.user_id,
+                        reservation.number_of_people,
+                        reservation_id]
                 )
-    
+                old_data = reservation.dict()
+                return ReservationOut(id=reservation_id, **old_data)
+
     def delete_reservation(self, reservation_id: int) -> bool:
         try:
             with pool.connection() as conn:

@@ -7,16 +7,16 @@ from queries.users import UserOut, UserQueries, UserOutWithPassword
 class UserAuthenticator(Authenticator):
     async def get_account_data(
         self,
-        email: str,
+        username: str,
         accounts: UserQueries,
     ):
         # Use your repo to get the account based on the
         # username (which could be an email)
-        return accounts.get(email)
+        return accounts.get_user(username)
 
     def get_account_getter(
         self,
-        accounts: UserQueries = Depends(),
+        accounts: UserQueries = Depends()
     ):
         # Return the accounts. That's it.
         return accounts
@@ -26,7 +26,7 @@ class UserAuthenticator(Authenticator):
         # account object
         return account.hashed_password
 
-    def get_account_data_for_cookie(self, account: UserOut):
+    def get_account_data_for_cookie(self, account: UserOutWithPassword):
         # Return the username and the data for the cookie.
         # You must return TWO values from this method.
         return account.email, UserOut(**account.dict())

@@ -70,11 +70,11 @@ class CabinQueries:
                     RETURNING id;
                     """,
                     [cabin.cabin_name,
-                    cabin.max_occupants,
-                    cabin.description,
-                    cabin.on_lake,
-                    cabin.rating,
-                    cabin.day_rate]
+                        cabin.max_occupants,
+                        cabin.description,
+                        cabin.on_lake,
+                        cabin.rating,
+                        cabin.day_rate]
                 )
                 id = db.fetchone()[0]
                 old_data = cabin.dict()
@@ -95,12 +95,12 @@ class CabinQueries:
                     WHERE id=%s
                     """,
                     [cabin.cabin_name,
-                    cabin.max_occupants,
-                    cabin.description,
-                    cabin.on_lake,
-                    cabin.rating,
-                    cabin.day_rate,
-                    cabin_id]
+                        cabin.max_occupants,
+                        cabin.description,
+                        cabin.on_lake,
+                        cabin.rating,
+                        cabin.day_rate,
+                        cabin_id]
                 )
                 old_data = cabin.dict()
                 return CabinOut(id=cabin_id, **old_data)

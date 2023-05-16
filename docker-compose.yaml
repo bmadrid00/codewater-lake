@@ -14,7 +14,7 @@ services:
     environment:
       DATABASE_URL: postgresql://postgres:password@postgres/postgres
       WAIT_HOSTS: postgres:5432
-      SIGNING_KEY:
+      SIGNING_KEY: 3f03c169d3baec47c4b699b89925631082841347e2ec74cf8c5633dabc18aaec
       WAIT_BEFORE: 5
       WAIT_TIMEOUT: 60
 
@@ -40,7 +40,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=password
-      - POSTGRES_USER = postgres
-      - POSTGRES_DB = postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
     ports:
       - 15432:5432
