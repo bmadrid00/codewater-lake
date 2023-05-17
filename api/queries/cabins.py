@@ -6,6 +6,8 @@ from psycopg_pool import ConnectionPool
 pool = ConnectionPool(conninfo=os.environ["DATABASE_URL"])
 
 
+# ########################---MODELS---########################
+
 class CabinIn(BaseModel):
     cabin_name: str
     max_occupants: int
@@ -13,6 +15,7 @@ class CabinIn(BaseModel):
     on_lake: bool
     rating: int
     day_rate: int
+    cabin_images: str
 
 
 class CabinOut(CabinIn):
@@ -23,13 +26,15 @@ class CabinList(BaseModel):
     cabins: List[CabinOut]
 
 
+# ########################---QUERIES---########################
+
 class CabinQueries:
     def get_all_cabins(self) -> List[CabinOut]:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
                     """
-                    SELECT id, cabin_name, max_occupants, description, on_lake, rating, day_rate
+                    SELECT id, cabin_name, max_occupants, description, on_lake, rating, day_rate, cabin_images
                     FROM cabins
                     """
                 )
@@ -46,7 +51,7 @@ class CabinQueries:
             with conn.cursor() as db:
                 db.execute(
                     """
-                    SELECT id, cabin_name, max_occupants, description, on_lake, rating, day_rate
+                    SELECT id, cabin_name, max_occupants, description, on_lake, rating, day_rate, cabin_images
                     FROM cabins
                     WHERE id=%s
                     """,
@@ -64,9 +69,9 @@ class CabinQueries:
                 db.execute(
                     """
                     INSERT INTO cabins
-                        (cabin_name, max_occupants, description, on_lake, rating, day_rate)
+                        (cabin_name, max_occupants, description, on_lake, rating, day_rate, cabin_images)
                     VALUES
-                        (%s, %s, %s, %s, %s, %s)
+                        (%s, %s, %s, %s, %s, %s, %s)
                     RETURNING id;
                     """,
                     [cabin.cabin_name,

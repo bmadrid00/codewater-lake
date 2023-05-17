@@ -6,6 +6,9 @@ import os
 pool = ConnectionPool(conninfo=os.environ["DATABASE_URL"])
 
 
+# ########################---MODELS---########################
+
+
 class UserIn(BaseModel):
     first_name: str
     last_name: str
@@ -31,6 +34,8 @@ class UserOutWithPassword(UserOut):
 
 class DuplicateAccountError(ValueError):
     pass
+
+# ########################---QUERIES---########################
 
 
 class UserQueries():

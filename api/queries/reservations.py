@@ -7,6 +7,9 @@ import os
 pool = ConnectionPool(conninfo=os.environ["DATABASE_URL"])
 
 
+# ########################---MODELS---########################
+
+
 class ReservationIn(BaseModel):
     cabin_id: int
     start_date: date
@@ -21,6 +24,9 @@ class ReservationOut(ReservationIn):
 
 class ReservationList(BaseModel):
     reservations: List[ReservationOut]
+
+
+# ########################---QUERIES---########################
 
 
 class ReservationQueries():
