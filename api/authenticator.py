@@ -8,7 +8,7 @@ class UserAuthenticator(Authenticator):
     async def get_account_data(
         self,
         username: str,
-        accounts: UserQueries,
+        accounts: UserQueries
     ):
         # Use your repo to get the account based on the
         # username (which could be an email)

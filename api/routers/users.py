@@ -6,11 +6,12 @@ from fastapi import (
     APIRouter,
     Request,
 )
-from queries.users import (UserOut,
-                        UserIn,
-                        UserQueries,
-                        DuplicateAccountError,
-                        UserForm
+from queries.users import (
+    UserOut,
+    UserIn,
+    UserQueries,
+    DuplicateAccountError,
+    UserForm
 )
 from jwtdown_fastapi.authentication import Token
 from pydantic import BaseModel
@@ -48,16 +49,6 @@ async def create_account(
     return AccountToken(account=user, **token.dict())
 
 
-@router.put("/api/users/{user_id}", response_model=UserOut)
-def update_user(user_id: int, user: UserIn, repo: UserQueries = Depends()):
-    return repo.update_user(user_id, user)
-
-
-@router.delete("/api/users/{user_id}", response_model=bool)
-def delete_user(user_id: int, repo: UserQueries = Depends()):
-    return repo.delete_user(user_id)
-
-
 @router.get("/token", response_model=AccountToken | None)
 async def get_token(
     request: Request,
@@ -69,3 +60,22 @@ async def get_token(
             "type": "Bearer",
             "account": account,
         }
+
+
+@router.put("/api/users/{user_id}", response_model=UserOut)
+def update_user(
+    user_id: int,
+    user: UserIn,
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    repo: UserQueries = Depends()
+):
+    return repo.update_user(user_id, user)
+
+
+@router.delete("/api/users/{user_id}", response_model=bool)
+def delete_user(
+    user_id: int,
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    repo: UserQueries = Depends()
+):
+    return repo.delete_user(user_id)

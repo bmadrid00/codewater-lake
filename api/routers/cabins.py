@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Depends
 from queries.cabins import CabinIn, CabinOut, CabinQueries, CabinList
-from typing import List
 
 router = APIRouter()
 
@@ -26,7 +25,11 @@ def create_cabin(cabin: CabinIn, repo: CabinQueries = Depends()):
 
 
 @router.put("/api/cabins/{cabin_id}", response_model=CabinOut)
-def update_cabin(cabin_id: int, cabin: CabinIn, repo: CabinQueries = Depends()):
+def update_cabin(
+    cabin_id: int,
+    cabin: CabinIn,
+    repo: CabinQueries = Depends()
+):
     return repo.update_cabin(cabin_id, cabin)
 
 

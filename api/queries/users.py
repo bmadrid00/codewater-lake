@@ -56,7 +56,11 @@ class UserQueries():
                     user[col.name] = result[i]
                 return UserOutWithPassword(**user)
 
-    def create_user(self, user: UserIn, hashed_password: str) -> UserOutWithPassword:
+    def create_user(
+            self,
+            user: UserIn,
+            hashed_password: str
+            ) -> UserOutWithPassword:
         account = user.dict()
         account[hashed_password] = hashed_password
 
@@ -76,7 +80,11 @@ class UserQueries():
                 )
                 id = db.fetchone()[0]
                 old_data = user.dict()
-                return UserOutWithPassword(id=id, hashed_password=hashed_password, **old_data)
+                return UserOutWithPassword(
+                    id=id,
+                    hashed_password=hashed_password,
+                    **old_data
+                    )
 
     def delete_user(self, user_id: int) -> bool:
         try:

@@ -34,13 +34,20 @@ class CabinQueries:
             with conn.cursor() as db:
                 db.execute(
                     """
-                    SELECT id, cabin_name, max_occupants, description, on_lake, rating, day_rate, cabin_images
+                    SELECT id
+                    , cabin_name
+                    , max_occupants
+                    , description
+                    , on_lake
+                    , rating
+                    , day_rate
+                    , cabin_images
                     FROM cabins
                     """
                 )
                 results = []
                 for row in db.fetchall():
-                    cabin =  {}
+                    cabin = {}
                     for i, col in enumerate(db.description):
                         cabin[col.name] = row[i]
                     results.append(cabin)
@@ -51,7 +58,14 @@ class CabinQueries:
             with conn.cursor() as db:
                 db.execute(
                     """
-                    SELECT id, cabin_name, max_occupants, description, on_lake, rating, day_rate, cabin_images
+                    SELECT id
+                    , cabin_name
+                    , max_occupants
+                    , description
+                    , on_lake
+                    , rating
+                    , day_rate
+                    , cabin_images
                     FROM cabins
                     WHERE id=%s
                     """,
@@ -69,7 +83,13 @@ class CabinQueries:
                 db.execute(
                     """
                     INSERT INTO cabins
-                        (cabin_name, max_occupants, description, on_lake, rating, day_rate, cabin_images)
+                        (cabin_name
+                        , max_occupants
+                        , description
+                        , on_lake
+                        , rating
+                        , day_rate
+                        , cabin_images)
                     VALUES
                         (%s, %s, %s, %s, %s, %s, %s)
                     RETURNING id;
