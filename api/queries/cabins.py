@@ -97,6 +97,7 @@ class CabinQueries:
                         , on_lake=%s
                         , rating=%s
                         , day_rate=%s
+                        , cabin_images=%s
                     WHERE id=%s
                     """,
                     [cabin.cabin_name,
@@ -105,6 +106,7 @@ class CabinQueries:
                         cabin.on_lake,
                         cabin.rating,
                         cabin.day_rate,
+                        cabin.cabin_images,
                         cabin_id]
                 )
                 old_data = cabin.dict()
