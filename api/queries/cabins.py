@@ -79,7 +79,8 @@ class CabinQueries:
                         cabin.description,
                         cabin.on_lake,
                         cabin.rating,
-                        cabin.day_rate]
+                        cabin.day_rate,
+                        cabin.cabin_images]
                 )
                 id = db.fetchone()[0]
                 old_data = cabin.dict()

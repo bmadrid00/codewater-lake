@@ -10,7 +10,7 @@ steps = [
             on_lake BOOLEAN NOT NULL,
             rating SMALLINT,
             day_rate SMALLINT NOT NULL,
-            cabin_images text ARRAY[] NOT NULL
+            cabin_images text[] NOT NULL
 
         );
         """,
