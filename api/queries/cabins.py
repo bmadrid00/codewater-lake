@@ -13,9 +13,9 @@ class CabinIn(BaseModel):
     max_occupants: int
     description: str
     on_lake: bool
-    rating: int
+    rating: float
     day_rate: int
-    cabin_images: str
+    cabin_images: List[str]
 
 
 class CabinOut(CabinIn):

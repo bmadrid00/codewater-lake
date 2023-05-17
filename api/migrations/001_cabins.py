@@ -6,12 +6,11 @@ steps = [
             id SERIAL PRIMARY KEY NOT NULL,
             cabin_name VARCHAR(100) NOT NULL,
             max_occupants SMALLINT NOT NULL,
-            description VARCHAR(500) NOT NULL,
+            description VARCHAR(5000) NOT NULL,
             on_lake BOOLEAN NOT NULL,
-            rating SMALLINT,
+            rating DECIMAL,
             day_rate SMALLINT NOT NULL,
-            cabin_images text[] NOT NULL
-
+            cabin_images TEXT[] NOT NULL
         );
         """,
         # "Down" SQL statement
