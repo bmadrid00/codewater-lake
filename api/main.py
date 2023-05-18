@@ -1,8 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
+from authenticator import authenticator
+from routers import cabins, users, reservations
+
 
 app = FastAPI()
+app.include_router(cabins.router, tags=['Cabins'])
+app.include_router(reservations.router, tags=['Reservations'])
+app.include_router(users.router, tags=['Users'])
+app.include_router(authenticator.router, tags=['Users'])
 
 app.add_middleware(
     CORSMiddleware,
@@ -13,16 +20,3 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-@app.get("/api/launch-details")
-def launch_details():
-    return {
-        "launch_details": {
-            "module": 3,
-            "week": 17,
-            "day": 5,
-            "hour": 19,
-            "min": "00"
-        }
-    }
