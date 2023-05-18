@@ -10,3 +10,7 @@ Coder's logEntry: 000002
 Stardate 05.17.2023
 Coder's logEntry: 000003
     ...Today we modified the cabin model to accomodate images and protected user_id authentication routes, additionally the React front-end framework was started.
+
+Stardate 05.18.2023
+Coder's logEntry: 000004
+    ...Today we introduced Redux and worked on the front end authorization configuration, and began graphic design discussions...

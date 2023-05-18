@@ -18,37 +18,37 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/api/homepage">
+              <NavLink className="navbar-brand" to="/homepage">
                 Homepage
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/api/signup">
+              <NavLink className="navbar-brand" to="/signup">
                 Signup
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/api/signin">
+              <NavLink className="navbar-brand" to="/signin">
                 Signin
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/api/profile">
+              <NavLink className="navbar-brand" to="/profile">
                 Profile
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/api/aboutus">
+              <NavLink className="navbar-brand" to="/aboutus">
                 About Us
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/api/reservations">
+              <NavLink className="navbar-brand" to="/reservations">
                 Reservations
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/api/cabins">
+              <NavLink className="navbar-brand" to="/cabins">
                 Cabins
               </NavLink>
             </li>
