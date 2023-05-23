@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+
 import CabinCarousel from "./CabinCarousel";
 import { MDBBtn, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 import { useGetCabinByIdQuery } from "./app/apiSlice";
-import { notInitialized } from "react-redux/es/utils/useSyncExternalStore";
+import { useParams } from "react-router-dom";
 
 
 
 function CabinDetail() {
-  const cabin_id = 2
+  const { cabin_id } = useParams();
   const { data, isLoading } = useGetCabinByIdQuery(cabin_id);
-  
+
     if (isLoading) return <div>loading...</div>
 
     return (
