@@ -14,3 +14,11 @@ Coder's logEntry: 000003
 Stardate 05.18.2023
 Coder's logEntry: 000004
     ...Today we introduced Redux and worked on the front end authorization configuration, and began graphic design discussions...
+
+Stardate 05.22.2023
+Coder's logEntry: 000005
+    ...Today we agreed on a name and location and began planning to incorporate Redux. Everyone worked on their issues and agreed to group code redux after the lecture tomorrow.
+
+Stardate 05.23.2023
+Coder's logEntry: 000006
+    ...Today I finished getting the calendar view for reservations sorted out.

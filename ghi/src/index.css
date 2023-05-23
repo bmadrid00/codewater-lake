@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* nav */
+.nav-item {
+  margin: 0 1rem;
+}
+
+.nav-link {
+  color: white;
+  transition: color 0.3s ease-in-out; /* optional: for smooth color transition */
+}
+
+/* Change color on hover */
+.nav-link:hover {
+  color: #ffc107;
+  text-decoration: none;
+}
