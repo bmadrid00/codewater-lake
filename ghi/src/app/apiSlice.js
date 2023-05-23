@@ -9,6 +9,9 @@ export const codeLakeApi = createApi({
         getCabins: builder.query({
             query: () => '/api/cabins'
         }),
+        getCabinById: builder.query({
+            query: (cabin_id) => `/api/cabins/${cabin_id}`
+        }),
         getReservationsByUser: builder.query({
             query: (user_id) => `/api/users/${user_id}/reservations/`,
             providesTags: ['User']
@@ -48,6 +51,7 @@ export const codeLakeApi = createApi({
 
 export const {
     useGetCabinsQuery,
+    useGetCabinByIdQuery,
     useGetReservationsByUserQuery,
     useGetAccountQuery,
     useLogoutMutation,

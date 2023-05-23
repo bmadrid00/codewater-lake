@@ -9,3 +9,19 @@ today i coded AUTH and got all the user endpoints working and we tested all the 
 ## may 16, 2023
 
 today i adjusted the tables, models and querries of cabins as well as started work on UI design and began constructing our actual cabin entries
+
+## may 17, 2023
+
+today i started constructing the cabin details page
+
+## may 18, 2023
+
+started work on the image carousel and got all data displayed on the page
+
+## may 22, 2023
+
+moved on to the styling of my page to get it layed out
+
+## may 23, 2023
+
+today i converted my detail page's state over to redux
