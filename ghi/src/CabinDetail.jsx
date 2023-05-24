@@ -3,6 +3,7 @@ import CabinCarousel from "./CabinCarousel";
 import { MDBBtn, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 import { useGetCabinByIdQuery } from "./app/apiSlice";
 import { useParams } from "react-router-dom";
+import React from "react";
 
 
 
@@ -14,7 +15,7 @@ function CabinDetail() {
 
     return (
       <>
-        <MDBContainer className="gx-4 mt-4">
+        <MDBContainer className="gx-4 mt-4 mb-5">
           <MDBRow className="d-flex justify-content-center mb-4">
             <MDBCol md="8" className="mt-5">
               <div className="carousel-wrapper w-100 ">
@@ -35,6 +36,8 @@ function CabinDetail() {
               {data.rating} <span>&#9734;</span>
             </MDBCol>
           </MDBRow>
+        </MDBContainer>
+        <MDBContainer className="shadow-5 mb-5 rounded-4">
           <MDBRow id="cabin-description" className="gx-4">
             <p>{data.description}</p>
           </MDBRow>

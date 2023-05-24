@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gill Sans";
+}
+
+.footer-logo {
+  width: 50px;
+  margin-right: 4px;
+}
+
+.logo-text {
+  margin-bottom: -16px;
+  font-size: large;
+}
+
+#cabin-description {
+  padding: 20px 8px 8px 8px;
+  margin: 10px;
+}

@@ -3,7 +3,7 @@ import Signup from "./Signup";
 import Signin from "./Signin";
 import Cabins from "./Cabins";
 import CabinDetail from "./CabinDetail";
-
+import Footer from "./Footer";
 import Nav from "./Nav";
 import "./App.css";
 
@@ -17,6 +17,7 @@ function App() {
           <Route path="/cabins" element={<Cabins />} />
           <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
         </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
