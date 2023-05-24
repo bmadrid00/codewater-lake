@@ -21,4 +21,8 @@ Coder's logEntry: 000005
 
 Stardate 05.23.2023
 Coder's logEntry: 000006
-    ...Today I finished getting the calendar view for reservations sorted out.
+    ...Today I finished getting the calendar view for reservations sorted out. I began adjusting the calendar view to a multi month.
+
+Stardate 05.24.2023
+Coder's logEntry: 000007
+    ...Today I
