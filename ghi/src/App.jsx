@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./signup";
-import Signin from "./signin";
-import Cabins from "./cabins";
-import CabinDetail from "./cabinDetail";
+import Signup from "./users/signup";
+import Signin from "./users/signin";
+import Cabins from "./cabins/cabins";
+import CabinDetail from "./cabins/cabinDetail";
 import Footer from "./footer";
 import Nav from "./nav";
-import "./app.css";
+import "./css/app.css";
 import HomePage from "./homepage";
 
 function App() {

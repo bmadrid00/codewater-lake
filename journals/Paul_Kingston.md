@@ -25,3 +25,7 @@ moved on to the styling of my page to get it layed out
 ## may 23, 2023
 
 today i converted my detail page's state over to redux
+
+## may 24, 2023
+
+today i moved onto building the homepage. i refactored the navbar. added a logo in the corner and moved the logout button over to the right and converted the whole thing over to bootstrapMD coponents

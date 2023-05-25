@@ -19,7 +19,7 @@ function Nav() {
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(false);
   return (
-    <MDBNavbar expand="lg" light bgColor="light">
+    <MDBNavbar expand="lg" light sticky bgColor="light">
       <MDBContainer fluid>
         <MDBNavbarBrand href="/">
           <img
@@ -45,12 +45,6 @@ function Nav() {
               </MDBNavbarItem>
             )}
 
-            {!account && (
-              <MDBNavbarItem>
-                <MDBNavbarLink href="/signin">Sign in</MDBNavbarLink>
-              </MDBNavbarItem>
-            )}
-
             {account && (
               <MDBNavbarItem>
                 <MDBNavbarLink href="/profile">Profile</MDBNavbarLink>
@@ -60,104 +54,49 @@ function Nav() {
             <MDBNavbarItem>
               <MDBNavbarLink href="/cabins">Our Cabins</MDBNavbarLink>
             </MDBNavbarItem>
-
-            <MDBNavbarItem></MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBContainer>
+
       <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
         {account && (
           <MDBNavbarItem>
             <MDBNavbarLink>
               <button
                 href="/"
+                type="button"
+                className="btn btn-sm btn-outline-danger"
+                id="logout"
                 onClick={() => {
                   navigate("/");
                   return logout();
                 }}
-                type="button"
-                class="btn btn-outline-danger"
               >
-                Logout
+              Logout
+              </button>
+            </MDBNavbarLink>
+          </MDBNavbarItem>
+        )}
+
+        {!account && (
+          <MDBNavbarItem>
+            <MDBNavbarLink>
+              <button
+                href="/signin"
+                type="button"
+                className="btn btn-sm btn-outline-success"
+                id="login"
+                onClick={() => {
+                  navigate("/signin");
+                }}
+              >
+              Login
               </button>
             </MDBNavbarLink>
           </MDBNavbarItem>
         )}
       </MDBNavbarNav>
     </MDBNavbar>
-    // <nav className="navbar navbar-expand-lg navbar-dark bg-light padding 5em">
-    //   <div className="container-fluid">
-    //     <button
-    //       className="navbar-toggler"
-    //       type="button"
-    //       data-bs-toggle="collapse"
-    //       data-bs-target="#navbarSupportedContent"
-    //       aria-controls="navbarSupportedContent"
-    //       aria-expanded="false"
-    //       aria-label="Toggle navigation"
-    //     >
-    //       <span className="navbar-toggler-icon"></span>
-    //     </button>
-    //     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    //       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-    //         <li className="nav-item">
-    //           <NavLink className="navbar-brand" to="/homepage">
-    //             Homepage
-    //           </NavLink>
-    //         </li>
-    //         {!account && (
-    //           <li className="nav-item">
-    //             <NavLink className="navbar-brand" to="/signup">
-    //               Signup
-    //             </NavLink>
-    //           </li>
-    //         )}
-    //         {!account && (
-    //           <li className="nav-item">
-    //             <NavLink className="navbar-brand" to="/signin">
-    //               Signin
-    //             </NavLink>
-    //           </li>
-    //         )}
-    //         {account && (
-    //           <li className="nav-item">
-    //             <NavLink className="navbar-brand" to="/profile">
-    //               Profile
-    //             </NavLink>
-    //           </li>
-    //         )}
-    //         <li className="nav-item">
-    //           <NavLink className="navbar-brand" to="/aboutus">
-    //             About Us
-    //           </NavLink>
-    //         </li>
-    //         {account && (
-    //           <li className="nav-item">
-    //             <NavLink className="navbar-brand" to="/reservations">
-    //               Reservations
-    //             </NavLink>
-    //           </li>
-    //         )}
-    //         <li className="nav-item">
-    //           <NavLink className="navbar-brand" to="/cabins">
-    //             Cabins
-    //           </NavLink>
-    //         </li>
-    //         {account && (
-    //           <button
-    //             className="btn btn-outline-danger"
-    //             onClick={() => {
-    //               navigate("/");
-    //               return logout();
-    //             }}
-    //           >
-    //             Logout
-    //           </button>
-    //         )}
-    //       </ul>
-    //     </div>
-    //   </div>
-    // </nav>
   );
 }
 

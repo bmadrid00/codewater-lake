@@ -1,6 +1,6 @@
 import CabinCarousel from "./cabinCarousel";
 import { MDBBtn, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
-import { useGetCabinByIdQuery } from "./redux/apiSlice";
+import { useGetCabinByIdQuery } from "../redux/apiSlice";
 import { useParams } from "react-router-dom";
 import React from "react";
 
