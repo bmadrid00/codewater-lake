@@ -9,9 +9,11 @@ export const codeLakeApi = createApi({
         getCabins: builder.query({
             query: () => '/api/cabins'
         }),
-        getReservationsByUser: builder.query({
-            query: (user_id) => `/api/users/${user_id}/reservations/`,
-            providesTags: ['User']
+        getReservations: builder.query({
+            query: () => ({
+                url: `/api/reservations/mine`,
+                credentials: 'include'
+            })
         }),
         getAccount: builder.query({
             query: () => ({
@@ -42,14 +44,26 @@ export const codeLakeApi = createApi({
                 }
             },
             invalidatesTags: ['Account']
+        }),
+        editAccount: builder.mutation({
+            query: (body) => {
+                return {
+                    url: `/api/users`,
+                    method: 'PUT',
+                    body,
+                    credentials: 'include'
+                }
+            },
+            invalidatesTags: ['Account']
         })
     })
 })
 
 export const {
     useGetCabinsQuery,
-    useGetReservationsByUserQuery,
+    useGetReservationsQuery,
     useGetAccountQuery,
     useLogoutMutation,
     useLoginMutation,
+    useEditAccountMutation,
 } = codeLakeApi

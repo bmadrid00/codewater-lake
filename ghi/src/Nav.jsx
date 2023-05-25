@@ -1,12 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useGetAccountQuery, useLogoutMutation } from "./app/apiSlice";
+import { useGetAccountQuery, useLogoutMutation } from "./redux/apiSlice";
 
 
 
 function Nav() {
 
   const { data: account } = useGetAccountQuery()
-  const [logout, result] = useLogoutMutation()
+  const [logout] = useLogoutMutation()
   const navigate = useNavigate()
 
   return (
@@ -26,7 +26,7 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/homepage">
+              <NavLink className="navbar-brand" to="/">
                 Homepage
               </NavLink>
             </li>
@@ -60,7 +60,10 @@ function Nav() {
                 Cabins
               </NavLink>
             </li>
-            {account && <button className='btn btn-outline-danger' onClick={() => {navigate('/'); return logout()}}>Logout</button>}
+            {account && <button
+            className='btn btn-outline-danger'
+            onClick={() => {navigate('/'); return logout()}}
+            >Logout</button>}
           </ul>
         </div>
       </div>

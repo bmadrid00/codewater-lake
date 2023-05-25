@@ -15,6 +15,7 @@ from queries.users import (
 )
 from jwtdown_fastapi.authentication import Token
 from pydantic import BaseModel
+from typing import List
 from authenticator import authenticator
 
 
@@ -27,6 +28,13 @@ class HttpError(BaseModel):
 
 
 router = APIRouter()
+
+
+@router.get("/api/users/", response_model=List[UserOut])
+def list_users(
+    repo: UserQueries = Depends(),
+):
+    return repo.get_all_users()
 
 
 @router.post("/api/users", response_model=AccountToken | HttpError)
@@ -62,13 +70,13 @@ async def get_token(
         }
 
 
-@router.put("/api/users/{user_id}", response_model=UserOut)
+@router.put("/api/users", response_model=UserOut)
 def update_user(
-    user_id: int,
     user: UserIn,
     account_data: dict = Depends(authenticator.get_current_account_data),
     repo: UserQueries = Depends()
 ):
+    user_id = account_data['id']
     return repo.update_user(user_id, user)
 
 
