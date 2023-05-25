@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useGetAccountQuery, useLogoutMutation } from "./app/apiSlice";
+import { useGetAccountQuery, useLogoutMutation, useSignupMutation } from "./redux/apiSlice";
 
 
 

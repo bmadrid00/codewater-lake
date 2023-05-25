@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useLoginMutation } from "./app/apiSlice";
+import { useLoginMutation } from "../redux/apiSlice";
 import { useNavigate, redirect, Navigate } from "react-router-dom";
-
 
 function Signin() {
   const [login] = useLoginMutation();
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    login({username, password})
-    navigate('/')
-  }
-
+    e.preventDefault();
+    login({ username, password });
+    navigate("/");
+  };
 
   return (
     <div className="card text-bg-light mb-3">
@@ -46,7 +44,6 @@ function Signin() {
       </div>
     </div>
   );
-};
-
+}
 
 export default Signin;
