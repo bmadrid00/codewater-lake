@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./users/signup";
 import Signin from "./users/signin";
-import Cabins from "./cabins/List";
-import CabinDetail from "./cabins/Detail";
+import Cabins from "./cabins/CabinList";
+import CabinDetail from "./cabins/CabinDetail";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import "./css/app.css";
