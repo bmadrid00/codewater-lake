@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./users/signup";
 import Signin from "./users/signin";
-import Cabins from "./cabins/cabins";
-import CabinDetail from "./cabins/cabinDetail";
-import Footer from "./footer";
-import Nav from "./nav";
+import Cabins from "./cabins/List";
+import CabinDetail from "./cabins/Detail";
+import Footer from "./Footer";
+import Nav from "./Nav";
 import "./css/app.css";
 import HomePage from "./Home";
 
