@@ -6,7 +6,7 @@ import CabinDetail from "./cabins/cabinDetail";
 import Footer from "./footer";
 import Nav from "./nav";
 import "./css/app.css";
-import HomePage from "./homepage";
+import HomePage from "./Home";
 
 function App() {
   return (
