@@ -26,7 +26,7 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="navbar-brand" to="/homepage">
+              <NavLink className="navbar-brand" to="/home">
                 Homepage
               </NavLink>
             </li>
@@ -50,11 +50,11 @@ function Nav() {
                 About Us
               </NavLink>
             </li>
-            {account && <li className="nav-item">
+            <li className="nav-item">
               <NavLink className="navbar-brand" to="/reservations">
                 Reservations
               </NavLink>
-            </li>}
+            </li>
             <li className="nav-item">
               <NavLink className="navbar-brand" to="/cabins">
                 Cabins
