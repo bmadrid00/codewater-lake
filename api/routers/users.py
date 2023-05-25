@@ -9,6 +9,7 @@ from fastapi import (
 from queries.users import (
     UserOut,
     UserIn,
+    UserList,
     UserQueries,
     DuplicateAccountError,
     UserForm
@@ -79,3 +80,9 @@ def delete_user(
     repo: UserQueries = Depends()
 ):
     return repo.delete_user(user_id)
+
+@router.get("/api/users/", response_model=UserList)
+def list_users(
+    repo: UserQueries = Depends(),
+):
+    return repo.get_all_users()

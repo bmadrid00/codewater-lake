@@ -25,4 +25,8 @@ Coder's logEntry: 000006
 
 Stardate 05.24.2023
 Coder's logEntry: 000007
-    ...Today I
+    ...Today I screwed everything up.
+
+Stardate 05.25.2023
+Coder's logEntry: 000008
+    ...Today I 

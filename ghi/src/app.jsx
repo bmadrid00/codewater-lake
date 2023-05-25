@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./Signup";
-import Signin from "./Signin";
-import Cabins from "./Cabins";
-import Reservations from "./Calendar";
-import Nav from "./Nav";
-import "./App.css";
+import Signup from "./users/signUp";
+import Signin from "./users/signIn";
+import Cabins from "./cabins/cabins";
+import Reservations from "./reservations/calendar";
+import Nav from "./nav";
+import "./css/app.css";
 
 function App() {
   return (

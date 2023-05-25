@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useGetAccountQuery, useLogoutMutation } from "./app/apiSlice";
+import { useGetAccountQuery, useLogoutMutation } from "./redux/apiSlice";
 
 
 
@@ -58,6 +58,11 @@ function Nav() {
             <li className="nav-item">
               <NavLink className="navbar-brand" to="/cabins">
                 Cabins
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="navbar-brand" to="/users">
+                Users
               </NavLink>
             </li>
             {account && <button className='btn btn-outline-danger' onClick={() => {navigate('/'); return logout()}}>Logout</button>}
