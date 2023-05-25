@@ -3,7 +3,7 @@ import Signup from "./users/SignUp";
 import Signin from "./users/SignIn";
 import Profile from "./users/Profile";
 import Cabins from "./Cabins";
-import Home from "./Home";
+import Home from "./crazyhome";
 import Nav from "./Nav";
 
 import "./css/app.css";
