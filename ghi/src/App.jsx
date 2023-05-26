@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Nav from "./Nav";
 import "./css/app.css";
 import HomePage from "./Home";
+import Reservations from "./reservations/Calendar";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/cabins" element={<Cabins />} />
         <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
+        <Route path="/reservations" element={<Reservations />} />
       </Routes>
       <Footer />
     </BrowserRouter>

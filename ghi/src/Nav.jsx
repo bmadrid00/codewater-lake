@@ -50,7 +50,9 @@ function Nav() {
                 <MDBNavbarLink href="/profile">Profile</MDBNavbarLink>
               </MDBNavbarItem>
             )}
-
+            <MDBNavbarItem>
+              <MDBNavbarLink href="/reservations">Reservations</MDBNavbarLink>
+            </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink href="/cabins">Our Cabins</MDBNavbarLink>
             </MDBNavbarItem>
