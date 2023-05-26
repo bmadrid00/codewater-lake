@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MDBCarousel, MDBCarouselItem, MDBContainer, MDBRow, MDBBtn, MDBCol } from "mdb-react-ui-kit";
 
 export default function HomePage() {
@@ -50,6 +50,7 @@ export default function HomePage() {
               <img
                 className="homepage-logo"
                 src="https://dl.dropboxusercontent.com/s/j268a6rjz1almh3/logo-black.png"
+                alt=""
               />
             </div>
 
