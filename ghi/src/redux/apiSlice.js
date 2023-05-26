@@ -58,9 +58,20 @@ export const codeLakeApi = createApi({
                 }
             },
             invalidatesTags: ['Account']
-        })
-    })
-})
+        }),
+
+        signup: builder.mutation({
+            query: (body) => {
+                return {
+                    url: '/api/users/',
+                    method: 'POST', 
+                    body,
+                    credentials: 'include'   
+        }
+            },
+        }),
+    }),
+});
 
 export const {
     useGetCabinsQuery,
@@ -70,4 +81,5 @@ export const {
     useLogoutMutation,
     useLoginMutation,
     useEditAccountMutation,
+    useSignupMutation,
 } = codeLakeApi

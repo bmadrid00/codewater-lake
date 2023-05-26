@@ -11,7 +11,8 @@ from queries.users import (
     UserIn,
     UserQueries,
     DuplicateAccountError,
-    UserForm
+    UserForm,
+    UserList,
 )
 from jwtdown_fastapi.authentication import Token
 from pydantic import BaseModel
@@ -28,6 +29,12 @@ class HttpError(BaseModel):
 
 
 router = APIRouter()
+
+@router.get("/api/users/", response_model=UserList)
+def list_users(
+  repo: UserQueries = Depends(),
+):
+  return repo.get_all_users()
 
 
 @router.get("/api/users/", response_model=List[UserOut])

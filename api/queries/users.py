@@ -3,7 +3,6 @@ from psycopg_pool import ConnectionPool
 import os
 from typing import List
 
-
 pool = ConnectionPool(conninfo=os.environ["DATABASE_URL"])
 
 
@@ -53,8 +52,11 @@ class UserOutWithPassword(UserOut):
 class DuplicateAccountError(ValueError):
     pass
 
-# ########################---QUERIES---########################
+class UserList(BaseModel):
+  users: List[UserOut]
 
+  
+# ########################---QUERIES---########################
 
 class UserQueries():
 
