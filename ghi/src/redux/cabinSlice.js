@@ -15,5 +15,5 @@ export const cabinSlice = createSlice({
     },
 })
 
-export const { addCabin } = cabinSlice.actions
+export const { cabinAction } = cabinSlice.actions
 export default cabinSlice.reducer

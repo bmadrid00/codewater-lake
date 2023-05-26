@@ -11,19 +11,19 @@ import "./css/app.css";
 
 function App() {
   return (
-      <BrowserRouter>
-        <Nav />
-        <div className="container">
-          <Routes>
-            <Route index element={<Homepage />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/signin" element={<Signin />} />
-              <Route path="/cabins" element={<Cabins />} />
-              <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Nav />
+      <div className="container">
+        <Routes>
+          <Route index element={<Homepage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/cabins" element={<Cabins />} />
+          <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
