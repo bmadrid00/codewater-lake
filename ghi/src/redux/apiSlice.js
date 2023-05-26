@@ -12,9 +12,11 @@ export const codeLakeApi = createApi({
         getCabinById: builder.query({
             query: (cabin_id) => `/api/cabins/${cabin_id}`
         }),
-        getReservationsByUser: builder.query({
-            query: (user_id) => `/api/users/${user_id}/reservations/`,
-            providesTags: ['User']
+        getReservations: builder.query({
+            query: () => ({
+                url: `/api/reservations/mine`,
+                credentials: 'include'
+            })
         }),
         getAccount: builder.query({
             query: () => ({
@@ -45,6 +47,17 @@ export const codeLakeApi = createApi({
                 }
             },
             invalidatesTags: ['Account']
+        }),
+        editAccount: builder.mutation({
+            query: (body) => {
+                return {
+                    url: `/api/users`,
+                    method: 'PUT',
+                    body,
+                    credentials: 'include'
+                }
+            },
+            invalidatesTags: ['Account']
         })
     })
 })
@@ -52,8 +65,9 @@ export const codeLakeApi = createApi({
 export const {
     useGetCabinsQuery,
     useGetCabinByIdQuery,
-    useGetReservationsByUserQuery,
+    useGetReservationsQuery,
     useGetAccountQuery,
     useLogoutMutation,
     useLoginMutation,
+    useEditAccountMutation,
 } = codeLakeApi

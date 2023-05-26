@@ -1,12 +1,20 @@
 from pydantic import BaseModel
 from psycopg_pool import ConnectionPool
 import os
+from typing import List
 
 
 pool = ConnectionPool(conninfo=os.environ["DATABASE_URL"])
 
 
 # ########################---MODELS---########################
+
+
+class UserInWithPassword(BaseModel):
+    first_name: str
+    last_name: str
+    email: str
+    password: str
 
 
 class UserIn(BaseModel):
@@ -21,6 +29,10 @@ class UserOut(BaseModel):
     first_name: str
     last_name: str
     email: str
+
+
+class UserList(BaseModel):
+    users: List[UserOut]
 
 
 class UserForm(BaseModel):
@@ -39,6 +51,27 @@ class DuplicateAccountError(ValueError):
 
 
 class UserQueries():
+
+    def get_all_users(self) -> UserList:
+        with pool.connection() as conn:
+            with conn.cursor() as db:
+                db.execute(
+                    """
+                    SELECT id
+                    , first_name
+                    , last_name
+                    , email
+                    FROM users
+                    """
+                )
+                results = []
+                for row in db.fetchall():
+                    user = {}
+                    for i, col in enumerate(db.description):
+                        user[col.name] = row[i]
+                        results.append(user)
+            return {"users": results}
+
     def get_user(self, email: str) -> UserOutWithPassword:
         with pool.connection() as conn:
             with conn.cursor() as db:
@@ -63,7 +96,6 @@ class UserQueries():
             ) -> UserOutWithPassword:
         account = user.dict()
         account[hashed_password] = hashed_password
-
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
