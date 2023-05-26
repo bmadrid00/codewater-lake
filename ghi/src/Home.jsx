@@ -10,31 +10,31 @@ export default function HomePage() {
         <MDBCarouselItem
           className="w-100 d-block"
           itemId={1}
-          src="https://previews.dropbox.com/p/thumb/AB5-VwRqS7OE85K3r_FYHn--ZtDcy_Y8qJQGTAgyKxV865QeOJab1DYxqEUeUtBcPQ8yCNFuTDumRIalUZ3U39JAnc1JfQdEM3NiVEfOffb1mSo7YdGTYQQ5M8BvO5uGs8SWpXJC_TvXh6Sms7SXfHa5pjUPozGLT-7Bc7-fYLiC1lwfSZqA00W9de61W5LV2lcLApYyhVmQk6k1q5nO39-KfIeVj03DCt2x8TcW1iUhR3CnoL71_tObU8qLilp9I9xuxNYj10ugAD_BZeXzL1rBMdjgSz6nBzYHYoaA5fkuWjv29YR9j7lG-eg648qwUt01ohDYyU8r_jI5hv6MAis2OWu4dmDHq1QnMrg6EYVoYq5DLJdYxpTZB4MZM_S8ITw/p.jpeg"
+          src="https://dl.dropboxusercontent.com/s/xsmxbjs12gnrpml/speedboat.jpg"
           alt="speedboat"
         />
         <MDBCarouselItem
           className="w-100 d-block"
           itemId={2}
-          src="https://previews.dropbox.com/p/thumb/AB4cQJNbjicVeYj53Vek6vqgeHQE1cx_bDa24pLrkNzyGK_luRFp_mBZ9wZVn0Fg2_h_o5YZkR_OaRNldFiL_44Ve1IMsZuf7BAcLS72kDuiHDSO6x20onP8czTfSdZ_6I-xo9iVMo9R6xe5aOqfeyq4z-hzubCWQQe5wv5WUrij0SUPSZroMechqX9MpAnTq9oSLl3sSgxXQTEpPtPzlsfk6U5hTWkRvSkaFmGOksBFKwMHefFJoP6q2E4ZgouMOAsCZv4t_PT4s1zkujIy4WJx_sVHr2WY-PfZ1xXaXy3So9137KcIzjStVYlJsYk4OuyZ5xPV7eXY4IACgqN8mnhEeTRLx7JNsqbxI2BfZLlTpssSKt7K6XSNzWGewiA1kpI/p.jpeg"
+          src="https://dl.dropboxusercontent.com/s/fnorpfvck6pf4rc/kayakers.jpeg"
           alt="kayakers"
         />
         <MDBCarouselItem
           className="w-100 d-block"
           itemId={3}
-          src="https://previews.dropbox.com/p/thumb/AB5lsnrXvIe7oG3sYoyBZ7hrOkhX6NDE1a4ZjSUEfIYXu1cPaUEk6nyH2owYVvkssqx21Ju_paPrgrRRzx11eL3TOEYC7688F5OpmjCvVoW_RSvwa_aNvta0LPpMLSDxXQgAuzvNRKUmlG-Lk-USlGNkHIr6XDnl6Xe70KcHwh91TR5rZA45G9ZB9iFZu-K0CWCGje3HBXVGPvMtYRK9hf6DPcav3BSC8k5YbCwA26pTNhluq1uxnrMg3RfnpRzkdvyzh7TjfVCYes-okDQcsLoR54vACJ2PhYORRkCo_OJ2M2tZ7PeOllSrzELJ_pgLB5id88XK1qTmGbFnuxBnP6ad7nroqw9I4wv44Cnnkiz15Dlp4IXKBpQZTJexkBjYK34/p.jpeg"
+          src="https://dl.dropboxusercontent.com/s/zelf1gmuk0vg5d7/reflection-mountain-view.jpg"
           alt="mountain view"
         />
         <MDBCarouselItem
           className="w-100 d-block"
           itemId={4}
-          src="https://previews.dropbox.com/p/thumb/AB6QC1ASAHaVZqK1bQkP7vo5kYmpZiG44XOUV0aXYuLxYpjIzgpjPACvPICgyz7iExGcGUz4cf4Wb7Si2Wa64oGWVhQwmjNA5NSR9f3v3fBPbuc01liR26aTB5cmTyt-a6ubXkAOx72G-LC6mN8dwMlYzxKDY0YPxhM6ldfcEWwR27zTlxOH2NLwqYef98gBphDYbJfIX3kJf_lLCjV6LU6gaM_y0g4nVz4O08ZG6dUziiWr2tIb31uEFfExA00pMcQ1Dmh3IzK42MxJl2GSRtxBOpKYax0ssuGk_jYhbw79JNykKtS_6QFSSm8LN_76cINtqO3WRjz1g-92zC0cYEb6tVqZ197LLUL66R088leFEpK9IuBGA-S8STnVfndCn4o/p.jpeg"
+          src="https://dl.dropboxusercontent.com/s/nwxsfrzj4aoy4zc/paddleboarders.jpg"
           alt="paddleboarders"
         />
         <MDBCarouselItem
           className="w-100 d-block"
           itemId={5}
-          src="https://previews.dropbox.com/p/thumb/AB66Rxm_pADraqNUYvmPgiDCehcdyL5Jdln9lTUB9CHHBlGAX5Swh_IZNsQA5Bs10zKicvs_ogmdw0Zf0x_xR8LMTjr3zo_OFAyZyfPjKviHupDbW2hlgxbjcy6duS2c5Jze0ieP61LdZeeo1oROnR1sSD-GjEXbgchL0_AZN2mZpXmnMJZQEFw-hvuhFyQ8afzwh62H4cB5Q2eQ8pEx6c8n_jhtm7VuBJc82zZeasXyCVEZUWwTkRjBIikQNEV9e69_-CDaEwL_pT2eniDxvo7vD5-RGFllLBaPZFzQHIpm_YGKlPvFoy24JJV_x35iVknuQESHJTRDQ2gGFV43TuW1yotJbf2lK_QxZeG6uAM4Th0k-1ef0a3TBaGb0ae4U2o/p.jpeg"
+          src="https://dl.dropboxusercontent.com/s/sjtfvvoehb3ql6c/foggy-lake.jpg"
           alt="foggy lake view"
         />
       </MDBCarousel>
@@ -49,7 +49,7 @@ export default function HomePage() {
             <div>
               <img
                 className="homepage-logo"
-                src="https://previews.dropbox.com/p/thumb/AB5xuQ08JucnkpSHnRYNVp45P0gmwiR4fctUn-m4FD1Bc79A6O3tuy2X5hT2yRDBI2fgIARM-N8fPzrvsKo5B-vbQuorYcobJ8zyEw1AQ7K1rYxkULXNprGlYvvkQmDn1yd1tcgGjBIgTGquIfsfJEG8Wl_Ui7xQFisbn2fb0uYNFctMot7w1NxcvuHzvCCpdqShRJWMXwrukezIE5f-VXUzOD95eNT2MyoM-aRzeyaHAJOu0LfQxf57bXyUFCSJzRD7BAIxOkBMkRlnOg6Eiy9V6lE868CG709MubJ_LCmNOvvRj5QITZ8mk-FbU9EqrQDKl3Ga-QYJOjgU5h2TZFv1W0_vcdj1tooZHVK_IaNfAcZELYf9rC-jbQuHRPXQbpQ/p.png"
+                src="https://dl.dropboxusercontent.com/s/j268a6rjz1almh3/logo-black.png"
               />
             </div>
 
@@ -101,7 +101,8 @@ export default function HomePage() {
             <a href="https://goo.gl/maps/hk2Rt2SsFo8UAxvR6">
               <img
                 className="rounded-3 map shadow-5-strong"
-                src="https://previews.dropbox.com/p/thumb/AB6nC1ZqFmC16gTgtazHlUxj1Kjg_PfFzA9JUZBVwfjasp_SpMb_DNmswwsWNZ4Z5oaGCiGtXFt1WeUzCVyhpUsWWkiHcbjvalyDPWurfOr4gvZ6OZuHr0c8KMtEb3FESGNYaVYWHozv3Fh-J6AcmVajJ5SoH7399iFbLr4i7qSw0-Y0_9mxAACbblHRmLVx-6nQfIUgBs0agSQKReH2Nu07UHs1fpK5VXmFMaYD0oQ3I6DscnOyrqG87Y4L8qXvep1qyc_i8cnJAHVKYqgH230WH4LJW91uQHsdE7KZuuQpERmH_0_u7I-PsttpqQkIr8MWWTDr6brDd5_MMaHO_COeD1o6XH1M2PAyvaD22yJ2hgALRjBc0-KDLhmyJCnvDSM/p.jpeg"
+                alt="map"
+                src="https://dl.dropboxusercontent.com/s/tka7gcs71j9ca2r/google-maps.jpg"
               />
             </a>
           </MDBCol>
@@ -146,14 +147,18 @@ export default function HomePage() {
         </MDBRow>
         <MDBRow className="rounded-4 text-row shadow-5">
           <MDBCol className="img-col col-6">
-              <img
-                id="digital-nomad-img"
-                className="rounded-3 shadow-5-strong"
-                src="https://previews.dropbox.com/p/thumb/AB5MktbUiFeEtRQLXZAwTdl1s5uFbfu0QfCyH3v-g6GCt3XTUvy_gYxlljFmXHUxHjOa5-WfvsLTmlmtgkKW5HUP2V0PebJod4rZbmF5uOqEs7GGA83F9wVar4u90Ywcj2OHCPqQ7TL45nSziKovnzsP42bBFZbUwlQlDXFkICWzRQ5G7j_gVAsmcRnjalNND6hhBxuArIJ6VKOLCv4nS_LOm94LrKkZ_d2alvQ51wOKQ1yENH1clEKlXAyCThI0enGBT7K8ppg_e6egUAfVaGjWGshGpKDpLu_8XvgV0xujGV_zz6gOakiUaMwR0XRnFkWcMDsnRrj--ieFhBBSPPeUN0DvGQ-H1vz73mH8vUvubFBamB2BkOszcLYwiHVLVu8/p.png"
-              />
+            <img
+              id="digital-nomad-img"
+              alt="digital-nomad"
+              className="rounded-3 shadow-5-strong"
+              src="https://dl.dropboxusercontent.com/s/0r5gf7xdrfdwcbd/digital-nomad.webp"
+            />
           </MDBCol>
           <MDBCol className="col-6">
-            <div id="stay-connected" className="homepage-text-box rounded-3 shadow-3">
+            <div
+              id="stay-connected"
+              className="homepage-text-box rounded-3 shadow-3"
+            >
               <h2>Stay Connected</h2>
               <p className="p1">
                 At Codewater Cabins, we understand the importance of staying

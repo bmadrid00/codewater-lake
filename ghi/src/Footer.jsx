@@ -12,7 +12,6 @@ export default function Footer() {
         className="text-center text-lg-start text-muted"
       >
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-
           <div>
             <a href="" className="me-4 text-reset">
               <MDBIcon fab icon="facebook-f" />
@@ -57,8 +56,9 @@ export default function Footer() {
         >
           <div>
             <img
+            alt="logo"
               className="footer-logo"
-              src="https://previews.dropbox.com/p/thumb/AB5xuQ08JucnkpSHnRYNVp45P0gmwiR4fctUn-m4FD1Bc79A6O3tuy2X5hT2yRDBI2fgIARM-N8fPzrvsKo5B-vbQuorYcobJ8zyEw1AQ7K1rYxkULXNprGlYvvkQmDn1yd1tcgGjBIgTGquIfsfJEG8Wl_Ui7xQFisbn2fb0uYNFctMot7w1NxcvuHzvCCpdqShRJWMXwrukezIE5f-VXUzOD95eNT2MyoM-aRzeyaHAJOu0LfQxf57bXyUFCSJzRD7BAIxOkBMkRlnOg6Eiy9V6lE868CG709MubJ_LCmNOvvRj5QITZ8mk-FbU9EqrQDKl3Ga-QYJOjgU5h2TZFv1W0_vcdj1tooZHVK_IaNfAcZELYf9rC-jbQuHRPXQbpQ/p.png"
+              src="https://dl.dropboxusercontent.com/s/j268a6rjz1almh3/logo-black.png"
             />
           </div>
 
