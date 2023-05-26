@@ -19,9 +19,9 @@ function Profile() {
     const [logout] = useLogoutMutation()
     const navigate = useNavigate()
     const reservations = useGetReservationsQuery()?.data?.reservations
-    const reservationsForSort = [...reservations]
 
-    if (!account ) {
+
+    if (!account || !reservations) {
             return (<h1>Loading...</h1>)
         }
 
@@ -41,7 +41,7 @@ function Profile() {
         navigate("/signin");
     }
 
-
+    const reservationsForSort = [...reservations]
 
     return (
     <div>

@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./users/SignUp";
-import Signin from "./users/SignIn";
-import Profile from "./users/Profile";
+import Signup from "./users/fixSignup";
+import Signin from "./users/fixSignin";
+import Profile from "./users/ProfileView";
 import Cabins from "./Cabins";
-import Home from "./Home";
+import Home from "./fixHome";
 import Nav from "./Nav";
 
 import "./css/app.css";
