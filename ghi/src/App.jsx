@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import Nav from "./Nav";
 import "./css/app.css";
 import HomePage from "./Home";
-import Reservations from "./reservations/Calendar";
+import Reservations from "./reservations/Calendar"
 
 function App() {
   return (
