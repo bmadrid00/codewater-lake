@@ -21,6 +21,12 @@ class UserIn(BaseModel):
     first_name: str
     last_name: str
     email: str
+
+
+class UserInWithPassword(UserIn):
+    first_name: str
+    last_name: str
+    email: str
     password: str
 
 
@@ -91,7 +97,7 @@ class UserQueries():
 
     def create_user(
             self,
-            user: UserIn,
+            user: UserInWithPassword,
             hashed_password: str
             ) -> UserOutWithPassword:
         account = user.dict()

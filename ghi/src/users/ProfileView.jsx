@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     MDBBtn,
     MDBInput
@@ -14,15 +14,25 @@ import {
 
 function Profile() {
     const {data: account} =  useGetAccountQuery();
-    const [changedAccount, setChangedAccount] = useState({...account})
+    const [changedAccount, setChangedAccount] = useState({
+        first_name: '',
+        last_name: '',
+        email: ''
+    })
+    const reservations = useGetReservationsQuery()?.data?.reservations
     const [accountChange] = useEditAccountMutation()
     const [logout] = useLogoutMutation()
     const navigate = useNavigate()
-    const reservations = useGetReservationsQuery()?.data?.reservations
 
+
+    useEffect(() => {
+        if (account) {
+            setChangedAccount({ ...account });
+        }
+    }, [account]);
 
     if (!account || !reservations) {
-            return (<h1>Loading...</h1>)
+        return (<h1>Loading...</h1>)
         }
 
     const changeField = (e) => {
@@ -36,6 +46,8 @@ function Profile() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        delete changedAccount['id']
+        console.log(changedAccount)
         accountChange(changedAccount);
         logout();
         navigate("/signin");
