@@ -4,7 +4,7 @@ import Signin from "./users/Signin";
 import Profile from "./users/ProfileView";
 import Cabins from "./cabins/CabinList";
 import CabinDetail from "./cabins/CabinDetail";
-import Homepage from "./fixHome";
+import Homepage from "./Home";
 import Footer from "./Footer";
 import Nav from "./Nav";
 import "./css/app.css";
