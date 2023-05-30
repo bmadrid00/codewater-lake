@@ -1,102 +1,130 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-// import Calendar from '@fullcalendar/core'
 import multiMonthPlugin from '@fullcalendar/multimonth'
-import { useGetAccountQuery } from '../redux/apiSlice'
+import { useDispatch } from 'react-redux';
+import { setDateRange } from '../redux/calendarSlice';
+import { useGetAccountQuery, useGetReservationsQuery, useBookReservationMutation } from '../redux/apiSlice'
+import ReservationForm from './BookReservation';
+// import { useLoginMutation } from "../redux/reservationsSlice";
+
 
 
 const colorMap = {
-  1: "blue",
-  2: "magenta",
-  3: "olive",
-  4: "purple",
-  5: "pink",
-  6: "orange",
+    1: "blue",
+    2: "magenta",
+    3: "olive",
+    4: "purple",
+    5: "pink",
+    6: "orange",
 
 }
 
 function fetchReservations(fetchInfo, successCallback, failureCallback) {
-  fetch('http://localhost:8000/api/reservations')
-    .then(response => response.json())
-    .then(data => {
-      const events = data.reservations.map(reservation => ({
+    fetch('http://localhost:8000/api/reservations')
+        .then(response => response.json())
+        .then(data => {
+    const events = data.reservations.map(reservation => ({
         start: reservation.start_date,
         end: reservation.end_date,
         title: `Cabin ${reservation.cabin_id} reserved`,
         color: colorMap[reservation.cabin_id] || "gray",
-      }));
-      successCallback(events);
+    }));
+    successCallback(events);
     })
-    .catch(failureCallback);
-
-}
+    .catch(failureCallback);}
 
 
 export default function ResCalendar() {
-  const[selectedDates, setSelectedDates] = useState(null);
-  const {data: account} = useGetAccountQuery();
-  const handleDateSelect = (selectInfo) => {
-    setSelectedDates({
-      start_date: selectInfo.startStr,
-      end_date: selectInfo.endStr,
-    })
-  }
-  const handleSave = () => {
-    if (!selectedDates) {
-      alert('Please select a date range first.');
-      return;
+    const dispatch = useDispatch();
+    const [bookReservation] = useBookReservationMutation();
+    const {data, isLoading} = useGetReservationsQuery();
+    const reservations = data?.reservations;
+    console.log(useGetReservationsQuery);
+    const[selectedDates, setSelectedDates] = useState(null);
+    const[selectedCabin, setSelectedCabin] = useState(null);
+    const {data: account} = useGetAccountQuery();
+
+    useEffect(() => {
+        if (reservations) {
+            const events = reservations.map(reservation => ({
+                start: reservation.start_date,
+                end: reservation.end_date,
+                title: `Cabin ${reservation.cabin_id} reserved`,
+                color: colorMap[reservation.cabin_id] || "gray",
+            }));
+            // update calendar with new events
+        }
+    }, [reservations]);
+
+    const handleDateSelect = (selectInfo) => {
+        dispatch(setDateRange({
+            start_date: selectInfo.startStr,
+            end_date: selectInfo.endStr,
+        }));
     }
-    fetch(`http://localhost:8000/api/users/${account.id}/reservations`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(selectedDates),
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('HTTP error ' + response.status);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      alert('Date range saved successfully!');
-      setSelectedDates(null);  // clear the selection
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      alert('An error occurred while saving the date range.');
-    });
-  }
 
 
+    // const selectedDates = useSelector(state => state.calendar.dateRange); // gets selected dates from store
+    const handleSave = async () => {
 
-  return (
-  <div className="calendar-container">
-      <div className="sidebar">
-        <h2>Select Date Range</h2>
-        <p>This is some additional content that will display next to the calendar.</p>
-        <button onClick={handleSave}>Book</button>
-      </div>
-    <FullCalendar
-      plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin, multiMonthPlugin]}
-      selectable= "true"
-      editable= "true"
-      selectMirror= "true"
-      initialView="multiMonthYear"
-      events={fetchReservations}
-      select={handleDateSelect}
-      headerToolbar={{
-          start: "dayGridMonth timeGridWeek timeGridDay",
-          center: "title",
-          end: "today prev,next",
-      }}
-      // height={"80vh"}
+        if (!selectedDates) {
+            alert('Please select a date range first.');
+            return;
+        }
+        try {
+            const response = await bookReservation(selectedDates).unwrap(); // passes selection to redux mutation
+            alert('Date range saved successfully!');
+            dispatch(setDateRange(null));  // clear the selection
+        } catch(error) {
+            console.error('Error:', error);
+            alert('An error occurred while saving the date range.');
+        }
+    }
 
-    />
-  </div>
-  )
+    // const { data: { reservations = [] } = {}, isLoading, error } = useGetReservationsQuery();
+
+    // if (error) {
+    //     console.error('Error fetching reservations:', error);
+    // }
+
+
+    const renderSidebar = () => {
+        return (
+            <div className='sidebar'>
+                <div className='sidebar-section'>
+                    <h2>Book Reservation</h2>
+
+                </div>
+                <div className='sidebar-section'>
+                    <ReservationForm />
+                </div>
+            </div>
+        )
+    }
+
+    return (
+        <div className="calendar-container">
+            {renderSidebar()}
+        <FullCalendar
+        key={reservations ? reservations.length : 0}
+        plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin, multiMonthPlugin]}
+        selectable= "true"
+        editable= "true"
+        selectMirror= "true"
+        initialView="dayGridMonth"
+        events={fetchReservations}
+        select={handleDateSelect}
+        headerToolbar={{
+            start: "",
+            center: "title",
+            end: "today prev,next",
+        }}
+        height={"80vh"}
+
+        />
+    </div>
+    )
 }

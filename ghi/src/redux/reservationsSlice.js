@@ -1,37 +1,25 @@
-import {createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import {createSlice } from '@reduxjs/toolkit';
 
 
-
-export const createReservation = createAsyncThunk(
-    'reservations/createReservation',
-    async (reservation, thunkAPI) => {
-        try {
-            const response = await axios.post('/api/reservations', reservation);
-            return response.data;
-
-        } catch (error) {
-            return thunkAPI.rejectWithValue({ error: error.message });
-        }
-    }
-)
+const initialState = {
+    reservations: [{
+        cabin: "cabin_id",
+        id: 1,
+        start_date: "2023-05-20",
+        end_date: "2023-05-30"
+    }]
+};
 
 
-export const reservationSlice = createSlice({
-    name: "reservations",
-    initialState: [],
+export const reservationsSlice = createSlice({
+    name: "reservation",
+    initialState,
     reducers: {
-        builder.addReservation: (state, action) => {
-            const newReservation = action.payload
-            state.reservations.push(newReservation)
+        bookReservation: (state, action) => {
+            state.reservations.push(action.payload)
         }
-    },
-    extraReducers: (builder) => {
-    builder.addCase(createReservation.fulfilled, (state, action) => {
-        state.push(action.payload);
-    });
     },
 });
 
-export const { addReservation } = reservationSlice.actions
-export default reservationSlice.reducer
+export const { bookReservation } = reservationsSlice.actions;
+export default reservationsSlice.reducer;

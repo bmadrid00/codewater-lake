@@ -7,7 +7,9 @@ import Footer from "./Footer";
 import Nav from "./Nav";
 import "./css/app.css";
 import HomePage from "./Home";
-import Reservations from "./reservations/Calendar"
+import Reservations from "./reservations/BookReservation";
+import Calendar from "./reservations/Calendar";
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/cabins" element={<Cabins />} />
         <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
         <Route path="/reservations" element={<Reservations />} />
+        <Route path="/reservationsC" element={<Calendar />} />
       </Routes>
       <Footer />
     </BrowserRouter>
