@@ -1,63 +1,101 @@
-// import React, { useEffect, useState } from "react";
-// import {
-//     MDBCard,
-//     MDBCardImage,
-//     MDBCardBody,
-//     MDBCardTitle,
-//     MDBCardText,
-//     MDBRow,
-//     MDBCol,
-// } from "mdb-react-ui-kit";
+import React, { useState, useEffect } from "react";
+import {
+    MDBBtn,
+    MDBInput
+} from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom"
+import { Form } from "react-bootstrap";
+import {
+    useGetAccountQuery,
+    useEditAccountMutation,
+    useLogoutMutation,
+    useGetReservationsQuery
+} from "../redux/apiSlice";
 
-// import { Button } from "react-bootstrap";
+function Profile() {
+    const {data: account} =  useGetAccountQuery();
+    const [changedAccount, setChangedAccount] = useState({
+        first_name: '',
+        last_name: '',
+        email: ''
+    })
+    const reservations = useGetReservationsQuery()?.data?.reservations
+    const [accountChange] = useEditAccountMutation()
+    const [logout] = useLogoutMutation()
+    const navigate = useNavigate()
 
-// function Profile() {
-//     const [User, setUser] = useState('');
 
-//     const fetchData = async () => {
-//     const url = "http://localhost:8000/api/token";
-//     const response = await fetch(url);
-//     if (response.ok) {
-//         const data = await response.json();
-//         console.log(data)
-//     }
-//     };
+    useEffect(() => {
+        if (account) {
+            setChangedAccount({ ...account });
+        }
+    }, [account]);
 
-//     useEffect(() => {
-//     fetchData();
-//     }, []);
+    if (!account || !reservations) {
+        return (<h1>Loading...</h1>)
+        }
 
-//     return (
-//     <>
-//         <h1>Cabins</h1>
-//         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
-//         {Cabins.map((cabin) => {
-//             return (
-//             <MDBCol>
-//                 <MDBCard className="h-100">
-//                 <MDBCardTitle>NAME: {cabin.cabin_name}</MDBCardTitle>
-//                 <MDBCardImage
-//                     src="https://www.edinarealty.com/media/1857/buyalakehomeorcabintips.jpg?mode=crop&width=800&height=540"
-//                     alt="..."
-//                     position="top"
-//                 />
-//                 <MDBCardBody>
-//                     <MDBCardText>Description: {cabin.description}</MDBCardText>
-//                     <MDBCardText>
-//                     Max Occupants: {cabin.max_occupants}
-//                     </MDBCardText>
-//                     <MDBCardText>Located by lake: {cabin.on_lake}</MDBCardText>
-//                     <MDBCardText>Rating: {cabin.rating}</MDBCardText>
-//                     <MDBCardText>Daily Rate: ${cabin.day_rate}</MDBCardText>
-//                 </MDBCardBody>
-//                 <Button>Book</Button>
-//                 </MDBCard>
-//             </MDBCol>
-//             );
-//         })}
-//         </MDBRow>
-//     </>
-//     );
-// }
+    const changeField = (e) => {
+        const { value } = e.target;
+        const { name } = e.target;
+        setChangedAccount({
+            ...changedAccount,
+            [name]: value
+        });
+    }
 
-// export default Profile;
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        delete changedAccount['id']
+        console.log(changedAccount)
+        accountChange(changedAccount);
+        logout();
+        navigate("/signin");
+    }
+
+    const reservationsForSort = [...reservations]
+
+    return (
+    <div>
+        <h1>My Profile</h1>
+        <Form>
+            <div className="input-wrapper">
+            <MDBInput label='First name' id="first_name" name="first_name" type="text" value={changedAccount.first_name} onChange={changeField} />
+            </div>
+            <div className="input-wrapper">
+            <MDBInput label='Last name' id="last_name" name="last_name" type="text" value={changedAccount.last_name} onChange={changeField} />
+            </div>
+            <div className="input-wrapper">
+            <MDBInput label='Email' id="email" name="email" type="email" value={changedAccount.email} onChange={changeField} />
+            </div>
+            <MDBBtn outline rounded className='mx-2' color='info' onClick={handleSubmit}>
+                Save Changes
+            </MDBBtn>
+        </Form>
+        <h1>Reservation History</h1>
+        <table className="table table-striped">
+            <thead>
+                <tr>
+                    <th>Cabin ID</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Number of Guests</th>
+                </tr>
+            </thead>
+            <tbody>
+                {reservationsForSort.sort((a, b) => a.start_date - b.start_date).map(reservation => {
+                    return (<tr key={reservation.id}>
+                        <td>{reservation.cabin_id}</td>
+                        <td>{reservation.start_date}</td>
+                        <td>{reservation.end_date}</td>
+                        <td>{reservation.number_of_people}</td>
+                        </tr>
+                    );
+                    })}
+            </tbody>
+        </table>
+    </div>
+    );
+}
+
+export default Profile;

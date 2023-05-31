@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useGetAccountQuery, useLogoutMutation } from "./redux/apiSlice";
 import {
   MDBContainer,
@@ -15,7 +15,7 @@ import { useState } from "react";
 
 function Nav() {
   const { data: account } = useGetAccountQuery();
-  const [logout, result] = useLogoutMutation();
+  const [logout] = useLogoutMutation();
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(false);
   return (
