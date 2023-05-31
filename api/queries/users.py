@@ -22,13 +22,6 @@ class UserIn(BaseModel):
     email: str
 
 
-class UserInWithPassword(UserIn):
-    first_name: str
-    last_name: str
-    email: str
-    password: str
-
-
 class UserOut(BaseModel):
     id: int
     first_name: str
@@ -52,10 +45,7 @@ class UserOutWithPassword(UserOut):
 class DuplicateAccountError(ValueError):
     pass
 
-class UserList(BaseModel):
-  users: List[UserOut]
 
-  
 # ########################---QUERIES---########################
 
 class UserQueries():
@@ -77,7 +67,7 @@ class UserQueries():
                     user = {}
                     for i, col in enumerate(db.description):
                         user[col.name] = row[i]
-                        results.append(user)
+                    results.append(user)
             return {"users": results}
 
     def get_user(self, email: str) -> UserOutWithPassword:

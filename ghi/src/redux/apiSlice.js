@@ -63,10 +63,10 @@ export const codeLakeApi = createApi({
         signup: builder.mutation({
             query: (body) => {
                 return {
-                    url: '/api/users/',
-                    method: 'POST', 
+                    url: '/api/users',
+                    method: 'POST',
                     body,
-                    credentials: 'include'   
+                    credentials: 'include'
         }
             },
         }),

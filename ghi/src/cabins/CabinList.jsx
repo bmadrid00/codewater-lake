@@ -41,7 +41,7 @@ function Cabins() {
       <MDBRow className="row-cols-1 row-cols-md-3 g-4">
         {Cabins.map((cabin) => {
           return (
-            <MDBCol>
+            <MDBCol key={cabin.id}>
               <MDBCard className="h-100">
                 <MDBCardTitle>{cabin.cabin_name}</MDBCardTitle>
                 <Link to={`/cabins/${cabin.id}`}>
