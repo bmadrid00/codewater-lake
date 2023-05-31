@@ -277,7 +277,6 @@ def get_all_cabins():
 
 
 all_cabins = get_all_cabins()
-print(all_cabins)
 
 for cabin in cabins:
     if cabin["cabin_name"] not in all_cabins:
