@@ -10,7 +10,7 @@ export const codeLakeApi = createApi({
     // tagTypes:['blahblahlist?']
     endpoints: (builder) => ({
         getCabins: builder.query({
-            query: () => '/api/cabins'
+            query: () => `/api/cabins`
         }),
         getCabinById: builder.query({
             query: (cabin_id) => `/api/cabins/${cabin_id}`

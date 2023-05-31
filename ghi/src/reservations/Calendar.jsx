@@ -48,6 +48,8 @@ export default function ResCalendar() {
     const {data: account} = useGetAccountQuery();
 
     useEffect(() => {
+        // const { data: cabinsData = [], isLoading: isLoadingCabins } = useGetCabinsQuery();
+        // console.log(cabinsData);
         if (reservations) {
             const events = reservations.map(reservation => ({
                 start: reservation.start_date,
@@ -93,17 +95,18 @@ export default function ResCalendar() {
 
     const renderSidebar = () => {
         return (
-            <div className='sidebar'>
-                <div className='sidebar-section'>
-                    <h2>Book Reservation</h2>
-
-                </div>
-                <div className='sidebar-section'>
+            <div className="booking-container">
+                <ResCalendar />
+                <div className='sidebar'>
                     <ReservationForm />
                 </div>
             </div>
         )
     }
+{/* <div className="booking-container">
+    <ReservationForm />
+    <ResCalendar />
+</div> */}
 
     return (
         <div className="calendar-container">
