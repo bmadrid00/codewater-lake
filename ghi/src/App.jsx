@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signup from "./users/Signout";
+import Signup from "./users/Signup";
 import Signin from "./users/Signin";
 import Cabins from "./cabins/CabinList";
+import Profile from "./users/ProfileView";
 import CabinDetail from "./cabins/CabinDetail";
 import Footer from "./Footer";
 import Nav from "./Nav";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/reservationsC" element={<Calendar />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </BrowserRouter>

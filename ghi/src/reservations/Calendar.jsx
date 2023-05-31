@@ -6,7 +6,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import multiMonthPlugin from '@fullcalendar/multimonth'
 import { useDispatch } from 'react-redux';
 import { setDateRange } from '../redux/calendarSlice';
-import { useGetAccountQuery, useGetReservationsQuery, useBookReservationMutation } from '../redux/apiSlice'
+import { useGetAccountQuery, useGetReservationsQuery, useCreateReservationMutation } from '../redux/apiSlice'
 import ReservationForm from './BookReservation';
 // import { useLoginMutation } from "../redux/reservationsSlice";
 
@@ -39,7 +39,7 @@ function fetchReservations(fetchInfo, successCallback, failureCallback) {
 
 export default function ResCalendar() {
     const dispatch = useDispatch();
-    const [bookReservation] = useBookReservationMutation();
+    const [bookReservation] = useCreateReservationMutation();
     const {data, isLoading} = useGetReservationsQuery();
     const reservations = data?.reservations;
     console.log(useGetReservationsQuery);

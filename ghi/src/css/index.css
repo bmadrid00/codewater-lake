@@ -149,3 +149,8 @@ h2 {
   margin-top: -50px;
   width: 70%;
 }
+
+.input-wrapper {
+  max-width: 200px;
+  padding-bottom: 10px;
+}
