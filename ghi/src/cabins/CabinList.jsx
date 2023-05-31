@@ -10,6 +10,7 @@ import {
 } from "mdb-react-ui-kit";
 
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Cabins() {
   const [Cabins, setCabins] = useState([]);
@@ -43,13 +44,13 @@ function Cabins() {
             <MDBCol>
               <MDBCard className="h-100">
                 <MDBCardTitle>{cabin.cabin_name}</MDBCardTitle>
-                <a href={`/cabins/${cabin.id}`}>
+                <Link to={`/cabins/${cabin.id}`}>
                   <MDBCardImage
                     src={cabin.cabin_images[0]}
                     alt={cabin.cabin_name}
                     position="top"
                   />
-                </a>
+                </Link>
                 <MDBCardBody>
                   <MDBCardText>
                     Max Occupants: {cabin.max_occupants}
