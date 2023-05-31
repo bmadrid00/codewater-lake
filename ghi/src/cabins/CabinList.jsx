@@ -42,20 +42,23 @@ function Cabins() {
           return (
             <MDBCol>
               <MDBCard className="h-100">
-                <MDBCardTitle>NAME: {cabin.cabin_name}</MDBCardTitle>
-                <MDBCardImage
-                  src="https://www.edinarealty.com/media/1857/buyalakehomeorcabintips.jpg?mode=crop&width=800&height=540"
-                  alt="..."
-                  position="top"
-                />
+                <MDBCardTitle>{cabin.cabin_name}</MDBCardTitle>
+                <a href={`/cabins/${cabin.id}`}>
+                  <MDBCardImage
+                    src={cabin.cabin_images[0]}
+                    alt={cabin.cabin_name}
+                    position="top"
+                  />
+                </a>
                 <MDBCardBody>
-                  <MDBCardText>Description: {cabin.description}</MDBCardText>
                   <MDBCardText>
                     Max Occupants: {cabin.max_occupants}
                   </MDBCardText>
                   <MDBCardText>Located by lake: {cabin.on_lake}</MDBCardText>
                   <MDBCardText>Rating: {cabin.rating}</MDBCardText>
-                  <MDBCardText>Daily Rate: ${cabin.day_rate}</MDBCardText>
+                  <MDBCardText>
+                    Daily Rate: ${(cabin.day_rate / 100).toFixed(2)}
+                  </MDBCardText>
                 </MDBCardBody>
                 <Button>Book</Button>
               </MDBCard>
