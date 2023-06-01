@@ -9,7 +9,7 @@ import {
     useGetAccountQuery,
     useEditAccountMutation,
     useLogoutMutation,
-    useGetReservationsQuery
+    useGetUserReservationsQuery
 } from "../redux/apiSlice";
 
 function Profile() {
@@ -19,7 +19,7 @@ function Profile() {
         last_name: '',
         email: ''
     })
-    const reservations = useGetReservationsQuery()?.data?.reservations
+    const reservations = useGetUserReservationsQuery()?.data?.reservations
     const [accountChange] = useEditAccountMutation()
     const [logout] = useLogoutMutation()
     const navigate = useNavigate()
