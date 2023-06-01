@@ -102,13 +102,15 @@ function ReservationForm(props) {
             <h5 className="card-header">Book Reservation</h5>
                 <div className="card-body">
                     <form className="reservation-form" onSubmit={handleSubmit} id="create-reservation-form">
-                        <label htmlFor="cabin">Cabin Selection:</label>
-                        <select value={cabin} onChange={(e) => setCabin(e.target.value)} required name="cabin" id="cabin" className="form-select">
-                            <option value="">Choose a cabin</option>
-                            {usefulCabinsData.map(cabin => (
-                                <option key={cabin.id} value={cabin.id}>{cabin.cabin_name}</option>
-                            ))}
-                        </select>
+                        <div className="input-wrapper">
+                            <label htmlFor="cabin">Cabin Selection:</label>
+                            <select value={cabin} onChange={(e) => setCabin(e.target.value)} required name="cabin" id="cabin" className="form-select">
+                                <option value="">Choose a cabin</option>
+                                {usefulCabinsData.map(cabin => (
+                                    <option key={cabin.id} value={cabin.id}>{cabin.cabin_name}</option>
+                                ))}
+                            </select>
+                        </div>
                         <label htmlFor="occupancy">Number of People</label>
                         <input value={occupancy} id="occupancy" name="occupancy" type="number" required onChange={(e) => setOccupancy(e.target.value)}/>
                         <label htmlFor="start_date">Start Date:</label>

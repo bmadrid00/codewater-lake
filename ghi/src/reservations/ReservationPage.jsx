@@ -8,14 +8,16 @@ function ReservationPage() {
         end_date: ''
     });
 
-
     const handleDateSelect = (selectInfo) => {
-            setSelectedDates({
-                start_date: selectInfo.startStr,
-                end_date: selectInfo.endStr,
-            });
-            console.log(selectedDates)
-        }
+        const endDateObj = new Date(selectInfo.endStr);
+        endDateObj.setDate(endDateObj.getDate() - 1);
+        const adjustedEndDate = endDateObj.toISOString().split("T")[0]
+        setSelectedDates({
+            start_date: selectInfo.startStr,
+            end_date: adjustedEndDate,
+        });
+        console.log(selectedDates)
+    }
 
     return (
         <div>
