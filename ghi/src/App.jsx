@@ -9,7 +9,7 @@ import Footer from "./Footer";
 import Nav from "./Nav";
 import "./css/app.css";
 import ReservationPage from "./reservations/ReservationPage";
-import ResCalendar from "./reservations/ResCalendar";
+
 
 
 function App() {
@@ -24,10 +24,10 @@ function App() {
           <Route path="/cabins" element={<Cabins />} />
           <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
           <Route path="/reservations" element={<ReservationPage />} />
-          <Route path="/reservationsC" element={<ResCalendar />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

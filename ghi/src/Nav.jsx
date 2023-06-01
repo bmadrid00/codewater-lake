@@ -54,9 +54,6 @@ function Nav() {
               <MDBNavbarLink href="/reservations">Reservations</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/reservationsc">Calendar</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
               <MDBNavbarLink href="/cabins">Our Cabins</MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>
