@@ -44,7 +44,11 @@ def update_reservation(
     account_data: dict = Depends(authenticator.get_current_account_data),
     repo: ReservationQueries = Depends()
 ):
-    return repo.update_reservation(reservation_id, account_data['id'], reservation)
+    return repo.update_reservation(
+        reservation_id,
+        account_data['id'],
+        reservation
+        )
 
 
 @router.delete("/api/reservations/{reservation_id}",
