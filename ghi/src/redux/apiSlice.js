@@ -17,8 +17,7 @@ export const codeLakeApi = createApi({
 // # ########################---Reservations---#######################
         getReservations: builder.query({
             query: () => ({
-                url: `/api/reservations/`,
-                credentials: 'incude'
+                url: `/api/reservations/`
             }),
             providesTags: ['ReservationsList']
         }),
