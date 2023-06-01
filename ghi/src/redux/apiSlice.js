@@ -31,7 +31,7 @@ export const codeLakeApi = createApi({
         }),
         createReservation: builder.mutation({
             query:(body) => ({
-                url: `/api/users/reservations/`,
+                url: `/api/reservations/`,
                 method: 'POST',
                 body,
                 credentials: 'include'
@@ -83,7 +83,7 @@ export const codeLakeApi = createApi({
         signup: builder.mutation({
             query: (body) => {
                 return {
-                    url: '/api/users/',
+                    url: '/api/users',
                     method: 'POST',
                     body,
                     credentials: 'include'

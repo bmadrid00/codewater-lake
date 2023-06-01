@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useCreateReservationMutation, useGetCabinsQuery,} from "../redux/apiSlice";
 
 
-
 function ReservationForm() {
     const dispatch = useDispatch();
     const [first_name, setFirstName] = useState('');

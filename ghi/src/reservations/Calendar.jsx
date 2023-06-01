@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { setDateRange } from '../redux/calendarSlice';
 import { useGetAccountQuery, useGetReservationsQuery, useCreateReservationMutation } from '../redux/apiSlice'
 import ReservationForm from './BookReservation';
-// import { useLoginMutation } from "../redux/reservationsSlice";
+
 
 
 
@@ -34,22 +34,19 @@ function fetchReservations(fetchInfo, successCallback, failureCallback) {
     }));
     successCallback(events);
     })
-    .catch(failureCallback);}
+    .catch(failureCallback);
+}
 
 
 export default function ResCalendar() {
     const dispatch = useDispatch();
-    const [bookReservation] = useCreateReservationMutation();
-    const {data, isLoading} = useGetReservationsQuery();
-    const reservations = data?.reservations;
-    console.log(useGetReservationsQuery);
+    const [createReservation] = useCreateReservationMutation();
+    const {data: reservations} = useGetReservationsQuery();
     const[selectedDates, setSelectedDates] = useState(null);
     const[selectedCabin, setSelectedCabin] = useState(null);
     const {data: account} = useGetAccountQuery();
 
     useEffect(() => {
-        // const { data: cabinsData = [], isLoading: isLoadingCabins } = useGetCabinsQuery();
-        // console.log(cabinsData);
         if (reservations) {
             const events = reservations.map(reservation => ({
                 start: reservation.start_date,
@@ -61,36 +58,27 @@ export default function ResCalendar() {
         }
     }, [reservations]);
 
-    const handleDateSelect = (selectInfo) => {
+    const handleDateSelect = async (selectInfo) => {
         dispatch(setDateRange({
             start_date: selectInfo.startStr,
             end_date: selectInfo.endStr,
         }));
-    }
-
-
-    // const selectedDates = useSelector(state => state.calendar.dateRange); // gets selected dates from store
-    const handleSave = async () => {
-
-        if (!selectedDates) {
-            alert('Please select a date range first.');
-            return;
-        }
         try {
-            const response = await bookReservation(selectedDates).unwrap(); // passes selection to redux mutation
-            alert('Date range saved successfully!');
-            dispatch(setDateRange(null));  // clear the selection
-        } catch(error) {
-            console.error('Error:', error);
-            alert('An error occurred while saving the date range.');
+            await createReservation({
+                start_date: selectInfo.startStr,
+                end_date: selectInfo.startStr,
+            }).unwrap();
+        } catch (error) {
+            console.error('Failed to create reservation:', error);
         }
+        createReservation({
+            start_date: selectInfo.startStr,
+            end_date: selectInfo.endStr,
+        })
     }
 
-    // const { data: { reservations = [] } = {}, isLoading, error } = useGetReservationsQuery();
 
-    // if (error) {
-    //     console.error('Error fetching reservations:', error);
-    // }
+
 
 
     const renderSidebar = () => {
@@ -103,10 +91,7 @@ export default function ResCalendar() {
             </div>
         )
     }
-{/* <div className="booking-container">
-    <ReservationForm />
-    <ResCalendar />
-</div> */}
+
 
     return (
         <div className="calendar-container">

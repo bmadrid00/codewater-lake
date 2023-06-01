@@ -9,7 +9,7 @@ steps = [
             description VARCHAR(5000) NOT NULL,
             on_lake BOOLEAN NOT NULL,
             rating DECIMAL,
-            day_rate SMALLINT NOT NULL,
+            day_rate INT NOT NULL,
             cabin_images TEXT[] NOT NULL
         );
         """,
