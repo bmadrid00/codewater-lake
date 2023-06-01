@@ -26,13 +26,13 @@ function fetchReservations(fetchInfo, successCallback, failureCallback) {
     fetch('http://localhost:8000/api/reservations')
         .then(response => response.json())
         .then(data => {
-    const events = data.reservations.map(reservation => ({
-        start: reservation.start_date,
-        end: reservation.end_date,
-        title: `Cabin ${reservation.cabin_id} reserved`,
-        color: colorMap[reservation.cabin_id] || "gray",
-    }));
-    successCallback(events);
+            const events = data.reservations.map(reservation => ({
+                start: reservation.start_date,
+                end: reservation.end_date,
+                title: `Cabin ${reservation.cabin_id} reserved`,
+                color: colorMap[reservation.cabin_id] || "gray",
+        }));
+        successCallback(events);
     })
     .catch(failureCallback);
 }
@@ -84,7 +84,6 @@ export default function ResCalendar() {
     const renderSidebar = () => {
         return (
             <div className="booking-container">
-                <ResCalendar />
                 <div className='sidebar'>
                     <ReservationForm />
                 </div>
@@ -116,3 +115,4 @@ export default function ResCalendar() {
     </div>
     )
 }
+
