@@ -10,6 +10,7 @@ import {
 } from "mdb-react-ui-kit";
 
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Cabins() {
   const [Cabins, setCabins] = useState([]);
@@ -40,22 +41,25 @@ function Cabins() {
       <MDBRow className="row-cols-1 row-cols-md-3 g-4">
         {Cabins.map((cabin) => {
           return (
-            <MDBCol>
+            <MDBCol key={cabin.id}>
               <MDBCard className="h-100">
-                <MDBCardTitle>NAME: {cabin.cabin_name}</MDBCardTitle>
-                <MDBCardImage
-                  src="https://www.edinarealty.com/media/1857/buyalakehomeorcabintips.jpg?mode=crop&width=800&height=540"
-                  alt="..."
-                  position="top"
-                />
+                <MDBCardTitle>{cabin.cabin_name}</MDBCardTitle>
+                <Link to={`/cabins/${cabin.id}`}>
+                  <MDBCardImage
+                    src={cabin.cabin_images[0]}
+                    alt={cabin.cabin_name}
+                    position="top"
+                  />
+                </Link>
                 <MDBCardBody>
-                  <MDBCardText>Description: {cabin.description}</MDBCardText>
                   <MDBCardText>
                     Max Occupants: {cabin.max_occupants}
                   </MDBCardText>
                   <MDBCardText>Located by lake: {cabin.on_lake}</MDBCardText>
                   <MDBCardText>Rating: {cabin.rating}</MDBCardText>
-                  <MDBCardText>Daily Rate: ${cabin.day_rate}</MDBCardText>
+                  <MDBCardText>
+                    Daily Rate: ${(cabin.day_rate / 100).toFixed(2)}
+                  </MDBCardText>
                 </MDBCardBody>
                 <Button>Book</Button>
               </MDBCard>

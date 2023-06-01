@@ -29,3 +29,19 @@ today i converted my detail page's state over to redux
 ## may 24, 2023
 
 today i moved onto building the homepage. i refactored the navbar. added a logo in the corner and moved the logout button over to the right and converted the whole thing over to bootstrapMD coponents
+
+## may 25, 2023
+
+finished building homepage
+
+## may 26, 2023
+
+figured out how to use our dropbox image links by refactoring the url
+
+## may 30, 2023
+
+continued work on building out our fixed cabin objects and wrote a script for seeding the database automatically on everyones machine
+
+## may 31, 2023
+
+finished the seeding script with all of our fixed cabins data and updated the cabin detail page to include proper image links

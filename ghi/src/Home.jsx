@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MDBCarousel, MDBCarouselItem, MDBContainer, MDBRow, MDBBtn, MDBCol } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -50,6 +51,7 @@ export default function HomePage() {
               <img
                 className="homepage-logo"
                 src="https://dl.dropboxusercontent.com/s/j268a6rjz1almh3/logo-black.png"
+                alt=""
               />
             </div>
 
@@ -98,13 +100,13 @@ export default function HomePage() {
             </div>
           </MDBCol>
           <MDBCol className="img-col col-5 text-center">
-            <a href="https://goo.gl/maps/hk2Rt2SsFo8UAxvR6">
+            <Link to="https://goo.gl/maps/hk2Rt2SsFo8UAxvR6">
               <img
                 className="rounded-3 map shadow-5-strong"
                 alt="map"
                 src="https://dl.dropboxusercontent.com/s/tka7gcs71j9ca2r/google-maps.jpg"
               />
-            </a>
+            </Link>
           </MDBCol>
         </MDBRow>
         <MDBRow className="rounded-4 text-row shadow-5 mb-8">

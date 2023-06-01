@@ -11,10 +11,13 @@ from queries.users import (
     UserIn,
     UserQueries,
     DuplicateAccountError,
-    UserForm
+    UserForm,
+    UserList,
+    UserInWithPassword
 )
 from jwtdown_fastapi.authentication import Token
 from pydantic import BaseModel
+from typing import List
 from authenticator import authenticator
 
 
@@ -29,9 +32,16 @@ class HttpError(BaseModel):
 router = APIRouter()
 
 
+@router.get("/api/users/", response_model=UserList)
+def list_users(
+    repo: UserQueries = Depends(),
+):
+    return repo.get_all_users()
+
+
 @router.post("/api/users", response_model=AccountToken | HttpError)
 async def create_account(
-    info: UserIn,
+    info: UserInWithPassword,
     request: Request,
     response: Response,
     users: UserQueries = Depends(),
@@ -62,20 +72,19 @@ async def get_token(
         }
 
 
-@router.put("/api/users/{user_id}", response_model=UserOut)
+@router.put("/api/users", response_model=UserOut)
 def update_user(
-    user_id: int,
     user: UserIn,
     account_data: dict = Depends(authenticator.get_current_account_data),
     repo: UserQueries = Depends()
 ):
+    user_id = account_data['id']
     return repo.update_user(user_id, user)
 
 
 @router.delete("/api/users/{user_id}", response_model=bool)
 def delete_user(
-    user_id: int,
     account_data: dict = Depends(authenticator.get_current_account_data),
     repo: UserQueries = Depends()
 ):
-    return repo.delete_user(user_id)
+    return repo.delete_user(account_data['id'])

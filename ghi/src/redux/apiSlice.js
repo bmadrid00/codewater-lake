@@ -102,5 +102,5 @@ export const {
     useLogoutMutation,
     useLoginMutation,
     useEditAccountMutation,
-    useSignupMutation
+    useSignupMutation,
 } = codeLakeApi
