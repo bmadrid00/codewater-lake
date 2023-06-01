@@ -12,3 +12,19 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    max-width: 300px; /* adjust this as needed */
+}
+
+.calendar-container {
+    flex: 2;
+    min-width: 0; /* prevent flexbox overflow */
+}

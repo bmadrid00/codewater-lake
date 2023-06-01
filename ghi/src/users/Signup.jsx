@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MDBBtn } from "mdb-react-ui-kit";
 import { useSignupMutation } from "../redux/apiSlice";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +16,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmpassword) {
-      setErrorMessage("PASSWORD DO NOT MATCH, TRY AGAIN!");
+      setErrorMessage("Passwords entered do not match.");
     } else {
       register({ first_name, last_name, email, password });
       navigate("/");
@@ -85,7 +86,7 @@ function Signup() {
               />
             </div>
             <div>
-              <input className="btn btn-primary" type="submit" value="Create" />
+              <MDBBtn className="btn btn-primary" type="submit" >Sign Up</MDBBtn>
             </div>
           </form>
         </div>
