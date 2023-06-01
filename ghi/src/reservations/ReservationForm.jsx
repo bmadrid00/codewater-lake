@@ -1,22 +1,36 @@
 import React, { useEffect, useState } from "react";
+import {
+    MDBBtn,
+    MDBModal,
+    MDBModalDialog,
+    MDBModalContent,
+    MDBModalHeader,
+    MDBModalTitle,
+    MDBModalBody,
+    MDBModalFooter
+} from 'mdb-react-ui-kit';
+import Signup from "../users/Signup";
+import Signin from "../users/Signin";
+import { useNavigate } from "react-router-dom";
 import { useCreateReservationMutation, useGetCabinsQuery, useGetAccountQuery} from "../redux/apiSlice";
 
 
-function ReservationForm({selectedDates}) {
+function ReservationForm(props) {
     const [cabin, setCabin] = useState('');
-    const [start_date, setStartDate] = useState(selectedDates?.start_date);
-    const [end_date, setEndDate] = useState(selectedDates?.end_date);
+    const [start_date, setStartDate] = useState(props.selectedDates?.start_date);
+    const [end_date, setEndDate] = useState(props.selectedDates?.end_date);
     const [occupancy, setOccupancy] = useState(0)
+    const [signInError, setSignInError] = useState(false)
     const { data:  cabinsData, isLoading: isLoadingCabins } = useGetCabinsQuery();
     const [usefulCabinsData, setUsefulCabinsData] = useState([])
     const [bookReservation] = useCreateReservationMutation();
     const {data: account} = useGetAccountQuery();
-
+    const [showLogin, setShowLogin] = useState(false)
 
     useEffect(() => {
-        setStartDate(selectedDates?.start_date);
-        setEndDate(selectedDates?.end_date);
-    }, [selectedDates]);
+        setStartDate(props.selectedDates?.start_date);
+        setEndDate(props.selectedDates?.end_date);
+    }, [props.selectedDates]);
 
     useEffect(() => {
         if (cabinsData?.cabins) {
@@ -32,6 +46,9 @@ function ReservationForm({selectedDates}) {
 
     async function handleSubmit(e){
         e.preventDefault();
+        if (account == null){
+            setSignInError(true)
+        }
         const form = e.target;
         const reservation = {
             user_id: account.id,
@@ -42,11 +59,45 @@ function ReservationForm({selectedDates}) {
         };
         console.log(reservation)
         await bookReservation(reservation);
+    }
 
+    let displayForm;
+
+    if (showLogin) {
+        displayForm =
+        <div>
+            <Signin />
+            <MDBModalFooter>
+                <div>Don't have an account yet?</div>
+                <MDBBtn color='success' onClick={()=> setShowLogin(false) }>Create Account</MDBBtn>
+            </MDBModalFooter>
+        </div>
+    } else {
+        displayForm =
+        <div>
+            <Signup />
+            <MDBModalFooter>
+                <div>Already have an account?</div>
+                <MDBBtn color='success' onClick={()=> setShowLogin(true) }>Login</MDBBtn>
+            </MDBModalFooter>
+        </div>
     }
 
     return (
-    <div className="reservation-form-wrapper">
+    <div>
+        <MDBModal show={signInError} setShow={setSignInError} tabIndex='-1'>
+            <MDBModalDialog>
+                <MDBModalContent>
+                    <MDBModalHeader>
+                        <MDBModalTitle>Error Creating Reservation</MDBModalTitle>
+                    </MDBModalHeader>
+                    <MDBModalBody>
+                        Please sign in or create a valid account to make a reservation.
+                    </MDBModalBody>
+                    {displayForm}
+                </MDBModalContent>
+            </MDBModalDialog>
+        </MDBModal>
         <div className="card text-bg-light mb-3">
             <h5 className="card-header">Book Reservation</h5>
                 <div className="card-body">
