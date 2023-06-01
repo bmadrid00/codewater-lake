@@ -56,19 +56,19 @@ function Profile() {
     const reservationsForSort = [...reservations]
 
     return (
-    <div>
+    <div className="profile">
         <h1>My Profile</h1>
         <Form>
             <div className="input-wrapper">
-            <MDBInput label='First name' id="first_name" name="first_name" type="text" value={changedAccount.first_name} onChange={changeField} />
+            <MDBInput className="mb-2" label='First name' id="first_name" name="first_name" type="text" value={changedAccount.first_name} onChange={changeField} />
             </div>
             <div className="input-wrapper">
-            <MDBInput label='Last name' id="last_name" name="last_name" type="text" value={changedAccount.last_name} onChange={changeField} />
+            <MDBInput className="mb-2" label='Last name' id="last_name" name="last_name" type="text" value={changedAccount.last_name} onChange={changeField} />
             </div>
             <div className="input-wrapper">
-            <MDBInput label='Email' id="email" name="email" type="email" value={changedAccount.email} onChange={changeField} />
+            <MDBInput className="mb-2"label='Email' id="email" name="email" type="email" value={changedAccount.email} onChange={changeField} />
             </div>
-            <MDBBtn outline rounded className='mx-2' color='info' onClick={handleSubmit}>
+            <MDBBtn outline rounded className='mx-2 mb-5' color='info' onClick={handleSubmit}>
                 Save Changes
             </MDBBtn>
         </Form>

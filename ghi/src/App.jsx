@@ -23,6 +23,7 @@ function App() {
           <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

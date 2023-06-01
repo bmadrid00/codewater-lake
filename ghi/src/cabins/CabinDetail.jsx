@@ -25,8 +25,8 @@ function CabinDetail() {
             <p>${(data.day_rate / 100).toFixed(2)} night</p>
           </MDBCol>
           <MDBCol md="4" className="text-center">
-            <MDBBtn id="book-now" className="me-1" color="danger">
-              Book Now
+            <MDBBtn id="book-now" className="me-1" color="danger" block>
+              Book This Cabin
             </MDBBtn>
           </MDBCol>
           <MDBCol md="4" className="text-center" id="rating">
