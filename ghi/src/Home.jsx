@@ -37,7 +37,8 @@ export default function HomePage() {
           itemId={5}
           src="https://dl.dropboxusercontent.com/s/sjtfvvoehb3ql6c/foggy-lake.jpg"
           alt="foggy lake view"
-        />b
+        />
+        b
       </MDBCarousel>
 
       <MDBContainer className="mb-5">
@@ -66,9 +67,11 @@ export default function HomePage() {
           </MDBCol>
           <MDBCol md="3">
             <div className="book-a-stay">
-              <MDBBtn rounded size="lg" className="mx-2" color="danger" block>
-                Book a stay
-              </MDBBtn>
+              <Link to="/reservations">
+                <MDBBtn rounded size="lg" className="mx-2" color="danger" block>
+                  Book a stay
+                </MDBBtn>
+              </Link>
             </div>
           </MDBCol>
         </MDBRow>

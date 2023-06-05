@@ -1,33 +1,41 @@
 import React, { useState } from "react";
-import { MDBBtn } from "mdb-react-ui-kit";
-import { useSignupMutation } from "../redux/apiSlice";
+import { useLoginMutation, useSignupMutation } from "../redux/apiSlice";
 import { useNavigate } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdb-react-ui-kit";
 
 function Signup() {
   const [register] = useSignupMutation();
   const navigate = useNavigate();
-  const [first_name, setFirstname] = useState("");
-  const [last_name, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmpassword] = useState("");
+  const [first_name, setFirstname] = useState(null);
+  const [last_name, setLastname] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [confirmpassword, setConfirmpassword] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const [ login ] = useLoginMutation()
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmpassword) {
       setErrorMessage("Passwords entered do not match.");
     } else {
-      register({ first_name, last_name, email, password });
-      alert("Account created!");
-      navigate("/signin");
-      console.log("Form submitted:", {
-        first_name,
-        last_name,
-        email,
-        password,
-      });
+      const response = await register({ first_name, last_name, email, password });
+      console.log(response)
+      if (response.error) {
+        alert("Incomplete form!", response.error.status);
+      } else {
+        login({ email, password });
+        navigate("/");
+        alert("Account created!");
+        console.log("Form submitted:", {
+          first_name,
+          last_name,
+          email,
+          password,
+        });
+      }
+
     }
   };
 
@@ -35,7 +43,6 @@ function Signup() {
     <>
       <MDBContainer className="signup">
         <MDBRow>
-          <MDBCol></MDBCol>
           <MDBCol>
             <div className="card text-bg-light mb-3">
               <h5 className="card-header">Signup</h5>
@@ -98,7 +105,6 @@ function Signup() {
               </div>
             </div>
           </MDBCol>
-          <MDBCol></MDBCol>
         </MDBRow>
       </MDBContainer>
     </>

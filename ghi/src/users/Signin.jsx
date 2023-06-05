@@ -10,7 +10,7 @@ import {
 } from 'mdb-react-ui-kit';
 
 function Signin() {
-  const [login, error] = useLoginMutation();
+  const [login] = useLoginMutation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   MDBCard,
   MDBCardImage,
@@ -7,12 +8,14 @@ import {
   MDBCardText,
   MDBRow,
   MDBCol,
+  MDBBtn,
 } from "mdb-react-ui-kit";
-
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { assignCabin } from "../redux/cabinIDSlice";
 
 function Cabins() {
+  const dispatch = useDispatch();
+
   const [Cabins, setCabins] = useState([]);
 
   const fetchData = async () => {
@@ -65,7 +68,12 @@ function Cabins() {
                       Daily Rate: ${(cabin.day_rate / 100).toFixed(2)}
                     </MDBCardText>
                   </MDBCardBody>
-                  <Button>Book</Button>
+                  <Link
+                    onClick={() => dispatch(assignCabin(cabin.id))}
+                    to="/reservations"
+                  >
+                    <MDBBtn block>Book</MDBBtn>
+                  </Link>
                 </MDBCard>
               </MDBCol>
             );

@@ -68,7 +68,7 @@ function Profile() {
             <div className="input-wrapper">
             <MDBInput className="mb-2"label='Email' id="email" name="email" type="email" value={changedAccount.email} onChange={changeField} />
             </div>
-            <MDBBtn outline rounded className='mx-2 mb-5' color='info' onClick={handleSubmit}>
+            <MDBBtn outline rounded className='mx-2 mb-2' color='info' onClick={handleSubmit}>
                 Save Changes
             </MDBBtn>
         </Form>
