@@ -7,6 +7,7 @@ import CabinDetail from "./cabins/CabinDetail";
 import HomePage from "./Home";
 import Footer from "./Footer";
 import Nav from "./Nav";
+import ReviewForm from "./ReviewForm";
 import "./css/app.css";
 import ReservationPage from "./reservations/ReservationPage";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/cabins/:cabin_id" element={<CabinDetail />} />
           <Route path="/reservations" element={<ReservationPage />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/reviews/create" element={<ReviewForm />} />
         </Routes>
       </div>
       <Footer />

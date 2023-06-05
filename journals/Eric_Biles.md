@@ -34,3 +34,19 @@ Coder's logEntry: 000008
 Stardate 05.26.2023
 Coder's logEntry: 000009
     ...Today the file naming issue was resolved and we all got synced on a proper main.  Calendar development continues.. Goal is to store the click and select values into the form and ensure they are dynamic until Booked.
+
+Stardate 05.30.2023
+Coder's logEntry: 000009
+    ...Today 
+
+Stardate 05.31.2023
+Coder's logEntry: 000009
+    ...Today I struggled with getting reservations implemented correctly. I continued to research and refactor the code attempts.
+
+Stardate 06.01.2023
+Coder's logEntry: 000009
+    ...Today I worked with Bradley and identified and corrected a number of faulty logic and syntax errors I was chasing in the reservations calendar.
+
+Stardate 06.02.2023
+Coder's logEntry: 000009
+    ...Today we made sure the main was current with all implemented issues. We

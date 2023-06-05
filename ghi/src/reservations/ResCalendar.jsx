@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
@@ -37,35 +37,58 @@ export default function ResCalendar(props) {
         }
     }, [cabinsData])
 
-    
+
     useEffect(()=> {
         if (reservations && usefulCabinsData.length > 0) {
-            const eventsForCal = reservations.reservations.map(reservation => ({
-                start: reservation.start_date,
-                end: reservation.end_date,
+            const eventsForCal = reservations.reservations.map(reservation => {
+                const endDateObj = new Date(reservation.end_date);
+                endDateObj.setDate(endDateObj.getDate() + 1);
+                const adjustedEndDate = endDateObj.toISOString().split("T")[0]
+                return {start: reservation.start_date,
+                end: adjustedEndDate,
                 title: cabinNames(reservation) + ` cabin reserved`,
                 color: colorMap[reservation.cabin_id] || "gray",
-            }));
+            }});
             setEvents(() => eventsForCal)
         }
     }, [reservations, usefulCabinsData]);
+
+    const calendarRef = useRef(null);
+
+    const [currentView, setCurrentView] = useState('dayGridMonth');
+
+    const handleToggleView = () => {
+        let calendarApi = calendarRef.current.getApi();
+        if (calendarApi.view.type === 'dayGridMonth') {
+            calendarApi.changeView('multiMonthYear');
+        } else {
+            calendarApi.changeView('dayGridMonth');
+        }
+    }
 
 
     return (
         <div className="calendar-container">
             <FullCalendar
+            ref={calendarRef}
             key={reservations ? reservations.length : 0}
             plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin, multiMonthPlugin]}
             selectable= "true"
-            editable= "true"
+            // editable= "true"
             selectMirror= "true"
-            initialView="dayGridMonth"
+            initialView={currentView}
             events={events}
             select={props.onDateSelect}
             headerToolbar={{
-                start: "",
+                start: "multiMoView",
                 center: "title",
                 end: "today prev,next",
+            }}
+            customButtons={{
+                multiMoView: {
+                    text: 'Extended view',
+                    click: handleToggleView,
+                },
             }}
             height={"80vh"}
             />

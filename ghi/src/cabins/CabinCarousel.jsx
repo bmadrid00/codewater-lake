@@ -13,7 +13,7 @@ export default function CabinCarousel(props) {
   const images = props.images
 
   return (
-    <MDBCarousel showControls showIndicators>
+    <MDBCarousel showControls showIndicators dealy={10}>
       {images.map((image) => {
         return (
           <MDBCarouselItem
