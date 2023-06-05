@@ -9,7 +9,7 @@ export default function Footer() {
     <>
       <MDBFooter
         bgColor="light"
-        className="text-center text-lg-start text-muted"
+        className="text-center text-lg-start text-muted footer-element"
       >
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <div>
@@ -56,7 +56,7 @@ export default function Footer() {
         >
           <div>
             <img
-            alt="logo"
+              alt="logo"
               className="footer-logo"
               src="https://dl.dropboxusercontent.com/s/j268a6rjz1almh3/logo-black.png"
             />

@@ -1,23 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query';
-import { codeLakeApi } from './apiSlice';
-import cabinsReducer from './cabinSlice';
-// import reservationsReducer from './redux/reservationsSlice';
-import { reservationsApi } from './apiSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { codeLakeApi } from "./apiSlice";
+import cabinIDReducer from "./cabinIDSlice";
 
 export const store = configureStore({
     reducer: {
-        cabins: cabinsReducer,
         [codeLakeApi.reducerPath]: codeLakeApi.reducer,
-        // [reservationsApi.reducerPath]: codeLakeApi.reducer
-        // reservations: reservationsReducer,
-        // [codeLakeApi.reducerPath]: codeLakeApi.reducer,
+        cabinID: cabinIDReducer,
     },
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware()
-            .concat(codeLakeApi.middleware)
-            // .concat(reservationsApi.middleware),
-})
+        getDefaultMiddleware().concat(codeLakeApi.middleware),
+});
 
-setupListeners(store.dispatch)
-  
+setupListeners(store.dispatch);

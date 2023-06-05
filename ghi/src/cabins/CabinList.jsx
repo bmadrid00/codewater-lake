@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {
   MDBCard,
   MDBCardImage,
@@ -7,12 +8,14 @@ import {
   MDBCardText,
   MDBRow,
   MDBCol,
+  MDBBtn,
 } from "mdb-react-ui-kit";
-
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { assignCabin } from "../redux/cabinIDSlice";
 
 function Cabins() {
+  const dispatch = useDispatch();
+
   const [Cabins, setCabins] = useState([]);
 
   const fetchData = async () => {
@@ -37,36 +40,46 @@ function Cabins() {
 
   return (
     <>
-      <h1>Cabins</h1>
-      <MDBRow className="row-cols-1 row-cols-md-3 g-4">
-        {Cabins.map((cabin) => {
-          return (
-            <MDBCol key={cabin.id}>
-              <MDBCard className="h-100">
-                <MDBCardTitle>{cabin.cabin_name}</MDBCardTitle>
-                <Link to={`/cabins/${cabin.id}`}>
-                  <MDBCardImage
-                    src={cabin.cabin_images[0]}
-                    alt={cabin.cabin_name}
-                    position="top"
-                  />
-                </Link>
-                <MDBCardBody>
-                  <MDBCardText>
-                    Max Occupants: {cabin.max_occupants}
-                  </MDBCardText>
-                  <MDBCardText>Located by lake: {cabin.on_lake}</MDBCardText>
-                  <MDBCardText>Rating: {cabin.rating}</MDBCardText>
-                  <MDBCardText>
-                    Daily Rate: ${(cabin.day_rate / 100).toFixed(2)}
-                  </MDBCardText>
-                </MDBCardBody>
-                <Button>Book</Button>
-              </MDBCard>
-            </MDBCol>
-          );
-        })}
-      </MDBRow>
+      <div className="cabins">
+        <h1>Cabins</h1>
+        <MDBRow className="row-cols-1 row-cols-md-3 g-4">
+          {Cabins.map((cabin) => {
+            return (
+              <MDBCol key={cabin.id}>
+                <MDBCard className="h-100">
+                  <MDBCardTitle>{cabin.cabin_name}</MDBCardTitle>
+                  <Link to={`/cabins/${cabin.id}`}>
+                    <MDBCardImage
+                      src={cabin.cabin_images[0]}
+                      alt={cabin.cabin_name}
+                      position="top"
+                    />
+                  </Link>
+                  <MDBCardBody>
+                    <MDBCardText>
+                      Max Occupants: {cabin.max_occupants}
+                    </MDBCardText>
+                    <MDBCardText>Located by lake: {cabin.on_lake}</MDBCardText>
+                    <MDBCardText>
+                      Rating: {cabin.rating}
+                      <span>&#9734;</span>
+                    </MDBCardText>
+                    <MDBCardText>
+                      Daily Rate: ${(cabin.day_rate / 100).toFixed(2)}
+                    </MDBCardText>
+                  </MDBCardBody>
+                  <Link
+                    onClick={() => dispatch(assignCabin(cabin.id))}
+                    to="/reservations"
+                  >
+                    <MDBBtn block>Book</MDBBtn>
+                  </Link>
+                </MDBCard>
+              </MDBCol>
+            );
+          })}
+        </MDBRow>
+      </div>
     </>
   );
 }
