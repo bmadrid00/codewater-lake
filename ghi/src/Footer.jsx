@@ -13,13 +13,10 @@ export default function Footer() {
       >
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <div>
-            <a href="" className="me-4 text-reset">
-              <MDBIcon fab icon="facebook-f" />
-            </a>
-
-            <a href="" className="me-4 text-reset">
-              <MDBIcon fab icon="instagram" />
-            </a>
+            <i className="fas fa-campground"></i>
+            <i className="fas fa-wifi"></i>
+            <i className="fab fa-facebook"></i>
+            <i className="fab fa-instagram"></i>
           </div>
         </section>
 

@@ -10,6 +10,8 @@ import {
   MDBCol,
   MDBBtn,
 } from "mdb-react-ui-kit";
+import { useGetReviewsQuery } from "../redux/apiSlice";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { assignCabin } from "../redux/cabinIDSlice";
 
@@ -17,6 +19,16 @@ function Cabins() {
   const dispatch = useDispatch();
 
   const [Cabins, setCabins] = useState([]);
+  const reviews = useGetReviewsQuery().data?.reviews
+  const [reviewsForSort, setReviewsForSort] = useState([])
+
+  useEffect(()=> {
+    if (reviews) {
+      setReviewsForSort([...reviews])
+    }
+  }, [reviews])
+
+
 
   const fetchData = async () => {
     const url = "http://localhost:8000/api/cabins/";
@@ -37,6 +49,20 @@ function Cabins() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const avgRatingForCabin = (cabin_id) => {
+    if (reviewsForSort !== null) {
+      const filteredReviews = reviewsForSort.filter((review) => review.cabin_id === cabin_id);
+      const ratings = filteredReviews.map((review) => review.rating);
+      const sum = ratings.reduce((total, rating) => total + rating, 0);
+      if (ratings.length !== 0) {
+        const average = sum / ratings.length;
+        return average;
+      } else {
+        return "No ratings yet!"
+      }
+    }
+  };
 
   return (
     <>
@@ -61,7 +87,7 @@ function Cabins() {
                     </MDBCardText>
                     <MDBCardText>Located by lake: {cabin.on_lake}</MDBCardText>
                     <MDBCardText>
-                      Rating: {cabin.rating}
+                      Rating: {avgRatingForCabin(cabin.id)}
                       <span>&#9734;</span>
                     </MDBCardText>
                     <MDBCardText>

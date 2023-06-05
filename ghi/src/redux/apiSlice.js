@@ -88,7 +88,33 @@ export const codeLakeApi = createApi({
                     credentials: 'include'
                 }
             },
+            invalidatesTags: ['Account']
         }),
+        deleteAccount: builder.mutation({
+            query: () => ({
+                url: `/api/users`,
+                method: 'DELETE',
+                credentials: 'include'
+            }),
+            invalidatesTags: ['Account']
+        }),
+        // ################################# Reviews ####################################
+        createReview: builder.mutation({
+            query: (body) => ({
+                url: `/api/reviews`,
+                method: 'POST',
+                body,
+                credentials: 'include'
+            })
+        }),
+        getReviews: builder.query({
+            query: () => ({
+                url: `/api/reviews/`
+            }),
+        }),
+        getReviewsByCabin: builder.query({
+            query: (cabin_id) => `/api/cabins/${cabin_id}/reviews`
+        })
     }),
 });
 
@@ -103,4 +129,8 @@ export const {
     useLoginMutation,
     useEditAccountMutation,
     useSignupMutation,
+    useDeleteAccountMutation,
+    useCreateReviewMutation,
+    useGetReviewsQuery,
+    useGetReviewsByCabinQuery
 } = codeLakeApi

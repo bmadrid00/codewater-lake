@@ -16,7 +16,6 @@ function ReservationPage() {
             start_date: selectInfo.startStr,
             end_date: adjustedEndDate,
         });
-        console.log(selectedDates)
     }
 
     return (

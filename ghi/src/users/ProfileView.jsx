@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import {
     MDBBtn,
+    MDBModal,
+    MDBModalDialog,
+    MDBModalContent,
+    MDBModalHeader,
+    MDBModalTitle,
+    MDBModalBody,
     MDBInput
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom"
@@ -9,8 +15,10 @@ import {
     useGetAccountQuery,
     useEditAccountMutation,
     useLogoutMutation,
-    useGetUserReservationsQuery
+    useGetUserReservationsQuery,
+    useDeleteAccountMutation
 } from "../redux/apiSlice";
+import ReviewForm from "../ReviewForm";
 
 function Profile() {
     const {data: account} =  useGetAccountQuery();
@@ -23,7 +31,11 @@ function Profile() {
     const [accountChange] = useEditAccountMutation()
     const [logout] = useLogoutMutation()
     const navigate = useNavigate()
-
+    const [deleteAccount] = useDeleteAccountMutation()
+    const [showReviewForm, setShowReviewForm] = useState(false)
+    const [showEditResForm, setShowEditResForm] = useState(false)
+    const [selectedReservationId, setSelectedReservationId] = useState(null);
+    const [selectedCabinId, setSelectedCabinId] = useState(null);
 
     useEffect(() => {
         if (account) {
@@ -53,6 +65,12 @@ function Profile() {
         navigate("/signin");
     }
 
+    const handleDelete = (e) => {
+        deleteAccount();
+        logout();
+        navigate("/signup")
+    }
+
     const reservationsForSort = [...reservations]
 
     return (
@@ -60,18 +78,21 @@ function Profile() {
         <h1>My Profile</h1>
         <Form>
             <div className="input-wrapper">
-            <MDBInput className="mb-2" label='First name' id="first_name" name="first_name" type="text" value={changedAccount.first_name} onChange={changeField} />
+                <MDBInput className="profile-input" label='First name' id="first_name" name="first_name" type="text" value={changedAccount.first_name} onChange={changeField} />
             </div>
             <div className="input-wrapper">
-            <MDBInput className="mb-2" label='Last name' id="last_name" name="last_name" type="text" value={changedAccount.last_name} onChange={changeField} />
+                <MDBInput className="profile-input" label='Last name' id="last_name" name="last_name" type="text" value={changedAccount.last_name} onChange={changeField} />
             </div>
             <div className="input-wrapper">
-            <MDBInput className="mb-2"label='Email' id="email" name="email" type="email" value={changedAccount.email} onChange={changeField} />
+                <MDBInput className="profile-input" label='Email' id="email" name="email" type="email" value={changedAccount.email} onChange={changeField} />
             </div>
-            <MDBBtn outline rounded className='mx-2 mb-2' color='info' onClick={handleSubmit}>
+            <MDBBtn outline rounded className='mx-2' color='info' onClick={handleSubmit}>
                 Save Changes
             </MDBBtn>
         </Form>
+        <MDBBtn outline rounded  className='mx-2 mb-2 mt-2' color='danger' onClick={handleDelete}>
+            Delete Profile
+        </MDBBtn>
         <h1>Reservation History</h1>
         <table className="table table-striped">
             <thead>
@@ -84,16 +105,62 @@ function Profile() {
             </thead>
             <tbody>
                 {reservationsForSort.sort((a, b) => a.start_date - b.start_date).map(reservation => {
+                    let buttonDisplay;
+                    let currDay = new Date()
+                    let startDay = new Date(reservation.start_date)
+                    if (startDay <= currDay){
+                    buttonDisplay = <MDBBtn
+                                    outline
+                                    className='mx-2'
+                                    color='success'
+                                    onClick={() => {setShowReviewForm(true);
+                                                    setSelectedReservationId(reservation.id);
+                                                    setSelectedCabinId(reservation.cabin_id);
+                                                }}>Give Feedback</MDBBtn>
+                    } else {
+                        buttonDisplay = <MDBBtn
+                                    outline
+                                    className='mx-2'
+                                    color='info'
+                                    onClick={() => {setShowEditResForm(true);
+                                                    setSelectedReservationId(reservation.id);
+                                                }}>Edit Reservation</MDBBtn>
+                        }
                     return (<tr key={reservation.id}>
                         <td>{reservation.cabin_id}</td>
                         <td>{reservation.start_date}</td>
                         <td>{reservation.end_date}</td>
                         <td>{reservation.number_of_people}</td>
+                        <td>{buttonDisplay}</td>
                         </tr>
                     );
                     })}
             </tbody>
         </table>
+        <MDBModal show={showReviewForm} setShow={setShowReviewForm} tabIndex='0'>
+            <MDBModalDialog>
+                <MDBModalContent>
+                    <MDBModalHeader>
+                        <MDBModalTitle>Leave Us Feedback For Your Stay</MDBModalTitle>
+                    </MDBModalHeader>
+                    <MDBModalBody>
+                        <ReviewForm reservation={selectedReservationId} cabin={selectedCabinId}/>
+                    </MDBModalBody>
+                </MDBModalContent>
+            </MDBModalDialog>
+        </MDBModal>
+        <MDBModal show={showEditResForm} setShow={setShowEditResForm} tabIndex='0'>
+            <MDBModalDialog>
+                <MDBModalContent>
+                    <MDBModalHeader>
+                        <MDBModalTitle>Edit Details of Reservation</MDBModalTitle>
+                    </MDBModalHeader>
+                    <MDBModalBody>
+                        <h1>Reservation edit form here</h1>
+                    </MDBModalBody>
+                </MDBModalContent>
+            </MDBModalDialog>
+        </MDBModal>
     </div>
     );
 }
