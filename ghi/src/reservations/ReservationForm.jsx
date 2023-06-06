@@ -179,8 +179,8 @@ function ReservationForm(props) {
                 </MDBContainer>
             </Form>
         </div>
-        </div>
-        </div>
+      </div>
+    </div>
     );
 }
 

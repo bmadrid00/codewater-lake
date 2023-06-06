@@ -14,7 +14,7 @@ class FakeReviewQueries():
         return {"reviews": []}
 
 
-def test_list_reviews():  # name of the router you are testing with test
+def test_list_reviews():
     # Arrange
 
     # Act
@@ -27,4 +27,4 @@ def test_list_reviews():  # name of the router you are testing with test
 
     # Cleanup
 
-    app.dependency_overides[ReviewQueries] = FakeReviewQueries
+    app.dependency_overrides[ReviewQueries] = FakeReviewQueries
