@@ -7,7 +7,9 @@ import {
     MDBModalHeader,
     MDBModalTitle,
     MDBModalBody,
-    MDBInput
+    MDBInput,
+    MDBContainer,
+    MDBRow, MDBCol,
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom"
 import { Form } from "react-bootstrap";
@@ -74,25 +76,39 @@ function Profile() {
     const reservationsForSort = [...reservations]
 
     return (
-    <div className="profile">
-        <h1>My Profile</h1>
-        <Form>
-            <div className="input-wrapper">
-                <MDBInput className="profile-input" label='First name' id="first_name" name="first_name" type="text" value={changedAccount.first_name} onChange={changeField} />
-            </div>
-            <div className="input-wrapper">
-                <MDBInput className="profile-input" label='Last name' id="last_name" name="last_name" type="text" value={changedAccount.last_name} onChange={changeField} />
-            </div>
-            <div className="input-wrapper">
-                <MDBInput className="profile-input" label='Email' id="email" name="email" type="email" value={changedAccount.email} onChange={changeField} />
-            </div>
-            <MDBBtn outline rounded className='mx-2' color='info' onClick={handleSubmit}>
-                Save Changes
-            </MDBBtn>
-        </Form>
-        <MDBBtn outline rounded  className='mx-2 mb-2 mt-2' color='danger' onClick={handleDelete}>
-            Delete Profile
-        </MDBBtn>
+        <MDBContainer>
+            <div className="profile">
+            <h1>My Profile</h1>
+            <Form>
+            <MDBRow>
+                <MDBCol>
+                <div className="input-wrapper">
+                    <MDBInput label='First name' id="first_name" name="first_name" type="text" value={changedAccount.first_name} onChange={changeField} />
+                </div>
+                </MDBCol>
+                <MDBCol>
+                <div className="input-wrapper">
+                    <MDBInput  label='Last name' id="last_name" name="last_name" type="text" value={changedAccount.last_name} onChange={changeField} />
+                </div>
+                </MDBCol>
+                <MDBCol>
+                <div className="input-wrapper">
+                    <MDBInput label='Email' id="email" name="email" type="email" value={changedAccount.email} onChange={changeField} />
+                </div>
+                </MDBCol>
+                <MDBCol>
+                    <MDBBtn outline rounded className='mx-2' color='info' onClick={handleSubmit}>
+                        Save Changes</MDBBtn>
+                    <MDBBtn outline rounded  className='mx-2 mt-2' color='danger' onClick={handleDelete}>
+                Delete Profile</MDBBtn>
+                </MDBCol>
+            </MDBRow>
+
+
+
+            </Form>
+
+
         <h1>Reservation History</h1>
         <table className="table table-striped">
             <thead>
@@ -162,6 +178,7 @@ function Profile() {
             </MDBModalDialog>
         </MDBModal>
     </div>
+    </MDBContainer>
     );
 }
 

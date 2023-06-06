@@ -157,6 +157,8 @@ h2 {
 }
 
 .input-wrapper {
+  margin-bottom: 5px;
+  padding: 5px;
   max-width: 200px;
   padding-bottom: 10px;
 }
@@ -167,7 +169,7 @@ h2 {
 }
 
 .profile {
-  margin-top: 5em;
+  margin-top: 1em;
   min-height: 50vh;
 }
 
