@@ -1,0 +1,30 @@
+from fastapi.testclient import TestClient
+from main import app
+from queries.reviews import ReviewQueries
+
+
+client = TestClient(app)
+
+# ####################--List Reviews Test--###################
+# ####################-------Eric B-------####################
+
+
+class FakeReviewQueries():
+    def get_reviews(self):
+        return {"reviews": []}
+
+
+def test_list_reviews():  # name of the router you are testing with test
+    # Arrange
+
+    # Act
+    response = client.get("/api/reviews/")
+    data = response.json()
+    # Assert
+    assert 1 == 1
+    assert response.status_code == 200
+    assert data == {"reviews": []}
+
+    # Cleanup
+
+    app.dependency_overides[ReviewQueries] = FakeReviewQueries

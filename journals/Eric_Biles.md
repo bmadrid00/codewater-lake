@@ -36,17 +36,30 @@ Coder's logEntry: 000009
     ...Today the file naming issue was resolved and we all got synced on a proper main.  Calendar development continues.. Goal is to store the click and select values into the form and ensure they are dynamic until Booked.
 
 Stardate 05.30.2023
-Coder's logEntry: 000009
-    ...Today 
+Coder's logEntry: 000010
+    ...Today
 
 Stardate 05.31.2023
-Coder's logEntry: 000009
+Coder's logEntry: 000011
     ...Today I struggled with getting reservations implemented correctly. I continued to research and refactor the code attempts.
 
 Stardate 06.01.2023
-Coder's logEntry: 000009
+Coder's logEntry: 000012
     ...Today I worked with Bradley and identified and corrected a number of faulty logic and syntax errors I was chasing in the reservations calendar.
 
 Stardate 06.02.2023
-Coder's logEntry: 000009
-    ...Today we made sure the main was current with all implemented issues. We
+Coder's logEntry: 000013
+    ...Today we made sure the main was current with all implemented issues.
+
+Stardate 06.05.2023
+Coder's logEntry: 000014
+    ...Today I began refactoring the Reservation form to use MDBcontainer, columns and rows. We all began working on the unit tests.
+
+Stardate 06.06.2023
+Coder's logEntry: 000015
+    ...Today I finished up the unit test I started last night and polished up the Reservation form layout.
+
+Stardate 06.07.2023
+Coder's logEntry: 000016
+    ...Today we made sure main was current with all dev branch work. The wireframe was checked to ensure it matched out site.  All eyes are on code review for cleanliness.
+    
