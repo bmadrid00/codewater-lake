@@ -180,6 +180,7 @@ function ReservationForm(props) {
             </Form>
         </div>
         </div>
+        </div>
     );
 }
 
