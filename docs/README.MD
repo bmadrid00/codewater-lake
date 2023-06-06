@@ -12,7 +12,7 @@ Tech Stack
 The front-end of this application is built using:
 
 React: A popular JavaScript library for building user interfaces, especially single-page applications.
-CSS/SCSS: For styling the components.
+CSS/SCSS: For styling the components. We incorporated BootstrapMD as well.
 React Router: For handling routing in our React application.
 Structure
 The React application is component-based. Each component has its own directory, and each directory contains the component JavaScript file and the associated CSS file.
@@ -34,11 +34,11 @@ Database Setup: Create a PostgreSQL database and update the database URI in the 
 API Endpoints
 The FastAPI server exposes several API endpoints for the front-end application to interact with:
 
-GET /cabins: Fetches a list of all cabins.
-POST /reservations: Creates a new reservation.
-GET /reservations/{id}: Fetches the details of a reservation.
-PUT /reservations/{id}: Updates a reservation.
-DELETE /reservations/{id}: Deletes a reservation.
+GET /api/cabins: Fetches a list of all cabins.
+POST /api/reservations: Creates a new reservation.
+GET /api/reservations/{id}: Fetches the details of a reservation.
+PUT /api/reservations/{id}: Updates a reservation.
+DELETE /api/reservations/{id}: Deletes a reservation.
 Testing
 We use Jest for front-end testing and Pytest for back-end testing. To run the tests, navigate to the respective directory and run npm test (for front-end) or pytest (for back-end).
 
