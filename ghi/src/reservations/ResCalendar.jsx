@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import multiMonthPlugin from '@fullcalendar/multimonth'
 import { useGetReservationsQuery, useGetCabinsQuery } from '../redux/apiSlice'
@@ -72,7 +71,7 @@ export default function ResCalendar(props) {
             <FullCalendar
             ref={calendarRef}
             key={reservations ? reservations.length : 0}
-            plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin, multiMonthPlugin]}
+            plugins={[ dayGridPlugin, interactionPlugin, multiMonthPlugin]}
             selectable= "true"
             // editable= "true"
             selectMirror= "true"
