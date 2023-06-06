@@ -97,9 +97,9 @@ function Profile() {
                 </div>
                 </MDBCol>
                 <MDBCol>
-                    <MDBBtn outline rounded className='mx-2' color='info' onClick={handleSubmit}>
+                    <MDBBtn outline rounded block className='mx-2' color='info' onClick={handleSubmit}>
                         Save Changes</MDBBtn>
-                    <MDBBtn outline rounded  className='mx-2 mt-2' color='danger' onClick={handleDelete}>
+                    <MDBBtn outline rounded block className='mx-2 mt-2' color='danger' onClick={handleDelete}>
                 Delete Profile</MDBBtn>
                 </MDBCol>
             </MDBRow>
