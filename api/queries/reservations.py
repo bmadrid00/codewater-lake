@@ -20,7 +20,15 @@ class ReservationIn(BaseModel):
 
 class ReservationOut(ReservationIn):
     id: int
+
+
+class ReservationOutCabin(ReservationIn):
+    id: int
     cabin_name: str
+
+
+class ReservationOutCabinList(BaseModel):
+    reservations: List[ReservationOutCabin]
 
 
 class ReservationLimited(BaseModel):
@@ -37,11 +45,12 @@ class ReservationList(BaseModel):
     reservations: List[ReservationOut]
 
 
+
 # ########################---QUERIES---########################
 
 
 class ReservationQueries():
-    def get_all_reservations_for_user(self, user_id) -> ReservationList:
+    def get_all_reservations_for_user(self, user_id) -> ReservationOutCabinList:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(

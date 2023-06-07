@@ -75,7 +75,7 @@ function Profile() {
     }
 
     const reservationsForSort = [...reservations]
-
+    console.log(reservationsForSort[0].cabin_name)
     return (
     <MDBContainer>
         <div className="profile">
