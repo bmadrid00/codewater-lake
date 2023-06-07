@@ -10,65 +10,48 @@ import {
   MDBCol,
   MDBBtn,
 } from "mdb-react-ui-kit";
-import { useGetReviewsQuery } from "../redux/apiSlice";
+import { useGetReviewsQuery, useGetCabinsQuery } from "../redux/apiSlice";
 import { Link } from "react-router-dom";
 import { assignCabin } from "../redux/cabinIDSlice";
 
 function Cabins() {
   const dispatch = useDispatch();
-
-  const [Cabins, setCabins] = useState([]);
-  const reviews = useGetReviewsQuery().data?.reviews
-  const [reviewsForSort, setReviewsForSort] = useState([])
-
-  useEffect(()=> {
-    if (reviews) {
-      setReviewsForSort([...reviews])
-    }
-  }, [reviews])
-
-
-
-  const fetchData = async () => {
-    const url = "http://localhost:8000/api/cabins/";
-    const response = await fetch(url);
-    if (response.ok) {
-      const data = await response.json();
-      for (let cabin of data.cabins) {
-        if (cabin.on_lake === true) {
-          cabin["on_lake"] = "Yes";
-        } else {
-          cabin["on_lake"] = "No";
-        }
-      }
-      setCabins(data.cabins);
-    }
-  };
+  const { data, isLoading } = useGetCabinsQuery();
+  const reviews = useGetReviewsQuery().data?.reviews;
+  const [reviewsForSort, setReviewsForSort] = useState([]);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (reviews) {
+      setReviewsForSort([...reviews]);
+    }
+  }, [reviews]);
 
   const avgRatingForCabin = (cabin_id) => {
     if (reviewsForSort !== null) {
-      const filteredReviews = reviewsForSort.filter((review) => review.cabin_id === cabin_id);
+      const filteredReviews = reviewsForSort.filter(
+        (review) => review.cabin_id === cabin_id
+      );
       const ratings = filteredReviews.map((review) => review.rating);
       const sum = ratings.reduce((total, rating) => total + rating, 0);
       if (ratings.length !== 0) {
         const average = sum / ratings.length;
         return average;
       } else {
-        return "No ratings yet!"
+        return "No ratings yet!";
       }
     }
   };
+
+  if (isLoading) {
+    return <div>IsLoading...</div>;
+  }
 
   return (
     <>
       <div className="cabins">
         <h1>Cabins</h1>
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
-          {Cabins.map((cabin) => {
+          {data.cabins.map((cabin) => {
             return (
               <MDBCol key={cabin.id}>
                 <MDBCard className="h-100">
@@ -84,7 +67,9 @@ function Cabins() {
                     <MDBCardText>
                       Max Occupants: {cabin.max_occupants}
                     </MDBCardText>
-                    <MDBCardText>Located by lake: {cabin.on_lake}</MDBCardText>
+                    <MDBCardText>
+                      Located by lake: {cabin.on_lake.toString().toUpperCase()}
+                    </MDBCardText>
                     <MDBCardText>
                       Rating: {avgRatingForCabin(cabin.id)}
                       <span>&#9734;</span>
