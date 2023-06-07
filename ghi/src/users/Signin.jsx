@@ -21,7 +21,12 @@ function Signin() {
     const response = await login({ username, password });
     console.log(response);
     if (response.error) {
-      alert(response.error.data.detail);
+      if ( response.error.status === 422) {
+        alert(response.error.data.detail[0].msg);
+      } else {
+        alert(response.error.data.detail);
+      }
+
     } else {
       navigate("/");
     }
