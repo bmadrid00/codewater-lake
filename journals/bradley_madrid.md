@@ -39,3 +39,9 @@ Finished up development and debugging for the reservation creation form with Eri
 
 ## 06/02/2023
 Worked on implementing reviews into the front end of the application
+
+## 06/05/2023
+Practice exam and then worked on unit test for cabins
+
+## 06/06/2023
+Internet was out most of the day but once I got online I worked on creating a confirmation popup for the delete account button

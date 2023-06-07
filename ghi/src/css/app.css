@@ -24,6 +24,28 @@
     min-width: 0; /* prevent flexbox overflow */
 }
 
+.occupancy-input {
+    width: 50px;
+    margin-left: 5px;
+    margin-top: 10px;
+    padding: 4px;
+}
+.date-input {
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 5px;
+    width: 150px;
+}
+.cabin-input {
+    width: 150px;
+    margin-left: 5px;
+    padding: 4px;
+}
+.profile-input {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 250px;
+}
 .form-input {
     margin-bottom: 5px;
     padding: 5px;
@@ -33,6 +55,23 @@
 .btn-primary {
   margin-top: 10px;
   margin-left: 10px;
+}
+.res-label {
+  font-family: "Gill Sans";
+  margin-top: 10px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.card-body {
+  font-family: "Gill Sans";
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
 
 .fas.fa-campground {

@@ -15,21 +15,19 @@ function Signup() {
   const [ login ] = useLoginMutation()
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== confirmpassword) {
       setErrorMessage("Passwords entered do not match.");
     } else {
-      const response = await register({ first_name, last_name, email, password });
+      const response = register({ first_name, last_name, email, password });
       if (response.error) {
         alert("Incomplete form!", response.error.status);
       } else {
-
         navigate("/");
+        };
       }
-
-    }
-  };
+    };
 
   return (
     <>
