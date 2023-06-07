@@ -1,13 +1,13 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselItem, MDBContainer, MDBRow, MDBBtn, MDBCol } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
-import Weather from "./users/weather.jsx";
-
+import Weather from "./users/weather";
 
 export default function HomePage() {
   return (
     <>
       {/* IMAGE CAROUSEL */}
+
       <MDBCarousel className="mb-5" showControls>
         <MDBCarouselItem
           className="w-100 d-block"
@@ -39,6 +39,7 @@ export default function HomePage() {
           src="https://dl.dropboxusercontent.com/s/sjtfvvoehb3ql6c/foggy-lake.jpg"
           alt="foggy lake view"
         />
+        b
       </MDBCarousel>
 
       <MDBContainer className="mb-5">
@@ -67,19 +68,19 @@ export default function HomePage() {
           </MDBCol>
           <MDBCol md="3">
             <div className="book-a-stay">
-              <MDBBtn rounded size="lg" className="mx-2" color="danger">
-                Book a stay
-              </MDBBtn>
+              <Link to="/reservations">
+                <MDBBtn rounded size="lg" className="mx-2" color="danger" block>
+                  Book a stay
+                </MDBBtn>
+              </Link>
             </div>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
       <MDBContainer className="mb-5">
-        <MDBContainer>
-          <MDBRow>
-            < Weather />
-          </MDBRow>
-        </MDBContainer>
+        <MDBRow>
+          <Weather />
+        </MDBRow>
         <MDBRow className="rounded-4 text-row shadow-5 mb-8">
           <MDBCol className="col-7">
             <div className="homepage-text-box rounded-3 shadow-3">

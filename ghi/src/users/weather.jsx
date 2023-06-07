@@ -48,7 +48,6 @@ const renderForecast = () => {
             src={iconUrl}
             alt="weather icon"
             style={{ width: "4em", height: "4em" }}
-            className="mb-3"
             />
           <div>
               {new Date(forecast.dt_txt).toLocaleDateString("en-US", {
@@ -103,6 +102,3 @@ useEffect(() => {
 };
 
 export default Weather;
-
-
-
