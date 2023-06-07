@@ -36,13 +36,13 @@ function Signin() {
           <MDBCol>
             <form onSubmit={(e) => handleSubmit(e)}>
               <MDBInput
-                className="mb-4"
+                className="form-input mb-4"
                 type="email"
                 label="Email address"
                 onChange={(e) => setUsername(e.target.value)}
               />
               <MDBInput
-                className="mb-4"
+                className="form-input mb-4"
                 type="password"
                 label="Password"
                 onChange={(e) => setPassword(e.target.value)}

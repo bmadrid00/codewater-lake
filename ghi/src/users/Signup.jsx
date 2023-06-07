@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLoginMutation, useSignupMutation } from "../redux/apiSlice";
 import { useNavigate } from "react-router-dom";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdb-react-ui-kit";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdb-react-ui-kit";
 
 function Signup() {
   const [register] = useSignupMutation();
@@ -33,6 +33,7 @@ function Signup() {
     <>
       <MDBContainer className="signup">
         <MDBRow>
+          <MDBCol></MDBCol>
           <MDBCol>
             <div className="card text-bg-light mb-3">
               <h5 className="card-header">Signup</h5>
@@ -45,46 +46,46 @@ function Signup() {
                 <form onSubmit={(e) => handleSubmit(e)}>
                   <div className="mb-3">
                     <label className="form-label">Enter Your First Name</label>
-                    <input
+                    <MDBInput
                       name="first name"
                       type="text"
-                      className="form-control"
+                      className="form-input"
                       onChange={(e) => setFirstname(e.target.value)}
                     />
                   </div>
                   <div className="mb-3">
                     <label className="form-label">Enter Your Last Name</label>
-                    <input
+                    <MDBInput
                       name="last name"
                       type="text"
-                      className="form-control"
+                      className="form-input"
                       onChange={(e) => setLastname(e.target.value)}
                     />
                   </div>
                   <div className="mb-3">
                     <label className="form-label">Enter Email</label>
-                    <input
+                    <MDBInput
                       name="email"
                       type="text"
-                      className="form-control"
+                      className="form-input"
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="mb-3">
                     <label className="form-label">Enter Password</label>
-                    <input
+                    <MDBInput
                       name="password"
                       type="password"
-                      className="form-control"
+                      className="form-input"
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                   <div className="mb-3">
                     <label className="form-label">Confirm Password</label>
-                    <input
+                    <MDBInput
                       name="confirmed password"
                       type="password"
-                      className="form-control"
+                      className="form-input"
                       onChange={(e) => setConfirmpassword(e.target.value)}
                     />
                   </div>
@@ -95,6 +96,7 @@ function Signup() {
               </div>
             </div>
           </MDBCol>
+          <MDBCol></MDBCol>
         </MDBRow>
       </MDBContainer>
     </>

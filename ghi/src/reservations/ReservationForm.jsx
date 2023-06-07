@@ -55,16 +55,18 @@ function ReservationForm(props) {
         e.preventDefault();
         if (account == null) {
         setSignInError(true);
+        } else {
+            const form = e.target;
+            const reservation = {
+                user_id: account.id,
+                number_of_people: form.occupancy.value,
+                cabin_id: form.cabin.value,
+                start_date: form.start_date.value,
+                end_date: form.end_date.value,
+            };
+            await bookReservation(reservation);
         }
-        const form = e.target;
-        const reservation = {
-        user_id: account.id,
-        number_of_people: form.occupancy.value,
-        cabin_id: form.cabin.value,
-        start_date: form.start_date.value,
-        end_date: form.end_date.value,
-        };
-        await bookReservation(reservation);
+
     }
 
     let displayForm;
