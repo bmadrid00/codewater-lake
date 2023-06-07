@@ -57,9 +57,8 @@ Coder's logEntry: 000014
 
 Stardate 06.06.2023
 Coder's logEntry: 000015
-    ...Today I finished up the unit test I started last night and polished up the Reservation form layout.
+    ...Today I finished up the unit test I started last night and polished up the Reservation form layout. Merged both to main.
 
 Stardate 06.07.2023
 Coder's logEntry: 000016
     ...Today we made sure main was current with all dev branch work. The wireframe was checked to ensure it matched out site.  All eyes are on code review for cleanliness.
-    
