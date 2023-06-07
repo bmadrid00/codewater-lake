@@ -116,7 +116,7 @@ function Profile() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th>Cabin ID</th>
+                        <th>Cabin</th>
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Number of Guests</th>
@@ -146,7 +146,7 @@ function Profile() {
                                                     }}>Edit Reservation</MDBBtn>
                             }
                         return (<tr key={reservation.id}>
-                            <td>{reservation.cabin_id}</td>
+                            <td>{reservation.cabin_name}</td>
                             <td>{reservation.start_date}</td>
                             <td>{reservation.end_date}</td>
                             <td>{reservation.number_of_people}</td>

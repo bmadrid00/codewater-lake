@@ -20,6 +20,7 @@ class ReservationIn(BaseModel):
 
 class ReservationOut(ReservationIn):
     id: int
+    cabin_name: str
 
 
 class ReservationLimited(BaseModel):
@@ -45,10 +46,13 @@ class ReservationQueries():
             with conn.cursor() as db:
                 db.execute(
                     """
-                    SELECT id, cabin_id, start_date, end_date, user_id
-                    , number_of_people
+                    SELECT reservations.id, reservations.cabin_id,
+                        reservations.start_date, reservations.end_date,
+                        reservations.user_id, reservations.number_of_people,
+                        cabins.cabin_name as cabin_name
                     FROM reservations
-                    WHERE user_id=%s
+                    INNER JOIN cabins ON reservations.cabin_id = cabins.id
+                    WHERE reservations.user_id=%s
                     """,
                     [user_id]
                 )
