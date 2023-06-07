@@ -22,6 +22,7 @@ import {
 } from "../redux/apiSlice";
 import ReviewForm from "../ReviewForm";
 
+
 function Profile() {
     const {data: account} =  useGetAccountQuery();
     const [changedAccount, setChangedAccount] = useState({

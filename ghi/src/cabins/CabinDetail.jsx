@@ -3,7 +3,7 @@ import { MDBBtn, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 import { useGetCabinByIdQuery, useGetReviewsByCabinQuery } from "../redux/apiSlice";
 import { useParams, Link } from "react-router-dom";
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { assignCabin } from "../redux/cabinIDSlice";
 
 function CabinDetail() {

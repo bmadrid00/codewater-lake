@@ -61,3 +61,7 @@ wrote unti test and merged some final touches into main
 ## june 6, 2023
 
 updated wireframe, reformatting and adding in the stretch goals we accomplished
+
+## june 7, 2023
+
+combed through code and cleaned up code base

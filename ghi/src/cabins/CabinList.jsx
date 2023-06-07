@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   MDBCard,
   MDBCardImage,
@@ -11,7 +11,6 @@ import {
   MDBBtn,
 } from "mdb-react-ui-kit";
 import { useGetReviewsQuery } from "../redux/apiSlice";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { assignCabin } from "../redux/cabinIDSlice";
 

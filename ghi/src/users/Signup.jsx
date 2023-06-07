@@ -21,19 +21,11 @@ function Signup() {
       setErrorMessage("Passwords entered do not match.");
     } else {
       const response = await register({ first_name, last_name, email, password });
-      console.log(response)
       if (response.error) {
         alert("Incomplete form!", response.error.status);
       } else {
-        login({ email, password });
+
         navigate("/");
-        alert("Account created!");
-        console.log("Form submitted:", {
-          first_name,
-          last_name,
-          email,
-          password,
-        });
       }
 
     }

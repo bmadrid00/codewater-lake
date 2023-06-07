@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {
-  MDBBtn,
-  MDBModal,
-  MDBModalDialog,
-  MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBModalBody,
-  MDBModalFooter,
-  MDBContainer,
-  MDBCol, MDBRow,
+    MDBBtn,
+    MDBModal,
+    MDBModalDialog,
+    MDBModalContent,
+    MDBModalHeader,
+    MDBModalTitle,
+    MDBModalBody,
+    MDBModalFooter,
+    MDBContainer,
+    MDBCol, MDBRow,
 } from "mdb-react-ui-kit";
 import { Form } from "react-bootstrap";
 import Signup from "../users/Signup";
@@ -96,22 +96,22 @@ function ReservationForm(props) {
         );
     }
 
-  return (
-    <div>
-      <MDBModal show={signInError} setShow={setSignInError} tabIndex="-1">
-        <MDBModalDialog>
-          <MDBModalContent>
-            <MDBModalHeader>
-              <MDBModalTitle>Error Creating Reservation</MDBModalTitle>
-            </MDBModalHeader>
-            <MDBModalBody>
-              Please sign in or create a valid account to make a reservation.
-            </MDBModalBody>
-            {displayForm}
-          </MDBModalContent>
-        </MDBModalDialog>
-      </MDBModal>
-      <div className="card text-bg-light text-center mb-3">
+    return (
+        <div>
+        <MDBModal show={signInError} setShow={setSignInError} tabIndex="-1">
+            <MDBModalDialog>
+            <MDBModalContent>
+                <MDBModalHeader>
+                <MDBModalTitle>Error Creating Reservation</MDBModalTitle>
+                </MDBModalHeader>
+                <MDBModalBody>
+                Please sign in or create a valid account to make a reservation.
+                </MDBModalBody>
+                {displayForm}
+            </MDBModalContent>
+            </MDBModalDialog>
+        </MDBModal>
+        <div className="card text-bg-light text-center mb-3">
         <h5 className="card-header mb-1">Book a Reservation</h5>
         <div className="card-body">
             <Form onSubmit={handleSubmit}>

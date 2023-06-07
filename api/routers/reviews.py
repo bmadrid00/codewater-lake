@@ -1,5 +1,11 @@
 from fastapi import APIRouter, Depends
-from queries.reviews import ReviewIn, ReviewOut, ReviewQueries, ReviewList, AllReviewList
+from queries.reviews import (
+    ReviewIn,
+    ReviewOut,
+    ReviewQueries,
+    ReviewList,
+    AllReviewList
+)
 from authenticator import authenticator
 
 

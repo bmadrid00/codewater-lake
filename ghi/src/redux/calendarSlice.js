@@ -9,7 +9,7 @@ export const calendarSlice = createSlice({
         setDateRange: (state, action) => {
             state.dateRange = action.payload;
         },
-        // ... other reducers ...
+        
     },
 });
 
