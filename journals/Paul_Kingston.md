@@ -45,3 +45,23 @@ continued work on building out our fixed cabin objects and wrote a script for se
 ## may 31, 2023
 
 finished the seeding script with all of our fixed cabins data and updated the cabin detail page to include proper image links
+
+## june 1, 2023
+
+started work on the links to the reservation form page from other areas of the app. the link from specific cabin cards and cabin detail pages should update the state of the cabin id so that the cabin selection field on the reservation form is auto selected to be the cabin that you navigated to the form page through.
+
+## june 2, 2023
+
+finished work on the reservation form links and added some bootstrap styling to some of the form pages
+
+## june 5, 2023
+
+wrote unti test and merged some final touches into main
+
+## june 6, 2023
+
+updated wireframe, reformatting and adding in the stretch goals we accomplished
+
+## june 7, 2023
+
+combed through code and cleaned up code base

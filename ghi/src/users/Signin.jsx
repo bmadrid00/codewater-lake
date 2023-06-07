@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useLoginMutation } from "../redux/apiSlice";
 import { useNavigate } from "react-router-dom";
+import {
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBBtn,
+  MDBContainer
+} from 'mdb-react-ui-kit';
 
 function Signin() {
   const [login] = useLoginMutation();
@@ -8,41 +15,52 @@ function Signin() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login({ username, password });
-    navigate("/");
+
+    const response = await login({ username, password });
+    console.log(response);
+    if (response.error) {
+      if ( response.error.status === 422) {
+        alert(response.error.data.detail[0].msg);
+      } else {
+        alert(response.error.data.detail);
+      }
+
+    } else {
+      navigate("/");
+    }
+
   };
 
   return (
-    <div className="card text-bg-light mb-3">
-      <h5 className="card-header">Login</h5>
-      <div className="card-body">
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <div className="mb-3">
-            <label className="form-label">Username:</label>
-            <input
-              name="username"
-              type="text"
-              className="form-control"
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Password:</label>
-            <input
-              name="password"
-              type="password"
-              className="form-control"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <input className="btn btn-primary" type="submit" value="Login" />
-          </div>
-        </form>
-      </div>
-    </div>
+    <>
+      <MDBContainer className="signin mb-10">
+        <MDBRow>
+          <MDBCol></MDBCol>
+          <MDBCol>
+            <form onSubmit={(e) => handleSubmit(e)}>
+              <MDBInput
+                className="form-input mb-4"
+                type="email"
+                label="Email address"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <MDBInput
+                className="form-input mb-4"
+                type="password"
+                label="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <MDBBtn outline rounded type="submit" color="info" block>
+                Sign in
+              </MDBBtn>
+            </form>
+          </MDBCol>
+          <MDBCol></MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    </>
   );
 }
 

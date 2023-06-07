@@ -4,16 +4,17 @@ from queries.reservations import (
     ReservationOut,
     ReservationList,
     ReservationQueries,
-    AllReservationList
+    AllReservationList,
+    ReservationOutCabinList
     )
 from authenticator import authenticator
+
 
 
 router = APIRouter()
 
 
-@router.get("/api/reservations/mine",
-            response_model=ReservationList)
+@router.get("/api/reservations/mine", response_model=ReservationOutCabinList)
 def get_all_reservations_for_user(
     account_data: dict = Depends(authenticator.get_current_account_data),
     repo: ReservationQueries = Depends()
@@ -26,8 +27,7 @@ def get_all_reservations(repo: ReservationQueries = Depends()):
     return repo.get_all_reservations()
 
 
-@router.post("/api/reservations/",
-             response_model=ReservationOut)
+@router.post("/api/reservations/", response_model=ReservationOut)
 def create_reservation(
     reservation: ReservationIn,
     account_data: dict = Depends(authenticator.get_current_account_data),
@@ -44,11 +44,14 @@ def update_reservation(
     account_data: dict = Depends(authenticator.get_current_account_data),
     repo: ReservationQueries = Depends()
 ):
-    return repo.update_reservation(reservation_id, account_data['id'], reservation)
+    return repo.update_reservation(
+        reservation_id,
+        account_data['id'],
+        reservation
+        )
 
 
-@router.delete("/api/reservations/{reservation_id}",
-               response_model=bool)
+@router.delete("/api/reservations/{reservation_id}", response_model=bool)
 def delete_reservation(
     reservation_id: int,
     account_data: dict = Depends(authenticator.get_current_account_data),

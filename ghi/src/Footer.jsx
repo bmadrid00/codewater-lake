@@ -9,17 +9,14 @@ export default function Footer() {
     <>
       <MDBFooter
         bgColor="light"
-        className="text-center text-lg-start text-muted"
+        className="text-center text-lg-start text-muted footer-element"
       >
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <div>
-            <a href="" className="me-4 text-reset">
-              <MDBIcon fab icon="facebook-f" />
-            </a>
-
-            <a href="" className="me-4 text-reset">
-              <MDBIcon fab icon="instagram" />
-            </a>
+            <i className="fas fa-campground"></i>
+            <i className="fas fa-wifi"></i>
+            <i className="fab fa-facebook"></i>
+            <i className="fab fa-instagram"></i>
           </div>
         </section>
 
@@ -56,7 +53,7 @@ export default function Footer() {
         >
           <div>
             <img
-            alt="logo"
+              alt="logo"
               className="footer-logo"
               src="https://dl.dropboxusercontent.com/s/j268a6rjz1almh3/logo-black.png"
             />

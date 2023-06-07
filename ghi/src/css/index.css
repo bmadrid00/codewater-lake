@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 code {
@@ -14,6 +18,10 @@ code {
 
 #footer {
   background-color: rgb(119, 158, 121);
+}
+
+.footer-elemnt {
+  margin-top: auto;
 }
 
 .footer {
@@ -33,9 +41,7 @@ code {
   font-size: large;
 }
 
-.fb-button {
-  margin-right: 2em;
-}
+
 
 .socials {
   display: flex;
@@ -141,8 +147,8 @@ h2 {
 }
 
 #digital-nomad-img {
-  margin-top: 10em;
-  height: 70%;
+  margin-top: 8em;
+  width: 80vh;
 }
 
 #cabin1 {
@@ -151,6 +157,28 @@ h2 {
 }
 
 .input-wrapper {
+  margin-bottom: 5px;
+  padding: 5px;
   max-width: 200px;
   padding-bottom: 10px;
+}
+
+.signin, .signup {
+  margin-top: 5em;
+  min-height: 40vh;
+}
+
+.profile {
+  margin-top: 1em;
+  min-height: 50vh;
+}
+
+.cabins {
+  margin-top: 5em;
+}
+
+#cabin_button {
+  margin-top: -120px;
+  display: flex;
+
 }

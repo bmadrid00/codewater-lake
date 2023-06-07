@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+
+
 export const codeLakeApi = createApi({
     reducerPath: 'cabinApi',
     baseQuery: fetchBaseQuery({
@@ -7,17 +9,35 @@ export const codeLakeApi = createApi({
     }),
     endpoints: (builder) => ({
         getCabins: builder.query({
-            query: () => '/api/cabins'
+            query: () => '/api/cabins/'
         }),
         getCabinById: builder.query({
             query: (cabin_id) => `/api/cabins/${cabin_id}`
         }),
+// # ########################---Reservations---#######################
         getReservations: builder.query({
+            query: () => ({
+                url: `/api/reservations/`
+            }),
+            providesTags: ['ReservationsList']
+        }),
+        getUserReservations: builder.query({
             query: () => ({
                 url: `/api/reservations/mine`,
                 credentials: 'include'
-            })
+            }),
+            providesTags: ['UserReservations']
         }),
+        createReservation: builder.mutation({
+            query:(body) => ({
+                url: `/api/reservations/`,
+                method: 'POST',
+                body,
+                credentials: 'include'
+            }),
+            invalidatesTags: ['ReservationsList', 'UserReservations']
+        }),
+// #########################--Users--###################################
         getAccount: builder.query({
             query: () => ({
                 url: '/token',
@@ -25,6 +45,17 @@ export const codeLakeApi = createApi({
             }),
             transformResponse: (response) => response?.account || null,
             providesTags: ['Account']
+        }),
+        editAccount: builder.mutation({
+            query: (body) => {
+                return {
+                    url: `/api/users`,
+                    method: 'PUT',
+                    body,
+                    credentials: 'include'
+                }
+            },
+            invalidatesTags: ['Account']
         }),
         logout: builder.mutation({
             query: () => ({
@@ -48,18 +79,6 @@ export const codeLakeApi = createApi({
             },
             invalidatesTags: ['Account']
         }),
-        editAccount: builder.mutation({
-            query: (body) => {
-                return {
-                    url: `/api/users`,
-                    method: 'PUT',
-                    body,
-                    credentials: 'include'
-                }
-            },
-            invalidatesTags: ['Account']
-        }),
-
         signup: builder.mutation({
             query: (body) => {
                 return {
@@ -67,9 +86,35 @@ export const codeLakeApi = createApi({
                     method: 'POST',
                     body,
                     credentials: 'include'
-        }
+                }
             },
+            invalidatesTags: ['Account']
         }),
+        deleteAccount: builder.mutation({
+            query: () => ({
+                url: `/api/users`,
+                method: 'DELETE',
+                credentials: 'include'
+            }),
+            invalidatesTags: ['Account']
+        }),
+        // ################################# Reviews ####################################
+        createReview: builder.mutation({
+            query: (body) => ({
+                url: `/api/reviews`,
+                method: 'POST',
+                body,
+                credentials: 'include'
+            })
+        }),
+        getReviews: builder.query({
+            query: () => ({
+                url: `/api/reviews/`
+            }),
+        }),
+        getReviewsByCabin: builder.query({
+            query: (cabin_id) => `/api/cabins/${cabin_id}/reviews`
+        })
     }),
 });
 
@@ -77,9 +122,15 @@ export const {
     useGetCabinsQuery,
     useGetCabinByIdQuery,
     useGetReservationsQuery,
+    useGetUserReservationsQuery,
+    useCreateReservationMutation,
     useGetAccountQuery,
     useLogoutMutation,
     useLoginMutation,
     useEditAccountMutation,
     useSignupMutation,
+    useDeleteAccountMutation,
+    useCreateReviewMutation,
+    useGetReviewsQuery,
+    useGetReviewsByCabinQuery
 } = codeLakeApi
