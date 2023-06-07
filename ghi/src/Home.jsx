@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselItem, MDBContainer, MDBRow, MDBBtn, MDBCol } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
-import Weather from "./users/weather";
+import Weather from "./users/weather.jsx";
 
 
 export default function HomePage() {

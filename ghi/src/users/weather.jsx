@@ -40,7 +40,7 @@ const renderForecast = () => {
     ((forecast.main.temp - 273.15) * 9) / 5 + 32
   );
       return (
-        <div key={index} className="flex-column">
+        <div key={index}>
           <div>
             {Math.round(tempInFahrenheit)}°F
           </div>
@@ -79,14 +79,17 @@ useEffect(() => {
       <MDBContainer>
         <MDBRow
           className="justify-content-center align-items-center h-100"
-          style={{ color: "#282828" }}>
+          style={{ color: "#282828" }}
+        >
+          {/* #FF0000AA */}
           <MDBCol md="10" lg="5" xl="5">
-            <MDBCard className="mb-6" style={{ borderRadius: "25px" }}>
-            </MDBCard>
+            <MDBCard
+              className="mb-4"
+              style={{ borderRadius: "25px" }}
+            ></MDBCard>
             <MDBCard className="mb-4" style={{ borderRadius: "25px" }}>
               <MDBCardBody className="p-4">
-                <MDBCardTitle> Current 5 day forecast
-                </MDBCardTitle>
+                <MDBCardTitle> Current 5 day forecast</MDBCardTitle>
                 <div className="d-flex justify-content-around text-center pb-3 pt-2">
                   {renderForecast()}
                 </div>
@@ -95,7 +98,7 @@ useEffect(() => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-  </>
+    </>
   );
 };
 
