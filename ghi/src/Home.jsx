@@ -77,6 +77,11 @@ export default function HomePage() {
         </MDBRow>
       </MDBContainer>
       <MDBContainer className="mb-5">
+        <MDBContainer>
+          <MDBRow>
+
+          </MDBRow>
+        </MDBContainer>
         <MDBRow className="rounded-4 text-row shadow-5 mb-8">
           <MDBCol className="col-7">
             <div className="homepage-text-box rounded-3 shadow-3">
