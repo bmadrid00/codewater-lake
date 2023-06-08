@@ -77,8 +77,11 @@ export default function HomePage() {
         </MDBRow>
       </MDBContainer>
       <MDBContainer className="mb-5">
+        <MDBContainer>
+          <MDBRow></MDBRow>
+        </MDBContainer>
         <MDBRow className="rounded-4 text-row shadow-5 mb-8">
-          <MDBCol className="col-7">
+          <MDBCol className="col-7 d-flex flex-columnjustify-content-center">
             <div className="homepage-text-box rounded-3 shadow-3">
               <p className="p1">
                 Escape to the breathtaking beauty of Flathead Lake, Montana,
@@ -100,6 +103,11 @@ export default function HomePage() {
                 and the comforts of luxury blend seamlessly into an
                 unforgettable experience.
               </p>
+              <div className="directions">
+                <Link to="https://goo.gl/maps/hk2Rt2SsFo8UAxvR6">
+                  <MDBBtn size="lg">Get Directions</MDBBtn>
+                </Link>
+              </div>
             </div>
           </MDBCol>
           <MDBCol className="img-col col-5 text-center">
@@ -110,6 +118,13 @@ export default function HomePage() {
                 src="https://dl.dropboxusercontent.com/s/tka7gcs71j9ca2r/google-maps.jpg"
               />
             </Link>
+            <div>
+              <img
+                className="rounded-3 sattellite shadow-5-strong"
+                alt="map"
+                src="https://dl.dropboxusercontent.com/s/qmxa2t8h11d4ydr/sattelite-view.jpg"
+              />
+            </div>
           </MDBCol>
         </MDBRow>
         <MDBRow className="rounded-4 text-row shadow-5 mb-8">
