@@ -200,7 +200,20 @@ export default function HomePage() {
               </p>
             </div>
           </MDBCol>
+            <MDBRow>
+              <MDBCol className="col-8"></MDBCol>
+                <MDBCol md="3" >
+                  <div id="cabin_button" className="book-a-stay">
+                <Link to="/cabins">
+                <MDBBtn rounded size="lg" className="mx-2" color="danger" block>
+                  View Cabins
+                </MDBBtn>
+                </Link>
+                  </div>
+                </MDBCol>
+            </MDBRow>
         </MDBRow>
+
       </MDBContainer>
     </>
   );

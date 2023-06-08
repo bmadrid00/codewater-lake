@@ -22,6 +22,15 @@ class ReservationOut(ReservationIn):
     id: int
 
 
+class ReservationOutCabin(ReservationIn):
+    id: int
+    cabin_name: str
+
+
+class ReservationOutCabinList(BaseModel):
+    reservations: List[ReservationOutCabin]
+
+
 class ReservationLimited(BaseModel):
     cabin_id: int
     start_date: date
@@ -36,19 +45,23 @@ class ReservationList(BaseModel):
     reservations: List[ReservationOut]
 
 
+
 # ########################---QUERIES---########################
 
 
 class ReservationQueries():
-    def get_all_reservations_for_user(self, user_id) -> ReservationList:
+    def get_all_reservations_for_user(self, user_id) -> ReservationOutCabinList:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
                     """
-                    SELECT id, cabin_id, start_date, end_date, user_id
-                    , number_of_people
+                    SELECT reservations.id, reservations.cabin_id,
+                        reservations.start_date, reservations.end_date,
+                        reservations.user_id, reservations.number_of_people,
+                        cabins.cabin_name as cabin_name
                     FROM reservations
-                    WHERE user_id=%s
+                    INNER JOIN cabins ON reservations.cabin_id = cabins.id
+                    WHERE reservations.user_id=%s
                     """,
                     [user_id]
                 )
