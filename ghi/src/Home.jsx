@@ -78,7 +78,7 @@ export default function HomePage() {
         </MDBRow>
       </MDBContainer>
       <MDBContainer className="mb-5">
-        <MDBRow>
+        <MDBRow className="mb-7">
           <Weather />
         </MDBRow>
         <MDBRow className="rounded-4 text-row shadow-5 mb-8">
