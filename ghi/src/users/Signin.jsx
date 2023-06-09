@@ -18,7 +18,6 @@ function Signin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await login({ username, password });
-    console.log(response);
     if (response.error) {
       if ( response.error.status === 422) {
         alert(response.error.data.detail[0].msg);
