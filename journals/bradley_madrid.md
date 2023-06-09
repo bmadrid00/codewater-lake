@@ -45,3 +45,12 @@ Practice exam and then worked on unit test for cabins
 
 ## 06/06/2023
 Internet was out most of the day but once I got online I worked on creating a confirmation popup for the delete account button
+
+## 06/07/2023
+Worked on miscellaneous errors that were showing up in the console
+
+## 06/08/2023
+Changed some styling and worked on debugging external weather api component
+
+## 06/09/2023
+Submit Project

@@ -11,8 +11,6 @@ import ReviewForm from "./ReviewForm";
 import "./css/app.css";
 import ReservationPage from "./reservations/ReservationPage";
 
-
-
 function App() {
   return (
     <BrowserRouter>

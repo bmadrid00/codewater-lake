@@ -23,3 +23,5 @@ def test_list_users():
     # assert
     assert res.status_code == 200
     assert data == {"users": []}
+
+    app.dependency_overrides = {}

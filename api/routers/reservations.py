@@ -2,14 +2,11 @@ from fastapi import APIRouter, Depends
 from queries.reservations import (
     ReservationIn,
     ReservationOut,
-    ReservationList,
     ReservationQueries,
     AllReservationList,
     ReservationOutCabinList
     )
 from authenticator import authenticator
-
-
 
 router = APIRouter()
 

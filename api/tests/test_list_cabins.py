@@ -6,6 +6,7 @@ client = TestClient(app)
 
 # written by Bradley M both cabin list and get cabin
 
+
 class FakeCabinQueries():
 
     def get_all_cabins(self):

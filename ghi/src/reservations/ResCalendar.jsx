@@ -12,23 +12,15 @@ const colorMap = {
     4: "purple",
     5: "pink",
     6: "orange",
-
 }
-
 
 export default function ResCalendar(props) {
     const {data: reservations} = useGetReservationsQuery();
     const [events, setEvents] = useState([])
-    const { data:  cabinsData, isLoading: isLoadingCabins } = useGetCabinsQuery();
+    const { data:  cabinsData } = useGetCabinsQuery();
     const [usefulCabinsData, setUsefulCabinsData] = useState([])
 
-    const cabinNames = (reservation) => {
-            for (let cabin of usefulCabinsData) {
-                if (cabin?.id  == reservation.cabin_id) {
-                    return cabin.cabin_name
-                }
-            }
-        }
+
 
     useEffect(() => {
         if (cabinsData?.cabins) {
@@ -36,25 +28,33 @@ export default function ResCalendar(props) {
         }
     }, [cabinsData])
 
-
     useEffect(()=> {
         if (reservations && usefulCabinsData.length > 0) {
+            function cabinNames(reservation) {
+                for (let cabin of usefulCabinsData) {
+                    if (cabin?.id  === reservation.cabin_id) {
+                        return cabin.cabin_name
+                    }
+                }
+            }
             const eventsForCal = reservations.reservations.map(reservation => {
                 const endDateObj = new Date(reservation.end_date);
                 endDateObj.setDate(endDateObj.getDate() + 1);
                 const adjustedEndDate = endDateObj.toISOString().split("T")[0]
-                return {start: reservation.start_date,
-                end: adjustedEndDate,
-                title: cabinNames(reservation) + ` cabin reserved`,
-                color: colorMap[reservation.cabin_id] || "gray",
-            }});
+
+                return{
+                    start: reservation.start_date,
+                    end: adjustedEndDate,
+                    title: cabinNames(reservation) + ` cabin reserved`,
+                    color: colorMap[reservation.cabin_id] || "gray",
+                }});
             setEvents(() => eventsForCal)
         }
     }, [reservations, usefulCabinsData]);
 
     const calendarRef = useRef(null);
 
-    const [currentView, setCurrentView] = useState('dayGridMonth');
+    const [currentView] = useState('dayGridMonth');
 
     const handleToggleView = () => {
         let calendarApi = calendarRef.current.getApi();
@@ -64,7 +64,6 @@ export default function ResCalendar(props) {
             calendarApi.changeView('dayGridMonth');
         }
     }
-
 
     return (
         <div className="calendar-container">

@@ -4,12 +4,7 @@ import {
   MDBCarouselItem,
 } from "mdb-react-ui-kit";
 
-
-
-
-
 export default function CabinCarousel(props) {
-
   const images = props.images
 
   return (

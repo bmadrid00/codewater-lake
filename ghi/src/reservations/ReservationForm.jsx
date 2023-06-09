@@ -23,7 +23,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { assignCabin } from "../redux/cabinIDSlice";
 
 function ReservationForm(props) {
-
     const cabinID = useSelector((state) => state.cabinID.id);
     const dispatch = useDispatch();
     const [start_date, setStartDate] = useState(props.selectedDates?.start_date);
@@ -66,7 +65,6 @@ function ReservationForm(props) {
             };
             await bookReservation(reservation);
         }
-
     }
 
     let displayForm;
@@ -76,10 +74,10 @@ function ReservationForm(props) {
         <div>
             <Signin />
             <MDBModalFooter>
-            <div>Don't have an account yet?</div>
-            <MDBBtn color="success" onClick={() => setShowLogin(false)}>
-                Create Account
-            </MDBBtn>
+                <div>Don't have an account yet?</div>
+                <MDBBtn color="success" onClick={() => setShowLogin(false)}>
+                    Create Account
+                </MDBBtn>
             </MDBModalFooter>
         </div>
         );
@@ -88,10 +86,10 @@ function ReservationForm(props) {
         <div>
             <Signup />
             <MDBModalFooter>
-            <div>Already have an account?</div>
-            <MDBBtn color="success" onClick={() => setShowLogin(true)}>
-                Login
-            </MDBBtn>
+                <div>Already have an account?</div>
+                <MDBBtn color="success" onClick={() => setShowLogin(true)}>
+                    Login
+                </MDBBtn>
             </MDBModalFooter>
         </div>
         );
@@ -101,15 +99,15 @@ function ReservationForm(props) {
         <div>
         <MDBModal show={signInError} setShow={setSignInError} tabIndex="-1">
             <MDBModalDialog>
-            <MDBModalContent>
-                <MDBModalHeader>
-                <MDBModalTitle>Error Creating Reservation</MDBModalTitle>
-                </MDBModalHeader>
-                <MDBModalBody>
-                Please sign in or create a valid account to make a reservation.
-                </MDBModalBody>
-                {displayForm}
-            </MDBModalContent>
+                <MDBModalContent>
+                    <MDBModalHeader>
+                        <MDBModalTitle>Error Creating Reservation</MDBModalTitle>
+                    </MDBModalHeader>
+                    <MDBModalBody>
+                        Please sign in or create a valid account to make a reservation.
+                    </MDBModalBody>
+                    {displayForm}
+                </MDBModalContent>
             </MDBModalDialog>
         </MDBModal>
         <div className="card text-bg-light text-center mb-3">
@@ -140,40 +138,40 @@ function ReservationForm(props) {
                                 </div>
                             </MDBCol>
                             <MDBCol size='md'>
-                            <label htmlFor="occupancy">Number of People</label>
-                            <input className="form-input"
-                                key="occupancy"
-                                value={occupancy}
-                                id="occupancy"
-                                name="occupancy"
-                                type="number"
-                                required
-                                onChange={(e) => setOccupancy(e.target.value)}
-                            />
+                                <label htmlFor="occupancy">Number of People</label>
+                                <input className="form-input"
+                                    key="occupancy"
+                                    value={occupancy}
+                                    id="occupancy"
+                                    name="occupancy"
+                                    type="number"
+                                    required
+                                    onChange={(e) => setOccupancy(e.target.value)}
+                                />
                             </MDBCol>
                             <MDBCol size='md'>
-                            <label htmlFor="start_date">Start Date:</label>
-                            <input className="form-input"
-                                key="start_date"
-                                value={start_date}
-                                id="start_date"
-                                name="start_date"
-                                type="date"
-                                required
-                                onChange={(e) => setStartDate(e.target.value)}
-                            />
+                                <label htmlFor="start_date">Start Date:</label>
+                                <input className="form-input"
+                                    key="start_date"
+                                    value={start_date}
+                                    id="start_date"
+                                    name="start_date"
+                                    type="date"
+                                    required
+                                    onChange={(e) => setStartDate(e.target.value)}
+                                />
                             </MDBCol>
                             <MDBCol size='md'>
-                            <label htmlFor="end_date">End Date:</label>
-                            <input className="form-input"
-                                key="end_date"
-                                value={end_date}
-                                id="end_date"
-                                name="end_date"
-                                type="date"
-                                required
-                                onChange={(e) => setEndDate(e.target.value)}
-                            />
+                                <label htmlFor="end_date">End Date:</label>
+                                <input className="form-input"
+                                    key="end_date"
+                                    value={end_date}
+                                    id="end_date"
+                                    name="end_date"
+                                    type="date"
+                                    required
+                                    onChange={(e) => setEndDate(e.target.value)}
+                                />
                             </MDBCol>
                             <MDBCol size='md'><button className="btn btn-primary">Book It!</button></MDBCol>
                         </MDBRow>
