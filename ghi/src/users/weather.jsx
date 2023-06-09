@@ -32,7 +32,6 @@ const weatherByDay = () => {
 
 const renderForecast = () => {
   const dailyForecast = weatherByDay();
-  console.log(dailyForecast);
   return dailyForecast.map((forecast, index) => {
   const { icon } = forecast.weather[0];
   const iconUrl = `${weatherIconUrl}${icon}@2x.png`;
@@ -77,19 +76,12 @@ useEffect(() => {
     <>
       <MDBContainer>
         <MDBRow
-          className="justify-content-center align-items-center h-100"
-          style={{ color: "#282828" }}
-        >
-          {/* #FF0000AA */}
-          <MDBCol md="10" lg="5" xl="5">
-            <MDBCard
-              className="mb-4"
-              style={{ borderRadius: "25px" }}
-            ></MDBCard>
-            <MDBCard className="mb-4" style={{ borderRadius: "25px" }}>
-              <MDBCardBody className="p-4">
-                <MDBCardTitle> Current 5 day forecast</MDBCardTitle>
-                <div className="d-flex justify-content-around text-center pb-3 pt-2">
+          className="justify-content-center align-items-center h-100">
+          <MDBCol md="8" lg="10" xl="">
+            <MDBCard className="mb-2" style={{ borderRadius: "25px" }}>
+              <MDBCardBody className="p-3">
+                <MDBCardTitle className="text-center"> 5 DAY FORECAST</MDBCardTitle>
+                <div className="d-flex justify-content-around text-center">
                   {renderForecast()}
                 </div>
               </MDBCardBody>

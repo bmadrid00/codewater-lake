@@ -42,7 +42,7 @@ export default function HomePage() {
         b
       </MDBCarousel>
 
-      <MDBContainer className="mb-5">
+      <MDBContainer>
         <MDBRow>
           <p className="welcome-text">Welcome to</p>
         </MDBRow>
