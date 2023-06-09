@@ -1,6 +1,7 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselItem, MDBContainer, MDBRow, MDBBtn, MDBCol } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+import Weather from "./users/weather";
 
 export default function HomePage() {
   return (
@@ -41,7 +42,7 @@ export default function HomePage() {
         b
       </MDBCarousel>
 
-      <MDBContainer className="mb-5">
+      <MDBContainer>
         <MDBRow>
           <p className="welcome-text">Welcome to</p>
         </MDBRow>
@@ -77,9 +78,9 @@ export default function HomePage() {
         </MDBRow>
       </MDBContainer>
       <MDBContainer className="mb-5">
-        <MDBContainer>
-          <MDBRow></MDBRow>
-        </MDBContainer>
+        <MDBRow className="mb-7">
+          <Weather />
+        </MDBRow>
         <MDBRow className="rounded-4 text-row shadow-5 mb-8">
           <MDBCol className="col-7 d-flex flex-columnjustify-content-center">
             <div className="homepage-text-box rounded-3 shadow-3">

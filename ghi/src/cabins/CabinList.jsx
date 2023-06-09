@@ -51,7 +51,7 @@ function Cabins() {
       <div className="cabins">
         <h1>Cabins</h1>
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
-          {data.cabins.map((cabin) => {
+          {data?.cabins.map((cabin) => {
             return (
               <MDBCol key={cabin.id}>
                 <MDBCard className="h-100">
