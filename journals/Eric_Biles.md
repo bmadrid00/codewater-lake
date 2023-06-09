@@ -35,24 +35,11 @@ Stardate 05.26.2023
 Coder's logEntry: 000009
     ...Today the file naming issue was resolved and we all got synced on a proper main.  Calendar development continues.. Goal is to store the click and select values into the form and ensure they are dynamic until Booked.
 
+--Memorial Day break--
+
 Stardate 05.30.2023
-Coder's logEntry: 000009
-    ...Today
-
-Stardate 05.31.2023
-Coder's logEntry: 000009
-    ...Today I struggled with getting reservations implemented correctly. I continued to research and refactor the code attempts.
-
-Stardate 06.01.2023
-Coder's logEntry: 000009
-    ...Today I worked with Bradley and identified and corrected a number of faulty logic and syntax errors I was chasing in the reservations calendar.
-
-Stardate 06.02.2023
-Coder's logEntry: 000009
-    ...Today we made sure the main was current with all implemented issues. We
-    
 Coder's logEntry: 000010
-    ...Today
+    ...Today I continued to work on the reservations calendar and form.
 
 Stardate 05.31.2023
 Coder's logEntry: 000011
@@ -77,3 +64,11 @@ Coder's logEntry: 000015
 Stardate 06.07.2023
 Coder's logEntry: 000016
     ...Today we made sure main was current with all dev branch work. The wireframe was checked to ensure it matched out site.  All eyes are on code review for cleanliness.
+
+Stardate 06.08.2023
+Coder's logEntry: 000017
+    ...Today we pretty much wrapped up the project, save for stretch goals.
+
+Stardate 06.09.2023
+Coder's logEntry: 000018
+    ...Today the project is due.
