@@ -15,29 +15,29 @@ const Weather = () => {
   const DEFAULT_CITY = "Kalispell";
   const weatherIconUrl = "http://openweathermap.org/img/wn/";
 
-const weatherByDay = () => {
-  if (!apiData) {
-    return [];
-  }
-  const dailyData = {};
-  for (const forecast of apiData.list) {
-    const date = forecast.dt_txt.split(" ")[0];
-    if (!dailyData[date]) {
-      dailyData[date] = forecast;
+  const weatherByDay = () => {
+    if (!apiData) {
+      return [];
     }
-  }
-  const dailyForecasts = Object.values(dailyData);
-  return dailyForecasts.slice(0, 5);
-};
+    const dailyData = {};
+    for (const forecast of apiData.list) {
+      const date = forecast.dt_txt.split(" ")[0];
+      if (!dailyData[date]) {
+        dailyData[date] = forecast;
+      }
+    }
+    const dailyForecasts = Object.values(dailyData);
+    return dailyForecasts.slice(0, 5);
+  };
 
-const renderForecast = () => {
-  const dailyForecast = weatherByDay();
-  return dailyForecast.map((forecast, index) => {
-  const { icon } = forecast.weather[0];
-  const iconUrl = `${weatherIconUrl}${icon}@2x.png`;
-  const tempInFahrenheit = Math.round(
-    ((forecast.main.temp - 273.15) * 9) / 5 + 32
-  );
+  const renderForecast = () => {
+    const dailyForecast = weatherByDay();
+    return dailyForecast.map((forecast, index) => {
+      const { icon } = forecast.weather[0];
+      const iconUrl = `${weatherIconUrl}${icon}@2x.png`;
+      const tempInFahrenheit = Math.round(
+        ((forecast.main.temp - 273.15) * 9) / 5 + 32
+      );
       return (
         <div key={index}>
           <div>
@@ -49,34 +49,32 @@ const renderForecast = () => {
             style={{ width: "4em", height: "4em" }}
             />
           <div>
-              {new Date(forecast.dt_txt).toLocaleDateString("en-US", {
-                weekday: "short",
-              })}
+            {new Date(forecast.dt_txt).toLocaleDateString("en-US", {
+              weekday: "short",
+            })}
           </div>
         </div>
       );
     });
   };
 
-useEffect(() => {
-  const fetchData = async () => {
-    const response = await fetch(
-      `${API_ENDPOINT}?q=${DEFAULT_CITY}&appid=${API_KEY}`
-    );
-    const data = await response.json();
-    if (response.ok) {
-      setApiData(data);
-    } 
-  };
-
-  fetchData();
-}, [API_KEY, API_ENDPOINT]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `${API_ENDPOINT}?q=${DEFAULT_CITY}&appid=${API_KEY}`
+      );
+      const data = await response.json();
+      if (response.ok) {
+        setApiData(data);
+      }
+    };
+    fetchData();
+  }, [API_KEY, API_ENDPOINT]);
 
   return (
     <>
       <MDBContainer>
-        <MDBRow
-          className="justify-content-center align-items-center h-100">
+        <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol md="8" lg="10" xl="">
             <MDBCard className="mb-2" style={{ borderRadius: "25px" }}>
               <MDBCardBody className="p-3">

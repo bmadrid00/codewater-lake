@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoginMutation, useSignupMutation } from "../redux/apiSlice";
+import { useSignupMutation } from "../redux/apiSlice";
 import { useNavigate } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdb-react-ui-kit";
 
@@ -12,8 +12,6 @@ function Signup() {
   const [password, setPassword] = useState(null);
   const [confirmpassword, setConfirmpassword] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
-  const [ login ] = useLoginMutation()
-
 
   const handleSubmit = (e) => {
     e.preventDefault();

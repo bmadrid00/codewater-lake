@@ -30,13 +30,14 @@ function Profile() {
         last_name: '',
         email: ''
     })
-    const reservations = useGetUserReservationsQuery()?.data?.reservations
-    const [accountChange] = useEditAccountMutation()
-    const [logout] = useLogoutMutation()
-    const navigate = useNavigate()
-    const [deleteAccount] = useDeleteAccountMutation()
-    const [showReviewForm, setShowReviewForm] = useState(false)
-    const [showEditResForm, setShowEditResForm] = useState(false)
+    const reservationsQuery = useGetUserReservationsQuery();
+    const reservations = reservationsQuery.data?.reservations;
+    const [accountChange] = useEditAccountMutation();
+    const [logout] = useLogoutMutation();
+    const navigate = useNavigate();
+    const [deleteAccount] = useDeleteAccountMutation();
+    const [showReviewForm, setShowReviewForm] = useState(false);
+    const [showEditResForm, setShowEditResForm] = useState(false);
     const [selectedReservationId, setSelectedReservationId] = useState(null);
     const [selectedCabinId, setSelectedCabinId] = useState(null);
     const [showDeleteAccountConfirm, setShowDeleteAccountConfirm] = useState(false);
@@ -48,36 +49,35 @@ function Profile() {
     }, [account]);
 
     if (!account || !reservations) {
-        return (<h1>Loading...</h1>)
-        }
+        return (<h1>Loading...</h1>);
+    }
 
     const changeField = (e) => {
         const { value } = e.target;
         const { name } = e.target;
-        setChangedAccount({
-            ...changedAccount,
+        setChangedAccount((prevAccount) => ({
+            ...prevAccount,
             [name]: value
-        });
-    }
+        }));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        delete changedAccount['id']
-        accountChange(changedAccount);
+        const { id, ...updatedAccount } = changedAccount; // Remove 'id' from the account object
+        accountChange(updatedAccount);
         logout();
         navigate("/signin");
-    }
+    };
 
     const handleDelete = (e) => {
         deleteAccount();
         logout();
-        navigate("/signup")
-    }
+        navigate("/signup");
+    };
+
+    const reservationsForSort = [...reservations];
 
 
-
-    const reservationsForSort = [...reservations]
-    
     return (
     <MDBContainer>
         <div className="profile">
@@ -121,7 +121,7 @@ function Profile() {
         <table className="table table-striped">
             <thead>
                 <tr>
-                    <th>Cabin ID</th>
+                    <th>Cabin</th>
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>Number of Guests</th>
@@ -151,7 +151,7 @@ function Profile() {
                                                 }}>Edit Reservation</MDBBtn>
                         }
                     return (<tr key={reservation.id}>
-                        <td>{reservation.cabin_id}</td>
+                        <td>{reservation.cabin_name}</td>
                         <td>{reservation.start_date}</td>
                         <td>{reservation.end_date}</td>
                         <td>{reservation.number_of_people}</td>

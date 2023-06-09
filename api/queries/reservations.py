@@ -44,21 +44,25 @@ class AllReservationList(BaseModel):
 class ReservationList(BaseModel):
     reservations: List[ReservationOut]
 
-
-
 # ########################---QUERIES---########################
 
 
 class ReservationQueries():
-    def get_all_reservations_for_user(self, user_id) -> ReservationOutCabinList:
+    def get_all_reservations_for_user(
+            self,
+            user_id
+            ) -> ReservationOutCabinList:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
                     """
-                    SELECT reservations.id, reservations.cabin_id,
-                        reservations.start_date, reservations.end_date,
-                        reservations.user_id, reservations.number_of_people,
-                        cabins.cabin_name as cabin_name
+                    SELECT reservations.id
+                        , reservations.cabin_id
+                        , reservations.start_date
+                        , reservations.end_date
+                        , reservations.user_id
+                        , reservations.number_of_people
+                        , cabins.cabin_name as cabin_name
                     FROM reservations
                     INNER JOIN cabins ON reservations.cabin_id = cabins.id
                     WHERE reservations.user_id=%s
@@ -78,7 +82,9 @@ class ReservationQueries():
             with conn.cursor() as db:
                 db.execute(
                     """
-                    SELECT cabin_id, start_date, end_date
+                    SELECT cabin_id
+                    , start_date
+                    , end_date
                     FROM reservations
                     """
                 )
@@ -100,7 +106,10 @@ class ReservationQueries():
                 db.execute(
                     """
                     INSERT INTO reservations
-                        (cabin_id, start_date, end_date, user_id
+                        (cabin_id
+                        , start_date
+                        , end_date
+                        , user_id
                         , number_of_people)
                     VALUES
                         (%s, %s, %s, %s, %s)

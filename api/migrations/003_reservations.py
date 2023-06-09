@@ -9,7 +9,6 @@ steps = [
             end_date DATE NOT NULL,
             user_id SMALLINT REFERENCES users(id) ON DELETE CASCADE NOT NULL,
             number_of_people SMALLINT NOT NULL
-
         );
         """,
         # "Down" SQL statement

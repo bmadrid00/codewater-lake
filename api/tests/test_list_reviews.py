@@ -16,15 +16,15 @@ class FakeReviewQueries():
 
 def test_list_reviews():
     # Arrange
+    app.dependency_overrides[ReviewQueries] = FakeReviewQueries
 
     # Act
     response = client.get("/api/reviews/")
     data = response.json()
+
     # Assert
-    assert 1 == 1
     assert response.status_code == 200
     assert data == {"reviews": []}
 
     # Cleanup
-
-    app.dependency_overrides[ReviewQueries] = FakeReviewQueries
+    app.dependency_overrides = {}

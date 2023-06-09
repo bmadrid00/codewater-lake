@@ -4,9 +4,7 @@ import os
 from authenticator import authenticator
 from routers import cabins, users, reservations, reviews
 
-
 app = FastAPI()
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -17,7 +15,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 app.include_router(cabins.router, tags=['Cabins'])
 app.include_router(reservations.router, tags=['Reservations'])

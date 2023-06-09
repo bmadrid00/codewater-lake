@@ -83,7 +83,11 @@ class ReviewQueries:
                     results.append(review)
                 return {"reviews": results}
 
-    def create_review(self, review: ReviewIn, user_id) -> ReviewOut:
+    def create_review(
+            self,
+            review: ReviewIn,
+            user_id
+            ) -> ReviewOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
@@ -112,7 +116,12 @@ class ReviewQueries:
                 old_data = review.dict()
                 return ReviewOut(id=id, created_at=created_at, **old_data)
 
-    def update_review(self, review_id: int, user_id: int, review: ReviewIn) -> ReviewOut:
+    def update_review(
+            self,
+            review_id: int,
+            user_id: int,
+            review: ReviewIn
+            ) -> ReviewOut:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 db.execute(
@@ -132,9 +141,17 @@ class ReviewQueries:
                 )
                 created_at = db.fetchone()[0]
                 old_data = review.dict()
-                return ReviewOut(id=review_id, created_at=created_at, **old_data)
+                return ReviewOut(
+                    id=review_id,
+                    created_at=created_at,
+                    **old_data
+                    )
 
-    def delete_review(self, review_id: int, user_id: int) -> bool:
+    def delete_review(
+            self,
+            review_id: int,
+            user_id: int
+            ) -> bool:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:

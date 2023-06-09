@@ -17,7 +17,6 @@ function Signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const response = await login({ username, password });
     console.log(response);
     if (response.error) {
@@ -26,18 +25,16 @@ function Signin() {
       } else {
         alert(response.error.data.detail);
       }
-
     } else {
       navigate("/");
     }
-
   };
 
   return (
     <>
       <MDBContainer className="signin mb-10">
         <MDBRow>
-          <MDBCol></MDBCol>
+          <MDBCol />
           <MDBCol>
             <form onSubmit={(e) => handleSubmit(e)}>
               <MDBInput
@@ -57,7 +54,7 @@ function Signin() {
               </MDBBtn>
             </form>
           </MDBCol>
-          <MDBCol></MDBCol>
+          <MDBCol />
         </MDBRow>
       </MDBContainer>
     </>
