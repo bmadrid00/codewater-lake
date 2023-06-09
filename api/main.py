@@ -6,11 +6,7 @@ from routers import cabins, users, reservations, reviews
 
 
 app = FastAPI()
-app.include_router(cabins.router, tags=['Cabins'])
-app.include_router(reservations.router, tags=['Reservations'])
-app.include_router(users.router, tags=['Users'])
-app.include_router(authenticator.router, tags=['Users'])
-app.include_router(reviews.router, tags=['Reviews'])
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -21,3 +17,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+app.include_router(cabins.router, tags=['Cabins'])
+app.include_router(reservations.router, tags=['Reservations'])
+app.include_router(users.router, tags=['Users'])
+app.include_router(authenticator.router, tags=['Users'])
+app.include_router(reviews.router, tags=['Reviews'])
