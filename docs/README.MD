@@ -46,4 +46,4 @@ Contributing
 If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
 
 Licensing
-This project is licensed under GPU license.
+This project is licensed under MIT license.
