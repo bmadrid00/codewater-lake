@@ -12,8 +12,8 @@ import {
     MDBCol, MDBRow,
 } from "mdb-react-ui-kit";
 import { Form } from "react-bootstrap";
-import Signup from "../users/Signup";
-import Signin from "../users/Signin";
+import SignupModal from "../users/SignupModal";
+import SigninModal from "../users/SigninModal";
 import {
     useCreateReservationMutation,
     useGetCabinsQuery,
@@ -72,7 +72,7 @@ function ReservationForm(props) {
     if (showLogin) {
         displayForm = (
         <div>
-            <Signin />
+            <SigninModal />
             <MDBModalFooter>
                 <div>Don't have an account yet?</div>
                 <MDBBtn color="success" onClick={() => setShowLogin(false)}>
@@ -84,7 +84,7 @@ function ReservationForm(props) {
     } else {
         displayForm = (
         <div>
-            <Signup />
+            <SignupModal />
             <MDBModalFooter>
                 <div>Already have an account?</div>
                 <MDBBtn color="success" onClick={() => setShowLogin(true)}>

@@ -3,13 +3,10 @@ import { useLoginMutation } from "../redux/apiSlice";
 import { useNavigate } from "react-router-dom";
 import {
   MDBInput,
-  MDBCol,
-  MDBRow,
-  MDBBtn,
-  MDBContainer
+  MDBBtn
 } from 'mdb-react-ui-kit';
 
-function Signin() {
+function SigninModal() {
   const [login] = useLoginMutation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,39 +28,31 @@ function Signin() {
 
   return (
     <>
-      <MDBContainer className="signin mb-10">
-        <MDBRow>
-          <MDBCol />
-          <MDBCol>
-            <div className="card text-bg-light mb-3">
-              <h5 className="card-header">Sign In</h5>
+        <div className="card text-bg-light mb-3">
+            <h5 className="card-header">Sign In</h5>
             <div className="card-body">
-              <form onSubmit={(e) => handleSubmit(e)}>
+                <form onSubmit={(e) => handleSubmit(e)}>
                 <MDBInput
-                  className="form-input mb-4"
-                  type="email"
-                  label="Email address"
-                  onChange={(e) => setUsername(e.target.value)}
+                    className="form-input mb-4"
+                    type="email"
+                    label="Email address"
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <MDBInput
-                  className="form-input mb-4"
-                  type="password"
-                  label="Password"
-                  onChange={(e) => setPassword(e.target.value)}
+                    className="form-input mb-4"
+                    type="password"
+                    label="Password"
+                    onChange={(e) => setPassword(e.target.value)}
                 />
                 <MDBBtn outline rounded type="submit" color="info" block>
-                  Sign in
+                    Sign in
                 </MDBBtn>
-              </form>
-              </div>
+                </form>
             </div>
-          </MDBCol>
-          <MDBCol />
-        </MDBRow>
-      </MDBContainer>
+        </div>
     </>
   );
 
 }
 
-export default Signin;
+export default SigninModal;
