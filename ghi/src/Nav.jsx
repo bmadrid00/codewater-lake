@@ -18,6 +18,13 @@ function Nav() {
   const [logout] = useLogoutMutation();
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(false);
+
+  const getLinkPath = (path) => {
+    const basePath = process.env.PUBLIC_URL || '';
+    const trimmedPath = path.trim();
+    return `${basePath}${trimmedPath}`;
+  };
+
   return (
     <MDBNavbar expand="lg" light sticky bgColor="light">
       <MDBContainer fluid>
@@ -41,20 +48,20 @@ function Nav() {
           <MDBNavbarNav>
             {!account && (
               <MDBNavbarItem>
-                <MDBNavbarLink href="/signup">Sign up</MDBNavbarLink>
+                <MDBNavbarLink href={getLinkPath("/signup")}>Sign up</MDBNavbarLink>
               </MDBNavbarItem>
             )}
 
             {account && (
               <MDBNavbarItem>
-                <MDBNavbarLink href="/profile">Profile</MDBNavbarLink>
+                <MDBNavbarLink href={getLinkPath("/profile")}>Profile</MDBNavbarLink>
               </MDBNavbarItem>
             )}
             <MDBNavbarItem>
-              <MDBNavbarLink href="/reservations">Reservations</MDBNavbarLink>
+              <MDBNavbarLink href={getLinkPath("/reservations")}>Reservations</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="/cabins">Our Cabins</MDBNavbarLink>
+              <MDBNavbarLink href={getLinkPath("/cabins")}>Our Cabins</MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
