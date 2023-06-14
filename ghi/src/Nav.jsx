@@ -28,7 +28,7 @@ function Nav() {
   return (
     <MDBNavbar expand="lg" light sticky bgColor="light">
       <MDBContainer fluid>
-        <MDBNavbarBrand href="/">
+        <MDBNavbarBrand href={getLinkPath("/")}>
           <img
             src="https://dl.dropboxusercontent.com/s/j268a6rjz1almh3/logo-black.png"
             height="50"

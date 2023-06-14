@@ -53,7 +53,7 @@ function ReservationForm(props) {
     async function handleSubmit(e) {
         e.preventDefault();
         if (account == null) {
-        setSignInError(true);
+            setSignInError(true);
         } else {
             const form = e.target;
             const reservation = {

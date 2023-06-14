@@ -35,6 +35,23 @@ export const codeLakeApi = createApi({
             }),
             invalidatesTags: ['ReservationsList', 'UserReservations']
         }),
+        editReservation: builder.mutation({
+            query:({ reservationId, ...body }) => ({
+                url: `/api/reservations/${reservationId}`,
+                method: 'PUT',
+                body,
+                credentials: 'include'
+            }),
+            invalidatesTags: ['ReservationsList', 'UserReservations']
+        }),
+        deleteReservation: builder.mutation({
+            query: (reservation_id) => ({
+                url: `/api/reservations/${reservation_id}`,
+                method: 'DELETE',
+                credentials: 'include'
+            }),
+            invalidatesTags: ['ReservationsList', 'UserReservations']
+        }),
 // #########################--Users--###################################
         getAccount: builder.query({
             query: () => ({
@@ -122,6 +139,8 @@ export const {
     useGetReservationsQuery,
     useGetUserReservationsQuery,
     useCreateReservationMutation,
+    useEditReservationMutation,
+    useDeleteReservationMutation,
     useGetAccountQuery,
     useLogoutMutation,
     useLoginMutation,

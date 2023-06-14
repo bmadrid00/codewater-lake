@@ -10,16 +10,19 @@ import {
     MDBInput,
     MDBContainer,
     MDBRow,
-    MDBCol
+    MDBCol,
+    MDBIcon
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom"
 import { Form } from "react-bootstrap";
+import EditReservation from "../reservations/EditReservation";
 import {
     useGetAccountQuery,
     useEditAccountMutation,
     useLogoutMutation,
     useGetUserReservationsQuery,
-    useDeleteAccountMutation
+    useDeleteAccountMutation,
+    useDeleteReservationMutation
 } from "../redux/apiSlice";
 import ReviewForm from "../ReviewForm";
 
@@ -34,6 +37,7 @@ function Profile() {
     const reservations = reservationsQuery.data?.reservations;
     const [accountChange] = useEditAccountMutation();
     const [logout] = useLogoutMutation();
+    const [deleteRes] = useDeleteReservationMutation();
     const navigate = useNavigate();
     const [deleteAccount] = useDeleteAccountMutation();
     const [showReviewForm, setShowReviewForm] = useState(false);
@@ -41,6 +45,7 @@ function Profile() {
     const [selectedReservationId, setSelectedReservationId] = useState(null);
     const [selectedCabinId, setSelectedCabinId] = useState(null);
     const [showDeleteAccountConfirm, setShowDeleteAccountConfirm] = useState(false);
+    const [showDeleteResConfirm, setShowDeleteResConfirm] = useState(false);
 
     useEffect(() => {
         if (account) {
@@ -63,8 +68,8 @@ function Profile() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { id, ...updatedAccount } = changedAccount; // Remove 'id' from the account object
-        accountChange(updatedAccount);
+        delete changedAccount['id'] // Remove 'id' from the account object
+        accountChange(changedAccount);
         logout();
         navigate("/signin");
     };
@@ -125,6 +130,8 @@ function Profile() {
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>Number of Guests</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -133,29 +140,46 @@ function Profile() {
                     let currDay = new Date()
                     let startDay = new Date(reservation.start_date)
                     if (startDay <= currDay){
-                    buttonDisplay = <MDBBtn
-                                    outline
-                                    className='mx-2'
-                                    color='success'
-                                    onClick={() => {setShowReviewForm(true);
-                                                    setSelectedReservationId(reservation.id);
-                                                    setSelectedCabinId(reservation.cabin_id);
-                                                }}>Give Feedback</MDBBtn>
+                    buttonDisplay =
+                    <>
+                        <td>
+                            <MDBBtn
+                            outline
+                            block
+                            className='mx-2'
+                            color='success'
+                            onClick={() => {setShowReviewForm(true);
+                                            setSelectedReservationId(reservation.id);
+                                            setSelectedCabinId(reservation.cabin_id);
+                                        }}>
+                            Give Feedback</MDBBtn>
+                        </td>
+                        <td />
+                    </>
                     } else {
-                        buttonDisplay = <MDBBtn
-                                    outline
-                                    className='mx-2'
-                                    color='info'
-                                    onClick={() => {setShowEditResForm(true);
-                                                    setSelectedReservationId(reservation.id);
-                                                }}>Edit Reservation</MDBBtn>
-                        }
-                    return (<tr key={reservation.id}>
+                        buttonDisplay = (
+                        <>
+                            <td>
+                        <MDBBtn
+                        outline
+                        block
+                        className='mx-2'
+                        color='info'
+                        onClick={() => {setShowEditResForm(true);
+                                        setSelectedReservationId(reservation.id);
+                        }}>Edit Reservation</MDBBtn>
+                            </td>
+                            <td>
+                                <MDBBtn color="light" onClick={() => {setShowDeleteResConfirm(true); setSelectedReservationId(reservation.id)}}>
+                                <MDBIcon far color="danger" icon="trash-alt" /></MDBBtn>
+                            </td>
+                        </>)}
+                    return (<tr className="res-table"key={reservation.id}>
                         <td>{reservation.cabin_name}</td>
                         <td>{reservation.start_date}</td>
                         <td>{reservation.end_date}</td>
                         <td>{reservation.number_of_people}</td>
-                        <td>{buttonDisplay}</td>
+                        {buttonDisplay}
                         </tr>
                     );
                     })}
@@ -180,7 +204,7 @@ function Profile() {
                         <MDBModalTitle>Edit Details of Reservation</MDBModalTitle>
                     </MDBModalHeader>
                     <MDBModalBody>
-                        <h1>Reservation edit form here</h1>
+                        <EditReservation id={selectedReservationId} />
                     </MDBModalBody>
                 </MDBModalContent>
             </MDBModalDialog>
@@ -192,10 +216,24 @@ function Profile() {
                         <MDBModalTitle>Are you sure you want to delete your account?</MDBModalTitle>
                     </MDBModalHeader>
                     <MDBModalBody>
-
                         <MDBBtn outline rounded block className='mx-2' color='danger' onClick={handleDelete}>
                             Delete Profile</MDBBtn>
-                            <MDBBtn outline rounded block className='mx-2' color='danger' onClick={() => setShowDeleteAccountConfirm(false)}>
+                        <MDBBtn outline rounded block className='mx-2' color='info' onClick={() => setShowDeleteAccountConfirm(false)}>
+                            Cancel</MDBBtn>
+                    </MDBModalBody>
+                </MDBModalContent>
+            </MDBModalDialog>
+        </MDBModal>
+        <MDBModal show={showDeleteResConfirm} setShow={setShowDeleteResConfirm} tabIndex='0'>
+            <MDBModalDialog>
+                <MDBModalContent>
+                    <MDBModalHeader>
+                        <MDBModalTitle>Are you sure you want to delete this reservation?</MDBModalTitle>
+                    </MDBModalHeader>
+                    <MDBModalBody>
+                        <MDBBtn outline rounded block className='mx-2' color='danger' onClick={() => {deleteRes(selectedReservationId); setShowDeleteResConfirm(false);}}>
+                            Delete Reservation</MDBBtn>
+                            <MDBBtn outline rounded block className='mx-2' color='info' onClick={() => setShowDeleteResConfirm(false)}>
                                 Cancel</MDBBtn>
                     </MDBModalBody>
                 </MDBModalContent>
