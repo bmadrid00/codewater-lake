@@ -62,7 +62,6 @@ pages:
     paths:
       - public
 
-Build Sample Service:
 build-api:
   image: docker:19.03.1
   stage: build
