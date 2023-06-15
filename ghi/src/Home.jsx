@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <>
       {/* IMAGE CAROUSEL */}
-
+      <div className="container">
       <MDBCarousel className="mb-5" showControls>
         <MDBCarouselItem
           className="w-100 d-block"
@@ -39,7 +39,7 @@ export default function HomePage() {
           src="https://dl.dropboxusercontent.com/s/sjtfvvoehb3ql6c/foggy-lake.jpg"
           alt="foggy lake view"
         />
-        b
+        
       </MDBCarousel>
 
       <MDBContainer>
@@ -214,8 +214,8 @@ export default function HomePage() {
                 </MDBCol>
             </MDBRow>
         </MDBRow>
-
       </MDBContainer>
+      </div>
     </>
   );
 };

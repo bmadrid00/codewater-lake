@@ -10,6 +10,7 @@ import Nav from "./Nav";
 import ReviewForm from "./ReviewForm";
 import "./css/app.css";
 import ReservationPage from "./reservations/ReservationPage";
+import UnexpectedError from "./error-handling/UnexpectedError";
 
 function App() {
   const domain = /https:\/\/[^/]+/;
@@ -18,7 +19,7 @@ function App() {
   return (
     <BrowserRouter basename={basename}>
       <Nav />
-      <div className="container">
+      <div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<Signup />} />
@@ -28,6 +29,7 @@ function App() {
           <Route path="/reservations" element={<ReservationPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/reviews/create" element={<ReviewForm />} />
+          <Route path="*" element={<UnexpectedError />} />
         </Routes>
       </div>
       <Footer />
