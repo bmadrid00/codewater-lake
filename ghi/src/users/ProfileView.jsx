@@ -111,17 +111,14 @@ function Profile() {
             </MDBRow>
             </Form>
             <MDBRow>
-                <MDBCol></MDBCol>
-                <MDBCol></MDBCol>
-                <MDBCol></MDBCol>
+                <MDBCol />
+                <MDBCol />
+                <MDBCol />
                 <MDBCol>
                     <MDBBtn outline rounded block className='mx-2' color='danger' onClick={() => setShowDeleteAccountConfirm(true)}>
                         Delete Profile</MDBBtn>
                 </MDBCol>
             </MDBRow>
-
-
-
         <h1>Reservation History</h1>
         <table className="table table-striped">
             <thead>
@@ -174,7 +171,7 @@ function Profile() {
                                 <MDBIcon far color="danger" icon="trash-alt" /></MDBBtn>
                             </td>
                         </>)}
-                    return (<tr className="res-table"key={reservation.id}>
+                    return (<tr key={reservation.id}>
                         <td>{reservation.cabin_name}</td>
                         <td>{reservation.start_date}</td>
                         <td>{reservation.end_date}</td>
