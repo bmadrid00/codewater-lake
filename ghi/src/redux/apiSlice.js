@@ -7,7 +7,7 @@ export const codeLakeApi = createApi({
     }),
     endpoints: (builder) => ({
         getCabins: builder.query({
-            query: () => '/api/cabins/'
+            query: () => '/api/cabins'
         }),
         getCabinById: builder.query({
             query: (cabin_id) => `/api/cabins/${cabin_id}`
@@ -15,7 +15,7 @@ export const codeLakeApi = createApi({
 // # ########################---Reservations---#######################
         getReservations: builder.query({
             query: () => ({
-                url: `/api/reservations/`
+                url: `/api/reservations`
             }),
             providesTags: ['ReservationsList']
         }),
@@ -28,7 +28,7 @@ export const codeLakeApi = createApi({
         }),
         createReservation: builder.mutation({
             query:(body) => ({
-                url: `/api/reservations/`,
+                url: `/api/reservations`,
                 method: 'POST',
                 body,
                 credentials: 'include'
@@ -124,7 +124,7 @@ export const codeLakeApi = createApi({
         }),
         getReviews: builder.query({
             query: () => ({
-                url: `/api/reviews/`
+                url: `/api/reviews`
             }),
         }),
         getReviewsByCabin: builder.query({

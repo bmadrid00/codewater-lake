@@ -4,7 +4,7 @@ from queries.cabins import CabinIn, CabinOut, CabinQueries, CabinList
 router = APIRouter()
 
 
-@router.get("/api/cabins/", response_model=CabinList)
+@router.get("/api/cabins", response_model=CabinList)
 def list_cabins(
     repo: CabinQueries = Depends(),
 ):

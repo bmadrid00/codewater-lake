@@ -31,7 +31,7 @@ class HttpError(BaseModel):
 router = APIRouter()
 
 
-@router.get("/api/users/", response_model=UserList)
+@router.get("/api/users", response_model=UserList)
 def list_users(
     repo: UserQueries = Depends(),
 ):

@@ -19,12 +19,12 @@ def get_all_reservations_for_user(
     return repo.get_all_reservations_for_user(account_data['id'])
 
 
-@router.get("/api/reservations/", response_model=AllReservationList)
+@router.get("/api/reservations", response_model=AllReservationList)
 def get_all_reservations(repo: ReservationQueries = Depends()):
     return repo.get_all_reservations()
 
 
-@router.post("/api/reservations/", response_model=ReservationOut)
+@router.post("/api/reservations", response_model=ReservationOut)
 def create_reservation(
     reservation: ReservationIn,
     account_data: dict = Depends(authenticator.get_current_account_data),
