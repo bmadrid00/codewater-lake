@@ -1,0 +1,1073 @@
+commit 3dae3f6f446b1371f5d89100ba5714f91bb3ea81
+Merge: 672e4dc 3fdd620
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Fri Jun 9 22:30:32 2023 +0000
+
+    Merge branch 'remove_console_log' into 'main'
+    
+    removed console.log
+    
+    See merge request sevendeadlysyntax/codewater-lake!37
+
+commit 3fdd6207a1319ac15332e95bc50e5e12902b7404
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Fri Jun 9 22:30:32 2023 +0000
+
+    removed console.log
+
+commit 672e4dcd9b1def38134feb880073ac19f50f4f0c
+Merge: f24e127 bc855e8
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Fri Jun 9 21:11:37 2023 +0000
+
+    Merge branch 'formatting' into 'main'
+    
+    Merge final formatting into main
+    
+    See merge request sevendeadlysyntax/codewater-lake!36
+
+commit bc855e82a5f1f524c7dbe29de2eb4ad9a1161a06
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Fri Jun 9 21:11:37 2023 +0000
+
+    Merge final formatting into main
+
+commit f24e127d61fd6f559d8ed2342974a61a1bac710c
+Merge: bff7d0d f98eb4e
+Author: luis Vela <velaluis60@gmail.com>
+Date:   Fri Jun 9 19:05:46 2023 +0000
+
+    Merge branch 'weather' into 'main'
+    
+    Merge weather to main
+    
+    See merge request sevendeadlysyntax/codewater-lake!35
+
+commit f98eb4e403850513dd5d3b2f37ab3447bd6388f9
+Author: luis Vela <velaluis60@gmail.com>
+Date:   Fri Jun 9 19:05:46 2023 +0000
+
+    Merge weather to main
+
+commit bff7d0d622dcf6d4e2e51a8c3ba3bbb4a5a93d29
+Merge: 45c428a 80e693b
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Fri Jun 9 14:26:30 2023 +0000
+
+    Merge branch 'code_cleaning' into 'main'
+    
+    Code cleaning
+    
+    See merge request sevendeadlysyntax/codewater-lake!34
+
+commit 80e693b806f9fdb0c3c6ca81bfb094389566539b
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Fri Jun 9 14:26:30 2023 +0000
+
+    Code cleaning
+
+commit 45c428a709aa121a277d35838fdcde1082cd42ce
+Merge: c959fa5 b125fd1
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Thu Jun 8 15:15:50 2023 +0000
+
+    Merge branch 'error-handling' into 'main'
+    
+    Error handling
+    
+    See merge request sevendeadlysyntax/codewater-lake!32
+
+commit b125fd1b223a564ffb817d12e6bbc4c34be1e24e
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Thu Jun 8 15:15:50 2023 +0000
+
+    Error handling
+
+commit c959fa5f9a1644a59f488a7e64caaa14b5c80cb2
+Merge: 24de5cf e912a6a
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Thu Jun 8 15:09:11 2023 +0000
+
+    Merge branch 'error-handling' into 'main'
+    
+    Error handling
+    
+    See merge request sevendeadlysyntax/codewater-lake!30
+
+commit e912a6aa8f73c32189573ba896d0dd1683c947ca
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Thu Jun 8 15:09:11 2023 +0000
+
+    Error handling
+
+commit 24de5cf56099e3009055d7afbb9d2284ec2e89ee
+Author: bileE <eric.biles@proton.me>
+Date:   Wed Jun 7 16:07:41 2023 -0700
+
+    Profile view cabin name, home cabin button
+
+commit 6a4b62682b5b2d62bc69e9f643325aedaa9117b3
+Author: bileE <eric.biles@proton.me>
+Date:   Wed Jun 7 16:01:36 2023 -0700
+
+    Cabin Name in profile view
+
+commit 8fe6b4d7f2459d2ea45d02e219e59e08e7eca2b0
+Merge: b13738a f2ee4f0
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Wed Jun 7 18:55:03 2023 +0000
+
+    Merge branch 'error-handling' into 'main'
+    
+    fixed error handling at login
+    
+    See merge request sevendeadlysyntax/codewater-lake!29
+
+commit f2ee4f09ac5f2c9768b53107b89a9398eff4fffc
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed Jun 7 12:52:50 2023 -0600
+
+    fixed error handling at login
+
+commit b13738aa4a766bc17fed6f9549b45524cd3de420
+Merge: bd65eef fe99962
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Wed Jun 7 17:51:22 2023 +0000
+
+    Merge branch 'PrinceMergingMain' into 'main'
+    
+    Prince merging main
+    
+    See merge request sevendeadlysyntax/codewater-lake!28
+
+commit fe999627d518bc49adff361eecd0ec205379ef7d
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Wed Jun 7 17:51:21 2023 +0000
+
+    Prince merging main
+
+commit bd65eef1a39096d17cfd7884def0276c694da908
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed Jun 7 11:49:04 2023 -0600
+
+    some form formatting and reservation signup error
+
+commit a0f62e788bd8efe00204b270ded645ada70b2346
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed Jun 7 11:28:37 2023 -0600
+
+    some code formatting and cleanup
+
+commit 99accba8b3963f6977882c3358ca8a10d9664712
+Merge: a9dcdc4 f91dfd9
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Wed Jun 7 17:01:57 2023 +0000
+
+    Merge branch 'reviews-implementation' into 'main'
+    
+    Merge reviews implementation into main
+    
+    See merge request sevendeadlysyntax/codewater-lake!27
+
+commit f91dfd9e1cf6f30247f66d0124d578f2c6ab0ac3
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Wed Jun 7 17:01:57 2023 +0000
+
+    Merge reviews implementation into main
+
+commit a9dcdc489e8b22c80b9a5e0064e47a9fcb2bef2d
+Merge: 2a9860d bd803b8
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed Jun 7 10:45:03 2023 -0600
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma
+    merged new main
+
+commit 2a9860d4f39ab36f10fb420dd88b869b0dd480d8
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed Jun 7 10:44:12 2023 -0600
+
+    fixed signup cors error and some code cleanup
+
+commit bd803b8281bb99e44c2e89cf67e2e297b63bcd11
+Merge: 8257ad9 c536d53
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Tue Jun 6 19:44:35 2023 +0000
+
+    Merge branch 'unit_test' into 'main'
+    
+    Finished unit test
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!26
+
+commit c536d53388eef4842104b8e6618d2b5b85c4291a
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Tue Jun 6 19:44:35 2023 +0000
+
+    Finished unit test
+
+commit 8257ad9d05519723587567d00dbd4c08ad0746c5
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue Jun 6 13:37:12 2023 -0600
+
+    added wire frame
+
+commit 2df2c3e392a3fb0200e410bda416935f416ccdfe
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue Jun 6 13:27:39 2023 -0600
+
+    fixed div bug in reservation form
+
+commit 21397e640085efcae2cceebbc221592e794c1598
+Merge: 4da85d0 09c2aa1
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue Jun 6 13:25:10 2023 -0600
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma
+    adding some journals
+
+commit 4da85d02bcb5f04a88540d7c1a0bcf4c0f30fdb1
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue Jun 6 13:24:37 2023 -0600
+
+    pauls journals and some read me adjustments
+
+commit 09c2aa1284d4814402558f11c0411c4a86098c7f
+Merge: cb3abe3 c20e0ab
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Tue Jun 6 19:21:51 2023 +0000
+
+    Merge branch 'resformCSS' into 'main'
+    
+    Resform css
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!25
+
+commit c20e0ab54e8d92e32c0c6751fac1e85d0a39a48b
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Tue Jun 6 19:21:51 2023 +0000
+
+    Resform css
+
+commit cb3abe3600165a68dcaf866b4e0b3e5a39a28b8c
+Merge: 07b5b20 6e65c29
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon Jun 5 21:09:31 2023 +0000
+
+    Merge branch 'test-cabins' into 'main'
+    
+    Test cabins merge into main
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!24
+
+commit 6e65c298559fce56c51a8423030c59d0450ac78a
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon Jun 5 21:09:31 2023 +0000
+
+    Test cabins merge into main
+
+commit 07b5b2040cc205b8d1db441d101dccc81aa624dd
+Merge: 8e52b2a 22a6531
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Mon Jun 5 20:58:28 2023 +0000
+
+    Merge branch 'test-users' into 'main'
+    
+    test working
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!23
+
+commit 22a6531d0306b8ecccafea7c84b05443077fab01
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon Jun 5 14:57:20 2023 -0600
+
+    test working
+
+commit 8e52b2a7bf0d4eb61a43f40ca30c9dfeb87a9b82
+Merge: 5e7eb65 d89cee0
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon Jun 5 20:09:00 2023 +0000
+
+    Merge branch 'reviews-implementation' into 'main'
+    
+    Reviews implementation merge into main
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!22
+
+commit d89cee0b2b494f383dc33fd666d7449e63277587
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon Jun 5 20:09:00 2023 +0000
+
+    Reviews implementation merge into main
+
+commit 5e7eb65bdbee950035ed3eeea3efb2e607d530a3
+Merge: 39313d0 f2a8d99
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Mon Jun 5 19:43:29 2023 +0000
+
+    Merge branch 'login-styling' into 'main'
+    
+    Login styling
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!21
+
+commit f2a8d995d488b74027aa8b10fc49b1af22f5a3ee
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Mon Jun 5 19:43:29 2023 +0000
+
+    Login styling
+
+commit 39313d0db324227a1d9129f265bb2acaca81b052
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu Jun 1 15:34:50 2023 -0600
+
+    deleted calendar and added footer into app
+
+commit fd91340fcf42b108c66f99b83417e19a870fc398
+Merge: 4af7f7c d941268
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Thu Jun 1 21:22:59 2023 +0000
+
+    Merge branch 'calendar' into 'main'
+    
+    Calendar
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!20
+
+commit d941268ac93272d936de9cb75abe9fcc971e6ea2
+Author: Eric Biles <eric.biles@proton.me>
+Date:   Thu Jun 1 21:22:59 2023 +0000
+
+    Calendar
+
+commit 4af7f7c458ce10c07beca71c1ff5ad79e386f010
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed May 31 15:18:11 2023 -0600
+
+    some bug fixes
+
+commit 44be621b5546f84323aebe8d0c1d4a0222f59770
+Merge: 6b067ca ab81dad
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Wed May 31 20:23:43 2023 +0000
+
+    Merge branch 'cabin-seed' into 'main'
+    
+    Cabin seed
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!19
+
+commit ab81dadcc33cc5c60bc0d10eab89f8bee08d7bf5
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Wed May 31 20:23:43 2023 +0000
+
+    Cabin seed
+
+commit 6b067caaddd80f4cfdef08f748975354964b7d72
+Merge: dc08689 6027e2b
+Author: luis Vela <velaluis60@gmail.com>
+Date:   Fri May 26 22:52:27 2023 +0000
+
+    Merge branch 'signup' into 'main'
+    
+    Merge into main for signup view
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!16
+
+commit 6027e2ba1758c04864bdfca6454f2e22f882a488
+Author: luis Vela <velaluis60@gmail.com>
+Date:   Fri May 26 22:52:27 2023 +0000
+
+    Merge into main for signup view
+
+commit dc08689c5382258677b55aa3b68d5706f9ae9727
+Merge: ab89e4b 1b96827
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Fri May 26 19:26:33 2023 +0000
+
+    Merge branch 'main-profile-view-merge' into 'main'
+    
+    merge issue 5 profile view into main
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!14
+
+commit 1b968276f22bc0f3eb3bc392d03f307c12a738d9
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Fri May 26 19:26:33 2023 +0000
+
+    merge issue 5 profile view into main
+
+commit ab89e4b5e99f77cbafe689ba6a17ab6d65bec6c4
+Merge: f9ff067 a7e3a88
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Fri May 26 19:22:23 2023 +0000
+
+    Merge branch 'main-profile-view-merge' into 'main'
+    
+    merge issue 5 profile view into main
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!13
+
+commit a7e3a880b46e33a2cc9b5855b5c2e9602e3a3025
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Fri May 26 19:22:23 2023 +0000
+
+    merge issue 5 profile view into main
+
+commit f9ff0670c82713edb26be82c07a2bc91daa4fc23
+Merge: ce48d25 f151830
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Fri May 26 15:05:12 2023 +0000
+
+    Merge branch 'img-url-fix' into 'main'
+    
+    fixed img urls
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!11
+
+commit f151830865e9d882bdfcc22fc504d0fdc8f356d1
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Fri May 26 08:35:49 2023 -0600
+
+    fixed img urls
+
+commit ce48d254274bb1bc95995d0b097d22f29d7dd9ab
+Merge: 37d0b91 7d2b769
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 18:43:55 2023 -0600
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma
+
+commit 7d2b769d0bcdc48fd3ca14737afae882884cd4fd
+Merge: cdf5b6e 13fa9ca
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Thu May 25 23:50:45 2023 +0000
+
+    Merge branch 'Main2' into 'main'
+    
+    Update 14 files
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!7
+
+commit 13fa9cac161c55a621e18e640f8f4eef98a675c6
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Thu May 25 23:49:17 2023 +0000
+
+    Update 14 files
+    
+    - /ghi/src/homepage.jsx
+    - /ghi/src/cabins/cabins.jsx
+    - /ghi/src/cabins/cabinDetail.jsx
+    - /ghi/src/cabins/cabinCarousel.jsx
+    - /ghi/src/users/profileView.jsx
+    - /ghi/src/users/signin.jsx
+    - /ghi/src/users/signup.jsx
+    - /ghi/src/Home.jsx
+    - /ghi/src/cabins/CabinList.jsx
+    - /ghi/src/cabins/CabinDetail.jsx
+    - /ghi/src/cabins/CabinCarousel.jsx
+    - /ghi/src/users/ProfileView.jsx
+    - /ghi/src/users/Signin.jsx
+    - /ghi/src/users/Signup.jsx
+
+commit 37d0b91c245f076acf8c0ad3189afe503e26f19b
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 17:05:27 2023 -0600
+
+    name changes
+
+commit be8118c71e0850703abb79a2f1657fa3be6a8030
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 17:04:43 2023 -0600
+
+    name changes
+
+commit d432c736bcd2a57d638a54485329aa26e72a9000
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 17:03:16 2023 -0600
+
+    more file name changes
+
+commit 840ef5e0630f16c2d129775831aebc46e6ad1b69
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 17:00:38 2023 -0600
+
+    changed file names
+
+commit da8fc5e86ab90916d95c847f5cc1e2f5156fa22e
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 16:58:12 2023 -0600
+
+    renamed some files
+
+commit 927a64d2b30f1cc430b0a65645b8d03c2bca7a82
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 16:54:45 2023 -0600
+
+    changed homepage to home
+
+commit 0197ce6442be289c373bf7c82bece5af43e591de
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 16:51:14 2023 -0600
+
+    everything functioning
+
+commit cdf5b6e136294587ed75df696657d3c7b13257b1
+Merge: a7131b7 8b3d509
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Thu May 25 22:20:39 2023 +0000
+
+    Merge branch '9-homepage' into 'main'
+    
+    Resolve "As a user on the site, I want to be able to see a homepage that shows information about the cabins"
+    
+    Closes #9
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!5
+
+commit 8b3d5095381f208da6ac8f1275b6071379fb1be8
+Author: Paul Kingston <paul.jesse.is@gmail.com>
+Date:   Thu May 25 22:20:38 2023 +0000
+
+    Resolve "As a user on the site, I want to be able to see a homepage that shows information about the cabins"
+
+commit 066065bf407aac6fb4169581903fc8224f552898
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 14:57:03 2023 -0600
+
+    img tweak
+
+commit 8f2f3baddc10bb0548621d31c3752924d04ddd1a
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 25 14:55:29 2023 -0600
+
+    homepage layout generally finished with complete footer
+
+commit bad4b262370abe7a1d966bc8e2ebfb70629921da
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed May 24 14:15:58 2023 -0600
+
+    homepage carousel functioning and navbar refactored
+
+commit f9c44bd88db20a55ef9a14b60ea46b0dfe46422f
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed May 24 10:52:10 2023 -0600
+
+    mostly finished cabin detail with the exception of functioning book button. added logo footer
+
+commit ee0310dda3a401f2fa14cadf3c6cb82ef38c1b7b
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue May 23 16:39:08 2023 -0600
+
+    finalized the use of redux in detail view
+
+commit bcbc2a1a29597e1df6a610fc2fbff2d40d06d31e
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue May 23 16:29:51 2023 -0600
+
+    converted page to work with our redux store
+
+commit 664f3ff67b026f4afe9078eff36676b5e389b44a
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue May 23 15:17:35 2023 -0600
+
+    functioning detail page with the redux store initialize but not implemented
+
+commit a27d553265fb561086c73fcb996188e93b76e061
+Merge: 5eb6b30 4dcdb23
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue May 23 14:46:25 2023 -0600
+
+    Merge branch '5-profile-view' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma into 7-cabin-detail
+    merging the redux store
+
+commit 4dcdb23e56444e6b297ee203fca95dc6ef6746b3
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Tue May 23 15:12:57 2023 -0500
+
+    Add redux implementation, login/logout,  and nav filtering based on user login status
+
+commit 5eb6b306bc54297c3f8a8dbb456554a807463ec2
+Merge: 89eac5d a7131b7
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon May 22 14:04:19 2023 -0600
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma into 7-cabin-detail
+    adding back package.json
+
+commit 89eac5de96f63ecef80db2738b9dddc082f11e37
+Merge: 5b38a49 454dad0
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Thu May 18 14:06:00 2023 -0600
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma into 7-cabin-detail
+
+commit a7131b785570748569ef842263e9a9a763078f0e
+Merge: 6be0fd8 454dad0
+Author: Luis Vela <velaluis60@gmail.com>
+Date:   Thu May 18 13:02:47 2023 -0400
+
+    changes
+
+commit 454dad0b2ff45491bcfafed1920fb87f5238640a
+Merge: 9b7d128 b6de623
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Thu May 18 14:27:52 2023 +0000
+
+    Merge branch 'react' into 'main'
+    
+    React
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!4
+
+commit b6de623991f4547f5b1cc5b15a042fe18006c127
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Thu May 18 14:27:52 2023 +0000
+
+    React
+
+commit 9b7d128619d829f5409e55faf6a8f41cefab37de
+Merge: 36206b1 c7873a5
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Wed May 17 21:56:20 2023 +0000
+
+    Merge branch 'queries' into 'main'
+    
+    queries and backend completed
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!3
+
+commit c7873a50a348b9e0222d338233de3f430aa88944
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Wed May 17 21:56:20 2023 +0000
+
+    queries and backend completed
+
+commit 5b38a49c6746dee7307b7b9d31f0b84d02f24ea8
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed May 17 15:32:31 2023 -0600
+
+    added journal for the day
+
+commit 36206b17a822202e3cf4e36febf2baec231051db
+Author: bileE <eric.biles@proton.me>
+Date:   Wed May 17 14:31:06 2023 -0700
+
+    Day 3 journal entry
+
+commit a321b553ae0ca9f8079a921d6d9d0c3890e8998f
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Wed May 17 15:19:17 2023 -0600
+
+    updated the cabin table
+
+commit 495034b4cc93560ccc720b87072059e773699fc6
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Wed May 17 16:00:56 2023 -0500
+
+    Add protection for certain views. Update reservation routes to be dependent on user
+
+commit 1b919657a7021cd09242d57a4ca5692fded74873
+Author: bileE <eric.biles@proton.me>
+Date:   Wed May 17 10:59:53 2023 -0700
+
+    fixed error with create cabin
+
+commit bc5271f46f1e30c3f44de3f5ca1188409350da10
+Author: bileE <eric.biles@proton.me>
+Date:   Wed May 17 10:44:46 2023 -0700
+
+    updated cabin model for images
+
+commit 99afd792e5ca07eb83f9eec3bd24a642b6e463c9
+Author: bileE <eric.biles@proton.me>
+Date:   Wed May 17 10:33:17 2023 -0700
+
+    Updated Documentation.readme
+
+commit 2c565dfcd74b17a1bf84705ba3c1d278265fde72
+Merge: cf74af7 ab2bd28
+Author: bileE <eric.biles@proton.me>
+Date:   Tue May 16 15:38:40 2023 -0700
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma
+
+commit cf74af7d490f4822bd2636da2edb7acbfa5b2a07
+Author: bileE <eric.biles@proton.me>
+Date:   Tue May 16 15:37:49 2023 -0700
+
+    Journal entry Tues-Day2
+
+commit b1b2dab932232fe8565d952e7a249fd8a7fc739f
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue May 16 16:35:52 2023 -0600
+
+    added journal entry for paul
+
+commit ba8554c6fdf037c27975a8c3d7c899e21b5e5084
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Tue May 16 15:39:58 2023 -0600
+
+    all endpoints functional
+
+commit 6284bffc41ab1070fd56e2bc57c9ec7082a602f6
+Merge: 9daaa68 69f4f78
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon May 15 16:26:00 2023 -0600
+
+    AUTH work
+
+commit 9daaa6856e59732120771114bab958e6549ef335
+Merge: ec23e3d ccb2a41
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon May 15 16:22:27 2023 -0600
+
+    AUTH work
+
+commit 69f4f78f9615ce43e9162d171fb91b849b30d95d
+Merge: 2ff1d22 ccb2a41
+Author: Luis Vela <velaluis60@gmail.com>
+Date:   Mon May 15 18:19:11 2023 -0400
+
+    Merge branch 'queries' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma into queries
+
+commit 2ff1d22702dee3aaa636e121700d68ddf92e1bb9
+Author: Luis Vela <velaluis60@gmail.com>
+Date:   Mon May 15 18:12:59 2023 -0400
+
+    added reservation routes
+
+commit ec23e3d06163109d0aec19efdb4db85ed3edb3a8
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon May 15 15:31:01 2023 -0600
+
+    continued work on AUTH
+
+commit ccb2a41208f55e9a4c4a344a9a5559c6a8ffde7c
+Author: bileE <eric.biles@proton.me>
+Date:   Mon May 15 14:22:57 2023 -0700
+
+    errors in users corrected
+
+commit 7c71a5d20434f2531349b82b97225349b0265354
+Merge: 0f11bdf 5081f3b
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon May 15 14:58:41 2023 -0600
+
+    Merge branch 'queries' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma into queries
+    mergin user queries
+
+commit 0f11bdf9e7ab80409559f8163dadcdfceda1ceda
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon May 15 14:58:37 2023 -0600
+
+    staring AUTH
+
+commit 5081f3be613070d52df543b9f7ee818119296a94
+Author: bileE <eric.biles@proton.me>
+Date:   Mon May 15 13:53:18 2023 -0700
+
+    added user routes
+
+commit a2c25fe34671ee5d9437997f6506dac136141285
+Author: bileE <eric.biles@proton.me>
+Date:   Mon May 15 13:43:22 2023 -0700
+
+    added users quereies
+
+commit ab2bd28c8fa809ffd43d824397dad78dcd9139e6
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Mon May 15 15:26:04 2023 -0500
+
+    Fixed some identation errors
+
+commit 9ed5362f5d68f483cf124d16c2bccc7c23a8559a
+Merge: b35276b 7a434a2
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Mon May 15 20:23:17 2023 +0000
+
+    Merge branch 'queries' into 'main'
+    
+    Merge cabins queries and routers
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!2
+
+commit 7a434a2f9508913a950b81fc2fb688893f908fbe
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon May 15 20:23:16 2023 +0000
+
+    Merge cabins queries and routers
+
+commit e167f0eac48718174b1000b00c503951ce1b7f7c
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon May 15 15:19:03 2023 -0500
+
+    Complete queries and routes for cabins
+
+commit 6be0fd8ab5db1939f33e9b3d9fa4e14d0e4ccb62
+Author: Luis Vela <velaluis60@gmail.com>
+Date:   Mon May 15 14:54:00 2023 -0400
+
+    added Luis' journal file
+
+commit 142e8f1acdf1dc0dab722bbfab157d725d64a999
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon May 15 13:07:28 2023 -0500
+
+    Complete post and get queries for cabin
+
+commit b35276bfa27518b7630ac59cafbcdff3512fbad9
+Merge: 391c637 5f2c72f
+Author: bileE <eric.biles@proton.me>
+Date:   Mon May 15 10:06:09 2023 -0700
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma
+
+commit 391c637d7c290532eb8566a9c1ab92fc90e52587
+Author: bileE <eric.biles@proton.me>
+Date:   Mon May 15 10:05:46 2023 -0700
+
+    Day1 Journal entry
+
+commit 5f2c72f3292c80d2c16cfd2ab32d7d75501c6861
+Merge: 3654391 19ab565
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon May 15 16:27:39 2023 +0000
+
+    Merge branch 'migrations' into 'main'
+    
+    Added queries,migrations and cabin router files
+    
+    See merge request sevendeadlysyntax/module3-project-gamma!1
+
+commit 19ab565bee6fc4ebdf04f5d5755f4a8f22f5325f
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Mon May 15 16:27:39 2023 +0000
+
+    Complete migrations; start queries and routers
+
+commit 495063c51b17fcdd1cd7afd11c7a461ea8590cef
+Author: Luis Vela <velaluis60@gmail.com>
+Date:   Mon May 15 11:42:51 2023 -0400
+
+    added Luis' journal file
+
+commit 36543912659be3b193a48fd0b70a1b529327704a
+Merge: 80a45bf 399948b
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon May 15 09:33:55 2023 -0600
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma
+    merge
+
+commit 80a45bf2f3d750d23314aaebc6c7f06c82e327f0
+Author: paul.jesse.is <paul.jesse.is@gmail.com>
+Date:   Mon May 15 09:33:08 2023 -0600
+
+    added paul's journal.md
+
+commit 399948b43b025104677221abb919c145f0cead13
+Author: Bradley Madrid <bradley.madrid2@gmail.com>
+Date:   Mon May 15 10:33:07 2023 -0500
+
+    Add my journal
+
+commit a8b279cc15e4b9a5ab8f5c33ec54fbaceaad930d
+Merge: ffd8699 61c5965
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Mon May 15 10:31:41 2023 -0500
+
+    Merge branch 'main' of https://gitlab.com/sevendeadlysyntax/module3-project-gamma
+
+commit ffd8699874384b85138060c2ae08c553f4b5ed67
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Mon May 15 10:31:27 2023 -0500
+
+    Fixed dockercompose files
+
+commit 61c59656f7a58b19abcb76c0c59a2236bbff1a77
+Author: bileE <eric.biles@proton.me>
+Date:   Mon May 15 08:12:58 2023 -0700
+
+    added Eric's journal readme
+
+commit 2edaffa08d943f07ad01cf302a19cfa0bb5dbe5e
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Mon May 15 10:03:42 2023 -0500
+
+    Added queries and routers folder
+
+commit 533f957c827353243fca22f1f2c7f3e4470bddea
+Author: Jobanpreet Singh <leonj7153@gmail.com>
+Date:   Mon May 15 10:01:10 2023 -0500
+
+    Added a journal file
+
+commit 5f4daa228a79eba08aed8218b9717cdb74d2a4df
+Author: James Rogers <jd2rogers2@gmail.com>
+Date:   Wed Mar 29 20:56:02 2023 +0000
+
+    static due date, remove render.com references, add .env instructions
+
+commit 2252e8531dcd4951c49587d09befda0bfa6b9155
+Author: James Rogers <jd2rogers2@gmail.com>
+Date:   Mon Mar 20 19:35:36 2023 +0000
+
+    Revert "wrote form component with fetch req #1"
+
+commit 1a77b0238167ff4a4be3d391256948feacc23e3b
+Author: James Rogers <jd2rogers2@gmail.com>
+Date:   Mon Mar 20 19:12:50 2023 +0000
+
+    wrote form component with fetch req #1
+
+commit fb065434b39e8265fe24dcfac9b55997de7aab7a
+Author: James Rogers <jd2rogers2@gmail.com>
+Date:   Wed Mar 15 19:22:54 2023 +0000
+
+    consolidate gitignore, reduce pipeline minutes usage, PORT flag on api start cmd
+
+commit 644eb6c5b0658e78a34ad6639a100a351c039642
+Author: James Rogers <jd2rogers2@gmail.com>
+Date:   Mon Feb 27 23:14:26 2023 +0000
+
+    add a .gitattributes file and write a better MR template
+
+commit 58eccf03247a0dbd9f901eb08c2b605db4f28356
+Author: James Rogers <jd2rogers2@gmail.com>
+Date:   Mon Feb 6 18:37:25 2023 +0000
+
+    adding issue template
+
+commit 7c1ca24021db3447359c9849a431721a3f3d92e8
+Author: Riley Dallas <riley.dallas@shortbear.com>
+Date:   Thu Jan 5 09:13:39 2023 -0600
+
+    Use shell script from microservice-two-shot
+
+commit af332d979458ae854426f63b80ffbc97d660e906
+Author: Riley Dallas <riley.dallas@shortbear.com>
+Date:   Thu Jan 5 09:12:38 2023 -0600
+
+    Remove shell script causing PC issues
+
+commit ced5af264ebffff0b6f12188e0975fa9c7f4ef62
+Author: James Rogers <jd2rogers2@gmail.com>
+Date:   Tue Dec 13 16:17:03 2022 +0000
+
+    add merge request template file
+
+commit a85bf1749fb3dce385926b6ad2d408cbeb38537c
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Tue Nov 8 22:40:25 2022 -0700
+
+    updated readme
+
+commit dd84a7e5f4f96c81c06c1d532fa47d3cef9cf002
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Tue Nov 8 21:22:39 2022 -0700
+
+    updated for render.com, take 1
+
+commit 587fd280348bb8a957a831525445b8a4fa9f2907
+Author: Andrew Singley <andrew.singley@galvanize.com>
+Date:   Mon Nov 7 18:22:10 2022 -0500
+
+    Add formatters
+
+commit fc9f6d80848d7e28707dcaa8766050ee3672c95a
+Author: Curtis Schlak <>
+Date:   Fri Sep 30 15:43:49 2022 -0500
+
+    Add a SQL-based migrations tool.
+
+commit 2f1c41a54ec189f0c07d074b90b74ddd1e9b5f0d
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 12:52:52 2022 -0700
+
+    filled in missing date
+
+commit ce8cb735637b1c546dd97f41fc703046efcc40fc
+Merge: 9bcae02 3e77443
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 12:21:42 2022 -0700
+
+    Merge branch 'main' of gitlab.com:sjp19-public-resources/project_templates/module3-project-gamma
+
+commit 9bcae023e7ef8b42d648b8d55d00c633f1a55af0
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 12:21:35 2022 -0700
+
+    added an env-var to the front-end build job
+
+commit 3e77443e4cbda27a16d3b3243193fab5659c2e43
+Author: Andrew Singley <andrew.singley@galvanize.com>
+Date:   Thu Sep 29 18:09:52 2022 +0000
+
+    Update journals/README.MD
+
+commit 8dd5c340c47779acb8ecd655a107d00e345b8608
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 10:59:07 2022 -0700
+
+    removed instructor todos from README
+
+commit 6723917c302067fbed4462a8c2e454aa9f3879b9
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 10:49:11 2022 -0700
+
+    some text changes
+
+commit 9863dd45b4142d6b50b70cda88cf105c8a56e6d9
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 02:41:32 2022 -0700
+
+    small updates to readme
+
+commit d889b03f6cc5d8400052daff66c196fe79d17a80
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 02:30:07 2022 -0700
+
+    added launch-info api endpoint and other stuff
+
+commit 3c7b1573a7c4c095f3d7e3a40cd38f0b9754ca9d
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 01:16:24 2022 -0700
+
+    fixing...
+
+commit 7ce515cb08a658636bc3dc3ca040156173efd177
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 01:04:10 2022 -0700
+
+    fixing...
+
+commit 02ab1a41292f96e352c8b0f020eef35ee5bcd5c9
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 00:52:50 2022 -0700
+
+    silly bug
+
+commit 74f1fc51d1aa2a5dd7f9488a510bbb49eb2078d4
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 00:50:35 2022 -0700
+
+    edited public site url
+
+commit 383cd17f78dae0bdd4ffc2f9ba0e46d8e1e51624
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 29 00:48:44 2022 -0700
+
+    added the UI and some docs
+
+commit dc62e10527dd7bc98d18fb6a92110bc2573ea715
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Fri Sep 23 11:53:14 2022 -0700
+
+    some things and some todos
+
+commit 5cd7cc1469d3e363ce7286eecdc5aeb7fea2d134
+Author: Daniel Billotte <daniel.billotte@galvanize.com>
+Date:   Thu Sep 22 18:00:44 2022 +0000
+
+    Initial commit

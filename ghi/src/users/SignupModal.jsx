@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useSignupMutation } from "../redux/apiSlice";
-import { useNavigate } from "react-router-dom";
 import { MDBBtn, MDBInput } from "mdb-react-ui-kit";
 
-function SignupModal() {
+function SignupModal(props) {
     const [register] = useSignupMutation();
-    const navigate = useNavigate();
     const [first_name, setFirstname] = useState(null);
     const [last_name, setLastname] = useState(null);
     const [email, setEmail] = useState(null);
@@ -14,17 +12,17 @@ function SignupModal() {
     const [errorMessage, setErrorMessage] = useState("");
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password !== confirmpassword) {
-        setErrorMessage("Passwords entered do not match.");
-    } else {
-        const response = register({ first_name, last_name, email, password });
-        if (response.error) {
-            alert("Incomplete form!", response.error.status);
+        e.preventDefault();
+        if (password !== confirmpassword) {
+            setErrorMessage("Passwords entered do not match.");
         } else {
-            navigate("/");
-        };
-        }
+            const response = register({ first_name, last_name, email, password });
+            if (response.error) {
+                alert("Incomplete form!", response.error.status);
+            } else {
+                props.func();
+            };
+            }
     };
 
     return (
@@ -83,7 +81,7 @@ function SignupModal() {
                     onChange={(e) => setConfirmpassword(e.target.value)}
                 />
                 </div>
-                <MDBBtn outline rounded type="submit" color="info" block>
+                <MDBBtn onClick={handleSubmit} outline rounded type="submit" color="info" block>
                 Sign up
                 </MDBBtn>
             </form>
