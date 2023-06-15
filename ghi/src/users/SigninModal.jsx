@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { useLoginMutation } from "../redux/apiSlice";
-import { useNavigate } from "react-router-dom";
 import {
   MDBInput,
   MDBBtn
 } from 'mdb-react-ui-kit';
 
-function SigninModal() {
+function SigninModal(props) {
   const [login] = useLoginMutation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +21,7 @@ function SigninModal() {
         alert(response.error.data.detail);
       }
     } else {
-      navigate("/");
+      props.func()
     }
   };
 
@@ -44,7 +43,7 @@ function SigninModal() {
                     label="Password"
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <MDBBtn outline rounded type="submit" color="info" block>
+                <MDBBtn onClick={handleSubmit} outline rounded type="submit" color="info" block>
                     Sign in
                 </MDBBtn>
                 </form>

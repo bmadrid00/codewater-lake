@@ -13,7 +13,7 @@ const Weather = () => {
   const API_KEY = "7a1c3fca54d378c6d010e3a3632b7f43";
   const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/forecast`;
   const DEFAULT_CITY = "Kalispell";
-  const weatherIconUrl = "http://openweathermap.org/img/wn/";
+  const weatherIconUrl = "https://openweathermap.org/img/wn/";
 
   const weatherByDay = () => {
     if (!apiData) {

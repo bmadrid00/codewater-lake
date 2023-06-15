@@ -18,6 +18,7 @@ import {
     useCreateReservationMutation,
     useGetCabinsQuery,
     useGetAccountQuery,
+    useGetReservationsQuery,
 } from "../redux/apiSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { assignCabin } from "../redux/cabinIDSlice";
@@ -34,6 +35,7 @@ function ReservationForm(props) {
     const [bookReservation] = useCreateReservationMutation();
     const { data: account } = useGetAccountQuery();
     const [showLogin, setShowLogin] = useState(false);
+    const { data: reservationsData, isLoading: isLoadingReservations } = useGetReservationsQuery();
 
     useEffect(() => {
         setStartDate(props.selectedDates?.start_date);
@@ -50,6 +52,10 @@ function ReservationForm(props) {
         return <h1>Loading...</h1>;
     }
 
+    const setSignupModal = () => {
+        setSignInError(false)
+    }
+
     async function handleSubmit(e) {
         e.preventDefault();
         if (account == null) {
@@ -63,7 +69,25 @@ function ReservationForm(props) {
                 start_date: form.start_date.value,
                 end_date: form.end_date.value,
             };
-            await bookReservation(reservation);
+            let book = true;
+            for (let existingRes of reservationsData["reservations"]) {
+                if (
+                    parseInt(reservation.cabin_id) === existingRes.cabin_id &&
+                    ((reservation.start_date <= existingRes.end_date &&
+                    reservation.end_date >= existingRes.start_date) ||
+                    (reservation.end_date >= existingRes.start_date &&
+                    reservation.start_date <= existingRes.end_date))
+                ) {
+                    book = false;
+                };
+            };
+            if (book === true) {
+                await bookReservation(reservation);
+            } else {
+                alert("This cabin is already booked during this time.");
+                book = true;
+            }
+
         }
     }
 
@@ -72,7 +96,7 @@ function ReservationForm(props) {
     if (showLogin) {
         displayForm = (
         <div>
-            <SigninModal />
+            <SigninModal func={setSignupModal}/>
             <MDBModalFooter>
                 <div>Don't have an account yet?</div>
                 <MDBBtn color="success" onClick={() => setShowLogin(false)}>
@@ -83,15 +107,15 @@ function ReservationForm(props) {
         );
     } else {
         displayForm = (
-        <div>
-            <SignupModal />
-            <MDBModalFooter>
+            <div>
+                <SignupModal func={setSignupModal} />
+                <MDBModalFooter>
                 <div>Already have an account?</div>
                 <MDBBtn color="success" onClick={() => setShowLogin(true)}>
                     Login
                 </MDBBtn>
-            </MDBModalFooter>
-        </div>
+                </MDBModalFooter>
+            </div>
         );
     }
 
