@@ -1,8 +1,11 @@
-# Module3 Project Gamma
-Codewater Lake Cabins
+## Project Documentation
+
+<!-- Please put any and all documentation for your project in this folder. Other than the documents that are required at the end of week 13, feel free to organize this however your group sees fit. -->
+
+Cabin Reservations
 
 Overview
-Codewater Lake Cabins is a web application that simplifies the process of reserving rental cabins. This project utilizes the FastAPI framework for the back-end API and the React library for the front-end user interface.
+Cabin Reservations is a web application that simplifies the process of reserving rental cabins. This project utilizes the FastAPI framework for the back-end API and the React library for the front-end user interface.
 
 Front-end
 Tech Stack
